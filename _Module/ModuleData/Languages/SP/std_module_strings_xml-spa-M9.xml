@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+	<tags>
+		<tag language="Español (LA)" />
+	</tags>
+	<strings>
+		<string id="KDHIT_zSNYn1" text="Knocked Down Heroes Influences Troops" />
+		<string id="KDHIT_zSNYnN" text="Your stupid general is dead! Nobody will save you now!" />
+		<string id="KDHIT_VrpEkb" text="Enemy's general is dead! We will win this war!" />
+		<string id="KDHIT_44PmYz" text="Your idiot captain is dead! Give up, you dogs!" />
+		<string id="KDHIT_GeOvFE" text="Enemy's captain is dead! They stand no chance against us!" />
+		<string id="KDHIT_XlhfeB" text="Another one of your lapdogs is dead!" />
+		<string id="KDHIT_SLjiPR" text="We have slain another one of their lords!" />
+		<string id="KDHIT_moZQWd" text="Morale penalties when heroes are knocked down" />
+		<string id="KDHIT_nTwCqB" text="When Troop Knocks Down Unassigned Hero" />
+		<string id="KDHIT_xMVk0a" text="The enemy suffers a morale loss when an ordinary soldier defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 4]" />
+		<string id="KDHIT_ck8DCA" text="When Troop Knocks Down Formation Captain" />
+		<string id="KDHIT_gONKNw" text="The enemy suffers a morale loss when an ordinary soldier defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 6]" />
+		<string id="KDHIT_7ft8BC" text="When Troop Knocks Down General" />
+		<string id="KDHIT_iYE63d" text="The enemy suffers a morale loss when an ordinary soldier defeats an enemy general. Works for both sides. [Default: 8]" />
+		<string id="KDHIT_GsOvcd" text="When Unassigned Hero Knocks Down Unassigned Hero" />
+		<string id="KDHIT_5SxZvI" text="The enemy suffers a morale loss when an unassigned hero defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 12]" />
+		<string id="KDHIT_rJu3Ta" text="When Unassigned Hero Knocks Down Formation Captain" />
+		<string id="KDHIT_27M1Cw" text="The enemy suffers a morale loss when an unassigned hero defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 14]" />
+		<string id="KDHIT_fuQ7uL" text="When Unassigned Hero Knocks Down General" />
+		<string id="KDHIT_Uy9idp" text="The enemy suffers a morale loss when an unassigned hero defeats an enemy general. Works for both sides. [Default: 16]" />
+		<string id="KDHIT_bCwaLZ" text="When Formation Captain Knocks Down Unassigned Hero" />
+		<string id="KDHIT_u6igdF" text="The enemy suffers a morale loss when a formation captain defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 20]" />
+		<string id="KDHIT_ihF98p" text="When Formation Captain Knocks Down Formation Captain" />
+		<string id="KDHIT_wbtwEt" text="The enemy suffers a morale loss when a formation captain defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 22]" />
+		<string id="KDHIT_v39avE" text="When Formation Captain Knocks Down General" />
+		<string id="KDHIT_H23Aqm" text="The enemy suffers a morale loss when a formation captain defeats an enemy general. Works for both sides. [Default: 24]" />
+		<string id="KDHIT_Ub2Yr1" text="When General Knocks Down Unassigned Hero" />
+		<string id="KDHIT_3ufjIe" text="The enemy suffers a morale loss when a general defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 28]" />
+		<string id="KDHIT_Ak8sE0" text="When General Knocks Down Formation Captain" />
+		<string id="KDHIT_XJexA4" text="The enemy suffers a morale loss when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 30]" />
+		<string id="KDHIT_DMQ1mL" text="When General Knocks Down General" />
+		<string id="KDHIT_9PRkKj" text="The enemy suffers a morale loss when a genral defeats an enemy general. Works for both sides. [Default: 32]" />
+		<string id="KDHIT_bYRqo3" text="Technical settings" />
+		<string id="KDHIT_x1Cnfc" text="Mod update interval in seconds" />
+		<string id="KDHIT_aFxaeQ" text="This mod updates hero and troop lists every XX seconds. It doesn’t need to be changed. [Default: 30]" />
+		<string id="KDHIT_u4S4Ha" text="Logging for debugging" />
+		<string id="KDHIT_ZXA7JS" text="Logging for debugging. [Default: false]" />
+		<string id="KDHIT_SZkRRR" text="" />
+		<string id="KDHIT_cNPmeY" text="" />
+		<string id="KDHIT_LIubXv" text="" />
+		<string id="KDHIT_XAjTGu" text="" />
+		<string id="KDHIT_AD25fH" text="" />
+		<string id="KDHIT_nHuuYM" text="" />
+		<string id="KDHIT_BR1Fph" text="" />
+		<string id="KDHIT_aEJtuW" text="" />
+		<string id="KDHIT_UGRkY9" text="" />
+		<string id="KDHIT_D45sAI" text="" />
+		<string id="KDHIT_7iEijI" text="" />
+		<string id="KDHIT_rfNIrx" text="" />
+		<string id="KDHIT_WahtGL" text="" />
+		<string id="KDHIT_h8H3AP" text="" />
+	</strings>
+</base>
