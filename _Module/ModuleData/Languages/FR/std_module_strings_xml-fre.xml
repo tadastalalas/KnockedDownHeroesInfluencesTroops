@@ -41,11 +41,11 @@
 		<string id="KDHIT_aFxaeQ" text="This mod updates hero and troop lists every XX seconds. It doesn’t need to be changed. [Default: 30]" />
 		<string id="KDHIT_u4S4Ha" text="Logging for debugging" />
 		<string id="KDHIT_ZXA7JS" text="Logging for debugging. [Default: false]" />
-		<string id="KDHIT_SZkRRR" text="" />
-		<string id="KDHIT_cNPmeY" text="" />
-		<string id="KDHIT_LIubXv" text="" />
-		<string id="KDHIT_XAjTGu" text="" />
-		<string id="KDHIT_AD25fH" text="" />
+		<string id="KDHIT_SZkRRR" text="Show On-Screen Notifications" />
+		<string id="KDHIT_cNPmeY" text="Toggle on-screen notifications when any hero is knocked down. [Default: enabled]" />
+		<string id="KDHIT_LIubXv" text="Main settings" />
+		<string id="KDHIT_XAjTGu" text="Enable This Modification" />
+		<string id="KDHIT_AD25fH" text="Toggle this modification. [Default: enabled]" />
 		<string id="KDHIT_nHuuYM" text="" />
 		<string id="KDHIT_BR1Fph" text="" />
 		<string id="KDHIT_aEJtuW" text="" />
