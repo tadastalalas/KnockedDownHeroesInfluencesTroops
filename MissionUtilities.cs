@@ -19,14 +19,15 @@ namespace KnockedDownHeroesInfluencesTroops
             {
                 if (agent.Position.Distance(referenceAgent.Position) < range)
                 {
-                    agent.ChangeMorale(moraleChange);
+                    agent?.ChangeMorale(moraleChange);
                     troopCount++;
                 }
             }
 
-            string logMessage = $"Number of troops affected by morale change and yell in range: {troopCount}";
             if (settings.LoggingEnabled)
             {
+                string logMessage = $"Number of troops affected by morale change and yell in range: {troopCount}";
+
                 if (moraleChange > 0)
                     InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Green));
                 else
@@ -44,9 +45,10 @@ namespace KnockedDownHeroesInfluencesTroops
                 troopCount++;
             }
 
-            string logMessage = $"Number of troops affected by morale change in the team: {troopCount}";
             if (settings.LoggingEnabled)
             {
+                string logMessage = $"Number of troops affected by morale change in the team: {troopCount}";
+
                 if (moraleChange > 0)
                     InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Green));
                 else
@@ -65,9 +67,10 @@ namespace KnockedDownHeroesInfluencesTroops
                 troopCount++;
             }
 
-            string logMessage = $"Number of troops affected by morale change in formation: {troopCount}";
             if (settings.LoggingEnabled)
             {
+                string logMessage = $"Number of troops affected by morale change in formation: {troopCount}";
+
                 if (moraleChange > 0)
                     InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Green));
                 else
@@ -85,9 +88,11 @@ namespace KnockedDownHeroesInfluencesTroops
                 troopCount++;
             }
 
-            string logMessage = $"Number of troops yells in the team: {troopCount}";
             if (settings.LoggingEnabled)
+            {
+                string logMessage = $"Number of troops yells in the team: {troopCount}";
                 InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Yellow));
+            }
         }
 
         public static void SetWantsToYellForFormation(List<Agent> troopsInFormation)
@@ -100,27 +105,35 @@ namespace KnockedDownHeroesInfluencesTroops
                 troopCount++;
             }
 
-            string logMessage = $"Number of troops yells in formation: {troopCount}";
             if (settings.LoggingEnabled)
+            {
+                string logMessage = $"Number of troops yells in formation: {troopCount}";
                 InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.White));
+            }
         }
 
         public static void SetWantsToYellInRange(Agent attackerAgent, float range)
         {
+            if (attackerAgent?.Team?.ActiveAgents == null)
+                return;
+
             int troopCount = 0;
 
             foreach (var agent in attackerAgent.Team.ActiveAgents)
             {
+                if (agent == null)
+                    continue;
+
                 if (agent.Position.Distance(attackerAgent.Position) < range)
                 {
-                    agent.SetWantsToYell();
+                    agent?.SetWantsToYell();
                     troopCount++;
                 }
             }
 
-            string logMessage = $"Number of troops yell in range: {troopCount}";
             if (settings.LoggingEnabled)
             {
+                string logMessage = $"Number of troops yell in range: {troopCount}";
                 InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.White));
             }
         }
