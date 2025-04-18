@@ -4,92 +4,92 @@
 		<tag language="繁體中文" />
 	</tags>
 	<strings>
-		<string id="KDHIT_yz6lxdJ" text="Knocked Down Heroes Influences Troops" />
-		<string id="KDHIT_AjEK8im" text="Main settings" />
-		<string id="KDHIT_4qcKDe7" text="Enable This Modification" />
-		<string id="KDHIT_ouqvaSg" text="Toggle this modification. [Default: enabled]" />
-		<string id="KDHIT_bJQyNOn" text="Show On-Screen Notifications" />
-		<string id="KDHIT_2EJdYrV" text="Toggle on-screen notifications when any hero is knocked down. [Default: enabled]" />
-		<string id="KDHIT_gfKSI8d" text="Morale penalties when heroes are knocked down" />
-		<string id="KDHIT_c4srbaQ" text="When Troop Knocks Down Unassigned Hero" />
-		<string id="KDHIT_tyxCqZv" text="The enemy's troops (all enemy's troops within 10m radius by default) suffers a morale loss when an ordinary soldier defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 2]" />
-		<string id="KDHIT_UGtdEWs" text="When Troop Knocks Down Formation Captain" />
-		<string id="KDHIT_PWWeMT7" text="The enemy's troops (all enemy's troops within 20m radius by default) suffers a morale loss when an ordinary soldier defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 3]" />
-		<string id="KDHIT_6XCQmYB" text="When Troop Knocks Down General" />
-		<string id="KDHIT_9OFc8j5" text="The enemy's troops (all enemy's troops within 30m radius by default) suffers a morale loss when an ordinary soldier defeats an enemy general. Works for both sides. [Default: 4]" />
-		<string id="KDHIT_vznAesO" text="When Unassigned Hero Knocks Down Unassigned Hero" />
-		<string id="KDHIT_7wBfD7S" text="The enemy's troops (all enemy's troops within 15m radius by default) suffers a morale loss when an unassigned hero defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 6]" />
-		<string id="KDHIT_I6WcJCc" text="When Unassigned Hero Knocks Down Formation Captain" />
-		<string id="KDHIT_isF6muT" text="The enemy's troops (all enemy's troops within 25m radius by default) suffers a morale loss when an unassigned hero defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 7]" />
-		<string id="KDHIT_duYOX1f" text="When Unassigned Hero Knocks Down General" />
-		<string id="KDHIT_r78H2kJ" text="The enemy's troops (all enemy's troops within 35m radius by default) suffers a morale loss when an unassigned hero defeats an enemy general. Works for both sides. [Default: 8]" />
-		<string id="KDHIT_UUDtgj1" text="When Formation Captain Knocks Down Unassigned Hero" />
-		<string id="KDHIT_1meRn0j" text="The enemy's troops (all enemy's troops within 20m radius by default) suffers a morale loss when a formation captain defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 10]" />
-		<string id="KDHIT_3tkkyDQ" text="When Formation Captain Knocks Down Formation Captain" />
-		<string id="KDHIT_7Rtfhw3" text="The enemy's troops (captain's formation troops) suffers a morale loss when a formation captain defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 11]" />
-		<string id="KDHIT_DtGsgZo" text="When Formation Captain Knocks Down General" />
-		<string id="KDHIT_zeFtZGY" text="The enemy's troops (all enemy troops) suffers a morale loss when a formation captain defeats an enemy general. Works for both sides. [Default: 12]" />
-		<string id="KDHIT_KRVzkuh" text="When General Knocks Down Unassigned Hero" />
-		<string id="KDHIT_fR3QOdQ" text="The enemy's troops (all enemy's troops within 25m radius by default) suffers a morale loss when a general defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 14]" />
-		<string id="KDHIT_yD6sszN" text="When General Knocks Down Formation Captain" />
-		<string id="KDHIT_LEvkHZs" text="The enemy's troops (captain's formation troops) suffers a morale loss when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 15]" />
-		<string id="KDHIT_j4dHqfE" text="When General Knocks Down General" />
-		<string id="KDHIT_Q4ntARL" text="The enemy's troops (all enemy troops) suffers a morale loss when a genral defeats an enemy general. Works for both sides. [Default: 16]" />
-		<string id="KDHIT_MdLvOaI" text="Morale gains when heroes are knocked down" />
-		<string id="KDHIT_fKK5mYm" text="When Troop Knocks Down Unassigned Hero" />
-		<string id="KDHIT_wPkAX9J" text="The attacker's troops (all friendly troops within 10m radius by default) gain morale when an ordinary soldier defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 2]" />
-		<string id="KDHIT_XhBHq0E" text="When Troop Knocks Down Formation Captain" />
-		<string id="KDHIT_em8SzGP" text="The attacker's troops (all friendly troops within 20m radius by default) gain morale when an ordinary soldier defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 3]" />
-		<string id="KDHIT_PeD32yh" text="When Troop Knocks Down General" />
-		<string id="KDHIT_DyZp4YZ" text="The attacker's troops (all friendly troops within 30m radius by default) gain morale when an ordinary soldier defeats an enemy general. Works for both sides. [Default: 4]" />
-		<string id="KDHIT_RteAlHu" text="When Unassigned Hero Knocks Down Unassigned Hero" />
-		<string id="KDHIT_snw15OQ" text="The attacker's troops (all friendly troops within 15m radius by default) gain morale when an unassigned hero defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 6]" />
-		<string id="KDHIT_9oNClO7" text="When Unassigned Hero Knocks Down Formation Captain" />
-		<string id="KDHIT_iPTAubL" text="The attacker's troops (all friendly troops within 25m radius by default) gain morale when an unassigned hero defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 7]" />
-		<string id="KDHIT_mN9WAX3" text="When Unassigned Hero Knocks Down General" />
-		<string id="KDHIT_7Vy0gz0" text="The attacker's troops (all friendly troops within 35m radius by default) gain morale when an unassigned hero defeats an enemy general. Works for both sides. [Default: 8]" />
-		<string id="KDHIT_qgy5fZD" text="When Formation Captain Knocks Down Unassigned Hero" />
-		<string id="KDHIT_PyH89Di" text="The attacker's troops (captain's formation troops) gain morale when a formation captain defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 10]" />
-		<string id="KDHIT_YO4yUEG" text="When Formation Captain Knocks Down Formation Captain" />
-		<string id="KDHIT_EhX1Z35" text="The attacker's troops (captain's formation troops) gain morale when a formation captain defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 11]" />
-		<string id="KDHIT_o898cli" text="When Formation Captain Knocks Down General" />
-		<string id="KDHIT_NSzvTKl" text="The attacker's troops (captain's formation troops) gain morale when a formation captain defeats an enemy general. Works for both sides. [Default: 12]" />
-		<string id="KDHIT_cAGHoTV" text="When General Knocks Down Unassigned Hero" />
-		<string id="KDHIT_0DyVL1g" text="The attacker's troops (all friendly troops) gain morale when a general defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 14]" />
-		<string id="KDHIT_Mr7cbdv" text="When General Knocks Down Formation Captain" />
-		<string id="KDHIT_6hBug9f" text="The attacker's troops (all friendly troops) gain morale when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 15]" />
-		<string id="KDHIT_Za6yOdt" text="When General Knocks Down General" />
-		<string id="KDHIT_kqmtG3J" text="The attacker's troops (all friendly troops) gain morale when a genral defeats an enemy general. Works for both sides. [Default: 16]" />
-		<string id="KDHIT_YD0DERb" text="On-screen notifications texts" />
-		<string id="KDHIT_iV3XC78" text="Friendly General Fallen" />
-		<string id="KDHIT_s56GZlT" text="This text will be shown when friendly general will fall in battle." />
-		<string id="KDHIT_wVePvMm" text="Enemy General Fallen" />
-		<string id="KDHIT_EeI805q" text="This text will be shown when enemy general will fall in battle." />
-		<string id="KDHIT_qbFTkze" text="Friendly Infantry Captain Fallen" />
-		<string id="KDHIT_UHNgIVw" text="This text will be shown when friendly infantry captain will fall in battle." />
-		<string id="KDHIT_WoZPz6c" text="Friendly Ranged Captain Fallen" />
-		<string id="KDHIT_oVJ3eRy" text="This text will be shown when friendly ranged captain will fall in battle." />
-		<string id="KDHIT_b8AAr0U" text="Friendly Cavalry Captain Fallen" />
-		<string id="KDHIT_AQNuxE5" text="This text will be shown when friendly cavalry captain will fall in battle." />
-		<string id="KDHIT_s5VAzgZ" text="Friendly Horse Archers Captain Fallen" />
-		<string id="KDHIT_xoLedGz" text="This text will be shown when friendly horse archers captain will fall in battle." />
-		<string id="KDHIT_6WCwIwf" text="Enemy Infantry Captain Fallen" />
-		<string id="KDHIT_s4PzqoL" text="This text will be shown when enemy's infantry captain will fall in battle." />
-		<string id="KDHIT_FSznMXB" text="Enemy Ranged Captain Fallen" />
-		<string id="KDHIT_E5blIa4" text="This text will be shown when enemy's ranged captain will fall in battle." />
-		<string id="KDHIT_Q6uPIqN" text="Enemy Cavalry Captain Fallen" />
-		<string id="KDHIT_LTMUzWd" text="This text will be shown when enemy's cavalry captain will fall in battle." />
-		<string id="KDHIT_NASm63y" text="Enemy Horse Archers Captain Fallen" />
-		<string id="KDHIT_ZZwZSL9" text="This text will be shown when enemy's horse archers captain will fall in battle." />
-		<string id="KDHIT_Q6yrpIe" text="Friendly Unassigned Hero Fallen" />
-		<string id="KDHIT_3q3G6R5" text="This text will be shown when friendly unassigned hero will fall in battle." />
-		<string id="KDHIT_otYAcfm" text="Enemy Unassigned Hero Fallen" />
-		<string id="KDHIT_tCIe7Fw" text="This text will be shown when enemy's unassigned hero will fall in battle." />
-		<string id="KDHIT_IG2AH0v" text="Technical settings" />
-		<string id="KDHIT_Aei3QtZ" text="Mod update interval in seconds" />
-		<string id="KDHIT_4jgoXLb" text="This mod updates hero and troop lists every XX seconds. It doesn’t need to be changed. [Default: 30]" />
-		<string id="KDHIT_AGgXl75" text="Logging for debugging" />
-		<string id="KDHIT_BQhlZPM" text="Logging for debugging. [Default: disabled]" />
+		<string id="KDHIT_yz6lxdJ" text="擊倒的英雄影響部隊" />
+		<string id="KDHIT_AjEK8im" text="主要設定" />
+		<string id="KDHIT_4qcKDe7" text="啟用此修改" />
+		<string id="KDHIT_ouqvaSg" text="切換此修改。[預設：啟用]" />
+		<string id="KDHIT_bJQyNOn" text="顯示螢幕通知" />
+		<string id="KDHIT_2EJdYrV" text="切換螢幕通知，當任何英雄被擊倒時。[預設：啟用]" />
+		<string id="KDHIT_gfKSI8d" text="英雄被擊倒時的士氣懲罰" />
+		<string id="KDHIT_c4srbaQ" text="當士兵擊倒未分配的英雄" />
+		<string id="KDHIT_tyxCqZv" text="敵方部隊（預設情況下，所有敵方部隊在10米半徑內）在普通士兵擊敗未擔任編隊隊長的敵方英雄時士氣下降。適用於雙方。[預設：2]" />
+		<string id="KDHIT_UGtdEWs" text="當士兵擊倒編隊隊長" />
+		<string id="KDHIT_PWWeMT7" text="敵方部隊（預設情況下，所有敵方部隊在20米半徑內）在普通士兵擊敗擔任編隊隊長的敵方英雄時士氣下降。適用於雙方。[預設：3]" />
+		<string id="KDHIT_6XCQmYB" text="當士兵擊倒將軍" />
+		<string id="KDHIT_9OFc8j5" text="敵方部隊（預設情況下，所有敵方部隊在30米半徑內）在普通士兵擊敗敵方將軍時士氣下降。適用於雙方。[預設：4]" />
+		<string id="KDHIT_vznAesO" text="當未分配的英雄擊倒未分配的英雄" />
+		<string id="KDHIT_7wBfD7S" text="敵方部隊（預設情況下，所有敵方部隊在15米半徑內）在未分配的英雄擊敗未擔任編隊隊長的敵方英雄時士氣下降。適用於雙方。[預設：6]" />
+		<string id="KDHIT_I6WcJCc" text="當未分配的英雄擊倒編隊隊長" />
+		<string id="KDHIT_isF6muT" text="敵方部隊（預設情況下，所有敵方部隊在25米半徑內）在未分配的英雄擊敗擔任編隊隊長的敵方英雄時士氣下降。適用於雙方。[預設：7]" />
+		<string id="KDHIT_duYOX1f" text="當未分配的英雄擊倒將軍" />
+		<string id="KDHIT_r78H2kJ" text="敵方部隊（預設情況下，所有敵方部隊在35米半徑內）在未分配的英雄擊敗敵方將軍時士氣下降。適用於雙方。[預設：8]" />
+		<string id="KDHIT_UUDtgj1" text="當編隊隊長擊倒未分配的英雄" />
+		<string id="KDHIT_1meRn0j" text="敵方部隊（預設情況下，所有敵方部隊在20米半徑內）在編隊隊長擊敗未擔任編隊隊長的敵方英雄時士氣下降。適用於雙方。[預設：10]" />
+		<string id="KDHIT_3tkkyDQ" text="當編隊隊長擊倒編隊隊長" />
+		<string id="KDHIT_7Rtfhw3" text="敵方部隊（編隊隊長的編隊部隊）在編隊隊長擊敗擔任編隊隊長的敵方英雄時士氣下降。適用於雙方。[預設：11]" />
+		<string id="KDHIT_DtGsgZo" text="當編隊隊長擊倒將軍" />
+		<string id="KDHIT_zeFtZGY" text="敵方部隊（所有敵方部隊）在編隊隊長擊敗敵方將軍時士氣下降。適用於雙方。[預設：12]" />
+		<string id="KDHIT_KRVzkuh" text="當將軍擊倒未分配的英雄" />
+		<string id="KDHIT_fR3QOdQ" text="敵方部隊（預設情況下，所有敵方部隊在25米半徑內）在將軍擊敗未擔任編隊隊長的敵方英雄時士氣下降。適用於雙方。[預設：14]" />
+		<string id="KDHIT_yD6sszN" text="當將軍擊倒編隊隊長" />
+		<string id="KDHIT_LEvkHZs" text="敵方部隊（編隊隊長的編隊部隊）在將軍擊敗擔任編隊隊長的敵方英雄時士氣下降。適用於雙方。[預設：15]" />
+		<string id="KDHIT_j4dHqfE" text="當將軍擊倒將軍" />
+		<string id="KDHIT_Q4ntARL" text="敵方部隊（所有敵方部隊）在將軍擊敗敵方將軍時士氣下降。適用於雙方。[預設：16]" />
+		<string id="KDHIT_MdLvOaI" text="英雄被擊倒時的士氣提升" />
+		<string id="KDHIT_fKK5mYm" text="當士兵擊倒未分配的英雄" />
+		<string id="KDHIT_wPkAX9J" text="攻擊方部隊（預設情況下，所有友軍部隊在10米半徑內）在普通士兵擊敗未擔任編隊隊長的敵方英雄時士氣提升。適用於雙方。[預設：2]" />
+		<string id="KDHIT_XhBHq0E" text="當士兵擊倒編隊隊長" />
+		<string id="KDHIT_em8SzGP" text="攻擊方部隊（預設情況下，所有友軍部隊在20米半徑內）在普通士兵擊敗擔任編隊隊長的敵方英雄時士氣提升。適用於雙方。[預設：3]" />
+		<string id="KDHIT_PeD32yh" text="當士兵擊倒將軍" />
+		<string id="KDHIT_DyZp4YZ" text="攻擊方部隊（預設情況下，所有友軍部隊在30米半徑內）在普通士兵擊敗敵方將軍時士氣提升。適用於雙方。[預設：4]" />
+		<string id="KDHIT_RteAlHu" text="當未分配的英雄擊倒未分配的英雄" />
+		<string id="KDHIT_snw15OQ" text="攻擊方部隊（預設情況下，所有友軍部隊在15米半徑內）在未分配的英雄擊敗未擔任編隊隊長的敵方英雄時士氣提升。適用於雙方。[預設：6]" />
+		<string id="KDHIT_9oNClO7" text="當未分配的英雄擊倒編隊隊長" />
+		<string id="KDHIT_iPTAubL" text="攻擊方部隊（預設情況下，所有友軍部隊在25米半徑內）在未分配的英雄擊敗擔任編隊隊長的敵方英雄時士氣提升。適用於雙方。[預設：7]" />
+		<string id="KDHIT_mN9WAX3" text="當未分配的英雄擊倒將軍" />
+		<string id="KDHIT_7Vy0gz0" text="攻擊方部隊（預設情況下，所有友軍部隊在35米半徑內）在未分配的英雄擊敗敵方將軍時士氣提升。適用於雙方。[預設：8]" />
+		<string id="KDHIT_qgy5fZD" text="當編隊隊長擊倒未分配的英雄" />
+		<string id="KDHIT_PyH89Di" text="攻擊方部隊（編隊隊長的編隊部隊）在編隊隊長擊敗未擔任編隊隊長的敵方英雄時士氣提升。適用於雙方。[預設：10]" />
+		<string id="KDHIT_YO4yUEG" text="當編隊隊長擊倒編隊隊長" />
+		<string id="KDHIT_EhX1Z35" text="攻擊方部隊（編隊隊長的編隊部隊）在編隊隊長擊敗擔任編隊隊長的敵方英雄時士氣提升。適用於雙方。[預設：11]" />
+		<string id="KDHIT_o898cli" text="當編隊隊長擊倒將軍" />
+		<string id="KDHIT_NSzvTKl" text="攻擊方部隊（編隊隊長的編隊部隊）在編隊隊長擊敗敵方將軍時士氣提升。適用於雙方。[預設：12]" />
+		<string id="KDHIT_cAGHoTV" text="當將軍擊倒未分配的英雄" />
+		<string id="KDHIT_0DyVL1g" text="攻擊方部隊（所有友軍部隊）在將軍擊敗未擔任編隊隊長的敵方英雄時士氣提升。適用於雙方。[預設：14]" />
+		<string id="KDHIT_Mr7cbdv" text="當將軍擊倒編隊隊長" />
+		<string id="KDHIT_6hBug9f" text="攻擊方部隊（所有友軍部隊）在將軍擊敗擔任編隊隊長的敵方英雄時士氣提升。適用於雙方。[預設：15]" />
+		<string id="KDHIT_Za6yOdt" text="當將軍擊倒將軍" />
+		<string id="KDHIT_kqmtG3J" text="攻擊方部隊（所有友軍部隊）在將軍擊敗敵方將軍時士氣提升。適用於雙方。[預設：16]" />
+		<string id="KDHIT_YD0DERb" text="螢幕通知文本" />
+		<string id="KDHIT_iV3XC78" text="友軍將軍陣亡" />
+		<string id="KDHIT_s56GZlT" text="當友軍將軍在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_wVePvMm" text="敵軍將軍陣亡" />
+		<string id="KDHIT_EeI805q" text="當敵軍將軍在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_qbFTkze" text="友軍步兵隊長陣亡" />
+		<string id="KDHIT_UHNgIVw" text="當友軍步兵隊長在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_WoZPz6c" text="友軍遠程隊長陣亡" />
+		<string id="KDHIT_oVJ3eRy" text="當友軍遠程隊長在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_b8AAr0U" text="友軍騎兵隊長陣亡" />
+		<string id="KDHIT_AQNuxE5" text="當友軍騎兵隊長在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_s5VAzgZ" text="友軍騎射隊長陣亡" />
+		<string id="KDHIT_xoLedGz" text="當友軍騎射隊長在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_6WCwIwf" text="敵軍步兵隊長陣亡" />
+		<string id="KDHIT_s4PzqoL" text="當敵軍步兵隊長在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_FSznMXB" text="敵軍遠程隊長陣亡" />
+		<string id="KDHIT_E5blIa4" text="當敵軍遠程隊長在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_Q6uPIqN" text="敵軍騎兵隊長陣亡" />
+		<string id="KDHIT_LTMUzWd" text="當敵軍騎兵隊長在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_NASm63y" text="敵軍騎射隊長陣亡" />
+		<string id="KDHIT_ZZwZSL9" text="當敵軍騎射隊長在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_Q6yrpIe" text="友軍未分配英雄陣亡" />
+		<string id="KDHIT_3q3G6R5" text="當友軍未分配英雄在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_otYAcfm" text="敵軍未分配英雄陣亡" />
+		<string id="KDHIT_tCIe7Fw" text="當敵軍未分配英雄在戰鬥中陣亡時，將顯示此文本。" />
+		<string id="KDHIT_IG2AH0v" text="技術設定" />
+		<string id="KDHIT_Aei3QtZ" text="模組更新間隔（秒）" />
+		<string id="KDHIT_4jgoXLb" text="此模組每XX秒更新一次英雄和部隊列表。無需更改。[預設：30]" />
+		<string id="KDHIT_AGgXl75" text="除錯日誌" />
+		<string id="KDHIT_BQhlZPM" text="除錯日誌。[預設：停用]" />
 		<string id="KDHIT_hOGKEE2" text="" />
 		<string id="KDHIT_KoXnreW" text="" />
 		<string id="KDHIT_Z30i9MU" text="" />

@@ -7,17 +7,10 @@ namespace KnockedDownHeroesInfluencesTroops
 {
     internal class MCMSettings : AttributeGlobalSettings<MCMSettings>
     {
-        public override string Id
-        { get { return "KnockedDownHeroesInfluencesTroopsSettings"; } }
-
-        public override string DisplayName
-        { get { return new TextObject("{=KDHIT_yz6lxdJ}Knocked Down Heroes Influences Troops").ToString(); } }
-
-        public override string FolderName
-        { get { return "KnockedDownHeroesInfluencesTroops"; } }
-
-        public override string FormatType
-        { get { return "json2"; } }
+        public override string Id => "KnockedDownHeroesInfluencesTroopsSettings";
+        public override string DisplayName => new TextObject("{=KDHIT_yz6lxdJ}Knocked Down Heroes Influences Troops").ToString();
+        public override string FolderName => "KnockedDownHeroesInfluencesTroops";
+        public override string FormatType => "json2";
 
         // Main settings
 

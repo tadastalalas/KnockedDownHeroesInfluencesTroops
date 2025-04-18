@@ -4,92 +4,92 @@
 		<tag language="Italiano" />
 	</tags>
 	<strings>
-		<string id="KDHIT_yz6lxdJ" text="Knocked Down Heroes Influences Troops" />
-		<string id="KDHIT_AjEK8im" text="Main settings" />
-		<string id="KDHIT_4qcKDe7" text="Enable This Modification" />
-		<string id="KDHIT_ouqvaSg" text="Toggle this modification. [Default: enabled]" />
-		<string id="KDHIT_bJQyNOn" text="Show On-Screen Notifications" />
-		<string id="KDHIT_2EJdYrV" text="Toggle on-screen notifications when any hero is knocked down. [Default: enabled]" />
-		<string id="KDHIT_gfKSI8d" text="Morale penalties when heroes are knocked down" />
-		<string id="KDHIT_c4srbaQ" text="When Troop Knocks Down Unassigned Hero" />
-		<string id="KDHIT_tyxCqZv" text="The enemy's troops (all enemy's troops within 10m radius by default) suffers a morale loss when an ordinary soldier defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 2]" />
-		<string id="KDHIT_UGtdEWs" text="When Troop Knocks Down Formation Captain" />
-		<string id="KDHIT_PWWeMT7" text="The enemy's troops (all enemy's troops within 20m radius by default) suffers a morale loss when an ordinary soldier defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 3]" />
-		<string id="KDHIT_6XCQmYB" text="When Troop Knocks Down General" />
-		<string id="KDHIT_9OFc8j5" text="The enemy's troops (all enemy's troops within 30m radius by default) suffers a morale loss when an ordinary soldier defeats an enemy general. Works for both sides. [Default: 4]" />
-		<string id="KDHIT_vznAesO" text="When Unassigned Hero Knocks Down Unassigned Hero" />
-		<string id="KDHIT_7wBfD7S" text="The enemy's troops (all enemy's troops within 15m radius by default) suffers a morale loss when an unassigned hero defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 6]" />
-		<string id="KDHIT_I6WcJCc" text="When Unassigned Hero Knocks Down Formation Captain" />
-		<string id="KDHIT_isF6muT" text="The enemy's troops (all enemy's troops within 25m radius by default) suffers a morale loss when an unassigned hero defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 7]" />
-		<string id="KDHIT_duYOX1f" text="When Unassigned Hero Knocks Down General" />
-		<string id="KDHIT_r78H2kJ" text="The enemy's troops (all enemy's troops within 35m radius by default) suffers a morale loss when an unassigned hero defeats an enemy general. Works for both sides. [Default: 8]" />
-		<string id="KDHIT_UUDtgj1" text="When Formation Captain Knocks Down Unassigned Hero" />
-		<string id="KDHIT_1meRn0j" text="The enemy's troops (all enemy's troops within 20m radius by default) suffers a morale loss when a formation captain defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 10]" />
-		<string id="KDHIT_3tkkyDQ" text="When Formation Captain Knocks Down Formation Captain" />
-		<string id="KDHIT_7Rtfhw3" text="The enemy's troops (captain's formation troops) suffers a morale loss when a formation captain defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 11]" />
-		<string id="KDHIT_DtGsgZo" text="When Formation Captain Knocks Down General" />
-		<string id="KDHIT_zeFtZGY" text="The enemy's troops (all enemy troops) suffers a morale loss when a formation captain defeats an enemy general. Works for both sides. [Default: 12]" />
-		<string id="KDHIT_KRVzkuh" text="When General Knocks Down Unassigned Hero" />
-		<string id="KDHIT_fR3QOdQ" text="The enemy's troops (all enemy's troops within 25m radius by default) suffers a morale loss when a general defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 14]" />
-		<string id="KDHIT_yD6sszN" text="When General Knocks Down Formation Captain" />
-		<string id="KDHIT_LEvkHZs" text="The enemy's troops (captain's formation troops) suffers a morale loss when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 15]" />
-		<string id="KDHIT_j4dHqfE" text="When General Knocks Down General" />
-		<string id="KDHIT_Q4ntARL" text="The enemy's troops (all enemy troops) suffers a morale loss when a genral defeats an enemy general. Works for both sides. [Default: 16]" />
-		<string id="KDHIT_MdLvOaI" text="Morale gains when heroes are knocked down" />
-		<string id="KDHIT_fKK5mYm" text="When Troop Knocks Down Unassigned Hero" />
-		<string id="KDHIT_wPkAX9J" text="The attacker's troops (all friendly troops within 10m radius by default) gain morale when an ordinary soldier defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 2]" />
-		<string id="KDHIT_XhBHq0E" text="When Troop Knocks Down Formation Captain" />
-		<string id="KDHIT_em8SzGP" text="The attacker's troops (all friendly troops within 20m radius by default) gain morale when an ordinary soldier defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 3]" />
-		<string id="KDHIT_PeD32yh" text="When Troop Knocks Down General" />
-		<string id="KDHIT_DyZp4YZ" text="The attacker's troops (all friendly troops within 30m radius by default) gain morale when an ordinary soldier defeats an enemy general. Works for both sides. [Default: 4]" />
-		<string id="KDHIT_RteAlHu" text="When Unassigned Hero Knocks Down Unassigned Hero" />
-		<string id="KDHIT_snw15OQ" text="The attacker's troops (all friendly troops within 15m radius by default) gain morale when an unassigned hero defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 6]" />
-		<string id="KDHIT_9oNClO7" text="When Unassigned Hero Knocks Down Formation Captain" />
-		<string id="KDHIT_iPTAubL" text="The attacker's troops (all friendly troops within 25m radius by default) gain morale when an unassigned hero defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 7]" />
-		<string id="KDHIT_mN9WAX3" text="When Unassigned Hero Knocks Down General" />
-		<string id="KDHIT_7Vy0gz0" text="The attacker's troops (all friendly troops within 35m radius by default) gain morale when an unassigned hero defeats an enemy general. Works for both sides. [Default: 8]" />
-		<string id="KDHIT_qgy5fZD" text="When Formation Captain Knocks Down Unassigned Hero" />
-		<string id="KDHIT_PyH89Di" text="The attacker's troops (captain's formation troops) gain morale when a formation captain defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 10]" />
-		<string id="KDHIT_YO4yUEG" text="When Formation Captain Knocks Down Formation Captain" />
-		<string id="KDHIT_EhX1Z35" text="The attacker's troops (captain's formation troops) gain morale when a formation captain defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 11]" />
-		<string id="KDHIT_o898cli" text="When Formation Captain Knocks Down General" />
-		<string id="KDHIT_NSzvTKl" text="The attacker's troops (captain's formation troops) gain morale when a formation captain defeats an enemy general. Works for both sides. [Default: 12]" />
-		<string id="KDHIT_cAGHoTV" text="When General Knocks Down Unassigned Hero" />
-		<string id="KDHIT_0DyVL1g" text="The attacker's troops (all friendly troops) gain morale when a general defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 14]" />
-		<string id="KDHIT_Mr7cbdv" text="When General Knocks Down Formation Captain" />
-		<string id="KDHIT_6hBug9f" text="The attacker's troops (all friendly troops) gain morale when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 15]" />
-		<string id="KDHIT_Za6yOdt" text="When General Knocks Down General" />
-		<string id="KDHIT_kqmtG3J" text="The attacker's troops (all friendly troops) gain morale when a genral defeats an enemy general. Works for both sides. [Default: 16]" />
-		<string id="KDHIT_YD0DERb" text="On-screen notifications texts" />
-		<string id="KDHIT_iV3XC78" text="Friendly General Fallen" />
-		<string id="KDHIT_s56GZlT" text="This text will be shown when friendly general will fall in battle." />
-		<string id="KDHIT_wVePvMm" text="Enemy General Fallen" />
-		<string id="KDHIT_EeI805q" text="This text will be shown when enemy general will fall in battle." />
-		<string id="KDHIT_qbFTkze" text="Friendly Infantry Captain Fallen" />
-		<string id="KDHIT_UHNgIVw" text="This text will be shown when friendly infantry captain will fall in battle." />
-		<string id="KDHIT_WoZPz6c" text="Friendly Ranged Captain Fallen" />
-		<string id="KDHIT_oVJ3eRy" text="This text will be shown when friendly ranged captain will fall in battle." />
-		<string id="KDHIT_b8AAr0U" text="Friendly Cavalry Captain Fallen" />
-		<string id="KDHIT_AQNuxE5" text="This text will be shown when friendly cavalry captain will fall in battle." />
-		<string id="KDHIT_s5VAzgZ" text="Friendly Horse Archers Captain Fallen" />
-		<string id="KDHIT_xoLedGz" text="This text will be shown when friendly horse archers captain will fall in battle." />
-		<string id="KDHIT_6WCwIwf" text="Enemy Infantry Captain Fallen" />
-		<string id="KDHIT_s4PzqoL" text="This text will be shown when enemy's infantry captain will fall in battle." />
-		<string id="KDHIT_FSznMXB" text="Enemy Ranged Captain Fallen" />
-		<string id="KDHIT_E5blIa4" text="This text will be shown when enemy's ranged captain will fall in battle." />
-		<string id="KDHIT_Q6uPIqN" text="Enemy Cavalry Captain Fallen" />
-		<string id="KDHIT_LTMUzWd" text="This text will be shown when enemy's cavalry captain will fall in battle." />
-		<string id="KDHIT_NASm63y" text="Enemy Horse Archers Captain Fallen" />
-		<string id="KDHIT_ZZwZSL9" text="This text will be shown when enemy's horse archers captain will fall in battle." />
-		<string id="KDHIT_Q6yrpIe" text="Friendly Unassigned Hero Fallen" />
-		<string id="KDHIT_3q3G6R5" text="This text will be shown when friendly unassigned hero will fall in battle." />
-		<string id="KDHIT_otYAcfm" text="Enemy Unassigned Hero Fallen" />
-		<string id="KDHIT_tCIe7Fw" text="This text will be shown when enemy's unassigned hero will fall in battle." />
-		<string id="KDHIT_IG2AH0v" text="Technical settings" />
-		<string id="KDHIT_Aei3QtZ" text="Mod update interval in seconds" />
-		<string id="KDHIT_4jgoXLb" text="This mod updates hero and troop lists every XX seconds. It doesn’t need to be changed. [Default: 30]" />
-		<string id="KDHIT_AGgXl75" text="Logging for debugging" />
-		<string id="KDHIT_BQhlZPM" text="Logging for debugging. [Default: disabled]" />
+		<string id="KDHIT_yz6lxdJ" text="Gli eroi abbattuti influenzano le truppe" />
+		<string id="KDHIT_AjEK8im" text="Impostazioni principali" />
+		<string id="KDHIT_4qcKDe7" text="Abilita questa modifica" />
+		<string id="KDHIT_ouqvaSg" text="Attiva o disattiva questa modifica. [Predefinito: abilitato]" />
+		<string id="KDHIT_bJQyNOn" text="Mostra notifiche sullo schermo" />
+		<string id="KDHIT_2EJdYrV" text="Attiva o disattiva le notifiche sullo schermo quando un eroe viene abbattuto. [Predefinito: abilitato]" />
+		<string id="KDHIT_gfKSI8d" text="Penalità al morale quando gli eroi vengono abbattuti" />
+		<string id="KDHIT_c4srbaQ" text="Quando una truppa abbatte un eroe non assegnato" />
+		<string id="KDHIT_tyxCqZv" text="Le truppe nemiche (tutte le truppe nemiche entro un raggio di 10 m per impostazione predefinita) subiscono una perdita di morale quando un soldato ordinario sconfigge un eroe nemico che non serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 2]" />
+		<string id="KDHIT_UGtdEWs" text="Quando una truppa abbatte un capitano di formazione" />
+		<string id="KDHIT_PWWeMT7" text="Le truppe nemiche (tutte le truppe nemiche entro un raggio di 20 m per impostazione predefinita) subiscono una perdita di morale quando un soldato ordinario sconfigge un eroe nemico che serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 3]" />
+		<string id="KDHIT_6XCQmYB" text="Quando una truppa abbatte un generale" />
+		<string id="KDHIT_9OFc8j5" text="Le truppe nemiche (tutte le truppe nemiche entro un raggio di 30 m per impostazione predefinita) subiscono una perdita di morale quando un soldato ordinario sconfigge un generale nemico. Funziona per entrambi i lati. [Predefinito: 4]" />
+		<string id="KDHIT_vznAesO" text="Quando un eroe non assegnato abbatte un altro eroe non assegnato" />
+		<string id="KDHIT_7wBfD7S" text="Le truppe nemiche (tutte le truppe nemiche entro un raggio di 15 m per impostazione predefinita) subiscono una perdita di morale quando un eroe non assegnato sconfigge un eroe nemico che non serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 6]" />
+		<string id="KDHIT_I6WcJCc" text="Quando un eroe non assegnato abbatte un capitano di formazione" />
+		<string id="KDHIT_isF6muT" text="Le truppe nemiche (tutte le truppe nemiche entro un raggio di 25 m per impostazione predefinita) subiscono una perdita di morale quando un eroe non assegnato sconfigge un eroe nemico che serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 7]" />
+		<string id="KDHIT_duYOX1f" text="Quando un eroe non assegnato abbatte un generale" />
+		<string id="KDHIT_r78H2kJ" text="Le truppe nemiche (tutte le truppe nemiche entro un raggio di 35 m per impostazione predefinita) subiscono una perdita di morale quando un eroe non assegnato sconfigge un generale nemico. Funziona per entrambi i lati. [Predefinito: 8]" />
+		<string id="KDHIT_UUDtgj1" text="Quando un capitano di formazione abbatte un eroe non assegnato" />
+		<string id="KDHIT_1meRn0j" text="Le truppe nemiche (tutte le truppe nemiche entro un raggio di 20 m per impostazione predefinita) subiscono una perdita di morale quando un capitano di formazione sconfigge un eroe nemico che non serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 10]" />
+		<string id="KDHIT_3tkkyDQ" text="Quando un capitano di formazione abbatte un altro capitano di formazione" />
+		<string id="KDHIT_7Rtfhw3" text="Le truppe nemiche (truppe della formazione del capitano) subiscono una perdita di morale quando un capitano di formazione sconfigge un eroe nemico che serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 11]" />
+		<string id="KDHIT_DtGsgZo" text="Quando un capitano di formazione abbatte un generale" />
+		<string id="KDHIT_zeFtZGY" text="Le truppe nemiche (tutte le truppe nemiche) subiscono una perdita di morale quando un capitano di formazione sconfigge un generale nemico. Funziona per entrambi i lati. [Predefinito: 12]" />
+		<string id="KDHIT_KRVzkuh" text="Quando un generale abbatte un eroe non assegnato" />
+		<string id="KDHIT_fR3QOdQ" text="Le truppe nemiche (tutte le truppe nemiche entro un raggio di 25 m per impostazione predefinita) subiscono una perdita di morale quando un generale sconfigge un eroe nemico che non serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 14]" />
+		<string id="KDHIT_yD6sszN" text="Quando un generale abbatte un capitano di formazione" />
+		<string id="KDHIT_LEvkHZs" text="Le truppe nemiche (truppe della formazione del capitano) subiscono una perdita di morale quando un generale sconfigge un eroe nemico che serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 15]" />
+		<string id="KDHIT_j4dHqfE" text="Quando un generale abbatte un altro generale" />
+		<string id="KDHIT_Q4ntARL" text="Le truppe nemiche (tutte le truppe nemiche) subiscono una perdita di morale quando un generale sconfigge un generale nemico. Funziona per entrambi i lati. [Predefinito: 16]" />
+		<string id="KDHIT_MdLvOaI" text="Guadagni di morale quando gli eroi vengono abbattuti" />
+		<string id="KDHIT_fKK5mYm" text="Quando una truppa abbatte un eroe non assegnato" />
+		<string id="KDHIT_wPkAX9J" text="Le truppe dell'attaccante (tutte le truppe alleate entro un raggio di 10 m per impostazione predefinita) guadagnano morale quando un soldato ordinario sconfigge un eroe nemico che non serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 2]" />
+		<string id="KDHIT_XhBHq0E" text="Quando una truppa abbatte un capitano di formazione" />
+		<string id="KDHIT_em8SzGP" text="Le truppe dell'attaccante (tutte le truppe alleate entro un raggio di 20 m per impostazione predefinita) guadagnano morale quando un soldato ordinario sconfigge un eroe nemico che serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 3]" />
+		<string id="KDHIT_PeD32yh" text="Quando una truppa abbatte un generale" />
+		<string id="KDHIT_DyZp4YZ" text="Le truppe dell'attaccante (tutte le truppe alleate entro un raggio di 30 m per impostazione predefinita) guadagnano morale quando un soldato ordinario sconfigge un generale nemico. Funziona per entrambi i lati. [Predefinito: 4]" />
+		<string id="KDHIT_RteAlHu" text="Quando un eroe non assegnato abbatte un altro eroe non assegnato" />
+		<string id="KDHIT_snw15OQ" text="Le truppe dell'attaccante (tutte le truppe alleate entro un raggio di 15 m per impostazione predefinita) guadagnano morale quando un eroe non assegnato sconfigge un eroe nemico che non serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 6]" />
+		<string id="KDHIT_9oNClO7" text="Quando un eroe non assegnato abbatte un capitano di formazione" />
+		<string id="KDHIT_iPTAubL" text="Le truppe dell'attaccante (tutte le truppe alleate entro un raggio di 25 m per impostazione predefinita) guadagnano morale quando un eroe non assegnato sconfigge un eroe nemico che serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 7]" />
+		<string id="KDHIT_mN9WAX3" text="Quando un eroe non assegnato abbatte un generale" />
+		<string id="KDHIT_7Vy0gz0" text="Le truppe dell'attaccante (tutte le truppe alleate entro un raggio di 35 m per impostazione predefinita) guadagnano morale quando un eroe non assegnato sconfigge un generale nemico. Funziona per entrambi i lati. [Predefinito: 8]" />
+		<string id="KDHIT_qgy5fZD" text="Quando un capitano di formazione abbatte un eroe non assegnato" />
+		<string id="KDHIT_PyH89Di" text="Le truppe dell'attaccante (truppe della formazione del capitano) guadagnano morale quando un capitano di formazione sconfigge un eroe nemico che non serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 10]" />
+		<string id="KDHIT_YO4yUEG" text="Quando un capitano di formazione abbatte un altro capitano di formazione" />
+		<string id="KDHIT_EhX1Z35" text="Le truppe dell'attaccante (truppe della formazione del capitano) guadagnano morale quando un capitano di formazione sconfigge un eroe nemico che serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 11]" />
+		<string id="KDHIT_o898cli" text="Quando un capitano di formazione abbatte un generale" />
+		<string id="KDHIT_NSzvTKl" text="Le truppe dell'attaccante (truppe della formazione del capitano) guadagnano morale quando un capitano di formazione sconfigge un generale nemico. Funziona per entrambi i lati. [Predefinito: 12]" />
+		<string id="KDHIT_cAGHoTV" text="Quando un generale abbatte un eroe non assegnato" />
+		<string id="KDHIT_0DyVL1g" text="Le truppe dell'attaccante (tutte le truppe alleate) guadagnano morale quando un generale sconfigge un eroe nemico che non serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 14]" />
+		<string id="KDHIT_Mr7cbdv" text="Quando un generale abbatte un capitano di formazione" />
+		<string id="KDHIT_6hBug9f" text="Le truppe dell'attaccante (tutte le truppe alleate) guadagnano morale quando un generale sconfigge un eroe nemico che serve come capitano di formazione. Funziona per entrambi i lati. [Predefinito: 15]" />
+		<string id="KDHIT_Za6yOdt" text="Quando un generale abbatte un altro generale" />
+		<string id="KDHIT_kqmtG3J" text="Le truppe dell'attaccante (tutte le truppe alleate) guadagnano morale quando un generale sconfigge un generale nemico. Funziona per entrambi i lati. [Predefinito: 16]" />
+		<string id="KDHIT_YD0DERb" text="Testi delle notifiche sullo schermo" />
+		<string id="KDHIT_iV3XC78" text="Generale alleato abbattuto" />
+		<string id="KDHIT_s56GZlT" text="Questo testo verrà mostrato quando il generale alleato cadrà in battaglia." />
+		<string id="KDHIT_wVePvMm" text="Generale nemico abbattuto" />
+		<string id="KDHIT_EeI805q" text="Questo testo verrà mostrato quando il generale nemico cadrà in battaglia." />
+		<string id="KDHIT_qbFTkze" text="Capitano di fanteria alleato abbattuto" />
+		<string id="KDHIT_UHNgIVw" text="Questo testo verrà mostrato quando il capitano di fanteria alleato cadrà in battaglia." />
+		<string id="KDHIT_WoZPz6c" text="Capitano a distanza alleato abbattuto" />
+		<string id="KDHIT_oVJ3eRy" text="Questo testo verrà mostrato quando il capitano a distanza alleato cadrà in battaglia." />
+		<string id="KDHIT_b8AAr0U" text="Capitano di cavalleria alleato abbattuto" />
+		<string id="KDHIT_AQNuxE5" text="Questo testo verrà mostrato quando il capitano di cavalleria alleato cadrà in battaglia." />
+		<string id="KDHIT_s5VAzgZ" text="Capitano degli arcieri a cavallo alleato abbattuto" />
+		<string id="KDHIT_xoLedGz" text="Questo testo verrà mostrato quando il capitano degli arcieri a cavallo alleato cadrà in battaglia." />
+		<string id="KDHIT_6WCwIwf" text="Capitano di fanteria nemico abbattuto" />
+		<string id="KDHIT_s4PzqoL" text="Questo testo verrà mostrato quando il capitano di fanteria nemico cadrà in battaglia." />
+		<string id="KDHIT_FSznMXB" text="Capitano a distanza nemico abbattuto" />
+		<string id="KDHIT_E5blIa4" text="Questo testo verrà mostrato quando il capitano a distanza nemico cadrà in battaglia." />
+		<string id="KDHIT_Q6uPIqN" text="Capitano di cavalleria nemico abbattuto" />
+		<string id="KDHIT_LTMUzWd" text="Questo testo verrà mostrato quando il capitano di cavalleria nemico cadrà in battaglia." />
+		<string id="KDHIT_NASm63y" text="Capitano degli arcieri a cavallo nemico abbattuto" />
+		<string id="KDHIT_ZZwZSL9" text="Questo testo verrà mostrato quando il capitano degli arcieri a cavallo nemico cadrà in battaglia." />
+		<string id="KDHIT_Q6yrpIe" text="Eroe non assegnato alleato abbattuto" />
+		<string id="KDHIT_3q3G6R5" text="Questo testo verrà mostrato quando l'eroe non assegnato alleato cadrà in battaglia." />
+		<string id="KDHIT_otYAcfm" text="Eroe non assegnato nemico abbattuto" />
+		<string id="KDHIT_tCIe7Fw" text="Questo testo verrà mostrato quando l'eroe non assegnato nemico cadrà in battaglia." />
+		<string id="KDHIT_IG2AH0v" text="Impostazioni tecniche" />
+		<string id="KDHIT_Aei3QtZ" text="Intervallo di aggiornamento della mod in secondi" />
+		<string id="KDHIT_4jgoXLb" text="Questa mod aggiorna le liste di eroi e truppe ogni XX secondi. Non è necessario modificarlo. [Predefinito: 30]" />
+		<string id="KDHIT_AGgXl75" text="Registrazione per il debug" />
+		<string id="KDHIT_BQhlZPM" text="Registrazione per il debug. [Predefinito: disabilitato]" />
 		<string id="KDHIT_hOGKEE2" text="" />
 		<string id="KDHIT_KoXnreW" text="" />
 		<string id="KDHIT_Z30i9MU" text="" />
