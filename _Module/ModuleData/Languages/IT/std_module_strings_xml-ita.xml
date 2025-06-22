@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="Questa mod aggiorna le liste di eroi e truppe ogni XX secondi. Non è necessario modificarlo. [Predefinito: 30]" />
 		<string id="KDHIT_AGgXl75" text="Registrazione per il debug" />
 		<string id="KDHIT_BQhlZPM" text="Registrazione per il debug. [Predefinito: disabilitato]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="Nascondi notifiche degli eroi non assegnati" />
+		<string id="KDHIT_KoXnreW" text="Nascondi le notifiche sullo schermo quando un eroe non assegnato viene abbattuto. [Predefinito: disabilitato]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

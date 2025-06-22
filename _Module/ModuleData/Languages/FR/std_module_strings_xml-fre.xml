@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="Ce mod met à jour les listes de héros et de troupes toutes les XX secondes. Il n'est pas nécessaire de le modifier. [Par défaut : 30]" />
 		<string id="KDHIT_AGgXl75" text="Journalisation pour le débogage" />
 		<string id="KDHIT_BQhlZPM" text="Journalisation pour le débogage. [Par défaut : désactivé]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="Masquer les notifications des héros non assignés" />
+		<string id="KDHIT_KoXnreW" text="Masquer les notifications à l'écran lorsqu'un héros non assigné est abattu. [Par défaut : désactivé]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

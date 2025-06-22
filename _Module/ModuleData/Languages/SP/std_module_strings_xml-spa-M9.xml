@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="Este mod actualiza las listas de héroes y tropas cada XX segundos. No necesita ser cambiado. [Predeterminado: 30]" />
 		<string id="KDHIT_AGgXl75" text="Registro para depuración" />
 		<string id="KDHIT_BQhlZPM" text="Registro para depuración. [Predeterminado: deshabilitado]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="Ocultar notificaciones de héroes no asignados" />
+		<string id="KDHIT_KoXnreW" text="Ocultar notificaciones en pantalla cuando un héroe no asignado sea derribado. [Predeterminado: deshabilitado]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

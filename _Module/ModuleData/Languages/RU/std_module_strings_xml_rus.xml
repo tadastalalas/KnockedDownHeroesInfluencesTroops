@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="Этот мод обновляет списки героев и войск каждые XX секунд. Изменение не требуется. [По умолчанию: 30]" />
 		<string id="KDHIT_AGgXl75" text="Логирование для отладки" />
 		<string id="KDHIT_BQhlZPM" text="Логирование для отладки. [По умолчанию: отключено]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="Скрыть уведомления о нераспределенных героях" />
+		<string id="KDHIT_KoXnreW" text="Скрыть уведомления на экране, когда нераспределенный герой сбит. [По умолчанию: отключено]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

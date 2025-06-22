@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="이 모드는 XX초마다 영웅 및 부대 목록을 업데이트합니다. 변경할 필요가 없습니다. [기본값: 30]" />
 		<string id="KDHIT_AGgXl75" text="디버깅을 위한 로깅" />
 		<string id="KDHIT_BQhlZPM" text="디버깅을 위한 로깅. [기본값: 비활성화]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="할당되지 않은 영웅 알림 숨기기" />
+		<string id="KDHIT_KoXnreW" text="할당되지 않은 영웅이 쓰러질 때 화면 알림을 숨깁니다. [기본값: 비활성화]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

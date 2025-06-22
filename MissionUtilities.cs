@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MCM.Abstractions.Base.Global;
 using TaleWorlds.Core;
@@ -10,6 +11,12 @@ namespace KnockedDownHeroesInfluencesTroops
     public static class MissionUtilities
     {
         private static readonly MCMSettings settings = AttributeGlobalSettings<MCMSettings>.Instance ?? new MCMSettings();
+
+        private static readonly Queue<Agent> _cheerQueue = new();
+        private static float _cheerBatchTimer = 0f;
+        private static int _cheerBatchSize = 10; // Number of agents to cheer per batch
+        private static float _cheerBatchInterval = 0.1f; // Seconds between batches
+        private static bool _cheeringInProgress = false;
 
         public static void UpdateMoraleForNearbyAgents(Team team, Agent referenceAgent, float range, float moraleChange, bool setWantsToYell = false)
         {
@@ -80,36 +87,12 @@ namespace KnockedDownHeroesInfluencesTroops
 
         public static void SetWantsToYellForTeam(Team team)
         {
-            int troopCount = 0;
-
-            foreach (Agent agent in team.ActiveAgents)
-            {
-                agent?.SetWantsToYell();
-                troopCount++;
-            }
-
-            if (settings.LoggingEnabled)
-            {
-                string logMessage = $"Number of troops yells in the team: {troopCount}";
-                InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Yellow));
-            }
+            EnqueueAgentsToCheer(team.ActiveAgents);
         }
 
         public static void SetWantsToYellForFormation(List<Agent> troopsInFormation)
         {
-            int troopCount = 0;
-
-            foreach (Agent agent in troopsInFormation)
-            {
-                agent?.SetWantsToYell();
-                troopCount++;
-            }
-
-            if (settings.LoggingEnabled)
-            {
-                string logMessage = $"Number of troops yells in formation: {troopCount}";
-                InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.White));
-            }
+            EnqueueAgentsToCheer(troopsInFormation);
         }
 
         public static void SetWantsToYellInRange(Agent attackerAgent, float range)
@@ -117,25 +100,56 @@ namespace KnockedDownHeroesInfluencesTroops
             if (attackerAgent?.Team?.ActiveAgents == null)
                 return;
 
-            int troopCount = 0;
+            EnqueueAgentsToCheer(
+                attackerAgent.Team.ActiveAgents,
+                agent => agent.Position.Distance(attackerAgent.Position) < range
+            );
+        }
 
-            foreach (var agent in attackerAgent.Team.ActiveAgents)
+        public static void EnqueueAgentsToCheer(IEnumerable<Agent> agents, Func<Agent, bool>? filter = null)
+        {
+            int enqueuedCount = 0;
+            foreach (var agent in agents)
             {
                 if (agent == null)
                     continue;
-
-                if (agent.Position.Distance(attackerAgent.Position) < range)
-                {
-                    agent?.SetWantsToYell();
-                    troopCount++;
-                }
+                if (filter != null && !filter(agent))
+                    continue;
+                _cheerQueue.Enqueue(agent);
+                enqueuedCount++;
             }
+            if (enqueuedCount > 0)
+                _cheeringInProgress = true;
 
-            if (settings.LoggingEnabled)
+            // Logging: only log when something is actually enqueued
+            if (settings.LoggingEnabled && enqueuedCount > 0)
             {
-                string logMessage = $"Number of troops yell in range: {troopCount}";
-                InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.White));
+                string logMessage = $"Number of troops queued to cheer: {enqueuedCount}";
+                InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Yellow));
             }
+        }
+
+        public static void ProcessCheerQueue(float dt)
+        {
+            if (!_cheeringInProgress)
+                return;
+
+            _cheerBatchTimer += dt;
+            if (_cheerBatchTimer < _cheerBatchInterval)
+                return;
+
+            int count = 0;
+            while (_cheerQueue.Count > 0 && count < _cheerBatchSize)
+            {
+                var agent = _cheerQueue.Dequeue();
+                agent.SetWantsToYell();
+                count++;
+            }
+
+            _cheerBatchTimer = 0f;
+
+            if (_cheerQueue.Count == 0)
+                _cheeringInProgress = false;
         }
 
         public static bool IsAgentGeneral(Agent agent) => agent == agent.Team.GeneralAgent;
@@ -233,6 +247,9 @@ namespace KnockedDownHeroesInfluencesTroops
         }
         public static void DisplayQuickInformationMessageWhenUnassignedHeroFalls(Agent attackerAgent, Agent victimAgent)
         {
+            if (settings.HideUnassignedHeroNotifications)
+                return;
+
             if (victimAgent.Team.IsPlayerTeam || victimAgent.Team.IsPlayerAlly)
                 MBInformationManager.AddQuickInformation(new TextObject(settings.friendlyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, "event:/ui/notification/death");
             if (!victimAgent.Team.IsPlayerTeam && !victimAgent.Team.IsPlayerAlly)

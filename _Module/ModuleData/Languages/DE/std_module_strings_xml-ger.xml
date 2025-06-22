@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="Dieses Mod aktualisiert die Helden- und Truppenlisten alle XX Sekunden. Es muss nicht geändert werden. [Standard: 30]" />
 		<string id="KDHIT_AGgXl75" text="Protokollierung für Debugging" />
 		<string id="KDHIT_BQhlZPM" text="Protokollierung für Debugging. [Standard: deaktiviert]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="Benachrichtigungen für nicht zugewiesene Helden ausblenden" />
+		<string id="KDHIT_KoXnreW" text="Bildschirmbenachrichtigungen ausblenden, wenn ein nicht zugewiesener Held gestürzt wird. [Standard: deaktiviert]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

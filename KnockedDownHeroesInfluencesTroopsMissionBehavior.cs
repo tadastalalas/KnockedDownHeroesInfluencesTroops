@@ -58,6 +58,7 @@ namespace KnockedDownHeroesInfluencesTroops
                 return;
 
             MainSetup(dt);
+            MissionUtilities.ProcessCheerQueue(dt);
         }
 
         private void MainSetup(float dt)

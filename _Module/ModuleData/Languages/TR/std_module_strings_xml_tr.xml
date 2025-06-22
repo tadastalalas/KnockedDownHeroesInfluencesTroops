@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="Bu mod, kahraman ve birlik listelerini her XX saniyede bir günceller. Değiştirilmesi gerekmez. [Varsayılan: 30]" />
 		<string id="KDHIT_AGgXl75" text="Hata ayıklama için günlük kaydı" />
 		<string id="KDHIT_BQhlZPM" text="Hata ayıklama için günlük kaydı. [Varsayılan: devre dışı]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="Atanmamış Kahraman Bildirimlerini Gizle" />
+		<string id="KDHIT_KoXnreW" text="Atanmamış bir kahraman yere düştüğünde ekran bildirimlerini gizle. [Varsayılan: devre dışı]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

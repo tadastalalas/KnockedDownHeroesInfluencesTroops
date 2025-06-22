@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="Ta modyfikacja aktualizuje listy bohaterów i oddziałów co XX sekund. Nie wymaga zmiany. [Domyślnie: 30]" />
 		<string id="KDHIT_AGgXl75" text="Rejestrowanie dla debugowania" />
 		<string id="KDHIT_BQhlZPM" text="Rejestrowanie dla debugowania. [Domyślnie: wyłączone]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="Ukryj powiadomienia o nieprzypisanych bohaterach" />
+		<string id="KDHIT_KoXnreW" text="Ukryj powiadomienia na ekranie, gdy nieprzypisany bohater zostanie powalony. [Domyślnie: wyłączone]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

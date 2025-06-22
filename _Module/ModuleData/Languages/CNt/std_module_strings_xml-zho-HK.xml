@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="此模組每XX秒更新一次英雄和部隊列表。無需更改。[預設：30]" />
 		<string id="KDHIT_AGgXl75" text="除錯日誌" />
 		<string id="KDHIT_BQhlZPM" text="除錯日誌。[預設：停用]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="隱藏未分配英雄的通知" />
+		<string id="KDHIT_KoXnreW" text="當未分配的英雄被擊倒時隱藏螢幕通知。[預設：停用]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />

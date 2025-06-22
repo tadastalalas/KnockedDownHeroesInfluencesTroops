@@ -90,8 +90,8 @@
 		<string id="KDHIT_4jgoXLb" text="このモッドはXX秒ごとに英雄と部隊のリストを更新します。変更する必要はありません。[デフォルト: 30]" />
 		<string id="KDHIT_AGgXl75" text="デバッグ用のログ記録" />
 		<string id="KDHIT_BQhlZPM" text="デバッグ用のログ記録。[デフォルト: 無効]" />
-		<string id="KDHIT_hOGKEE2" text="" />
-		<string id="KDHIT_KoXnreW" text="" />
+		<string id="KDHIT_hOGKEE2" text="未割り当て英雄の通知を非表示にする" />
+		<string id="KDHIT_KoXnreW" text="未割り当て英雄が倒れたときに画面上の通知を非表示にします。[デフォルト: 無効]" />
 		<string id="KDHIT_Z30i9MU" text="" />
 		<string id="KDHIT_3ol4FO4" text="" />
 		<string id="KDHIT_gyfUZLl" text="" />
