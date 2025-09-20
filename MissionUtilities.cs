@@ -195,9 +195,9 @@ namespace KnockedDownHeroesInfluencesTroops
         public static void DisplayQuickInformationMessageWhenGeneralFalls(Agent attackerAgent, Agent victimAgent)
         {
             if (victimAgent.Team.IsPlayerTeam || victimAgent.Team.IsPlayerAlly)
-                MBInformationManager.AddQuickInformation(new TextObject(settings.friendlyGeneralFallenNotification), 2000, attackerAgent.Character, "event:/ui/notification/death");
+                MBInformationManager.AddQuickInformation(new TextObject(settings.friendlyGeneralFallenNotification), 2000, attackerAgent.Character, null, "event:/ui/notification/death");
             if (!victimAgent.Team.IsPlayerTeam && !victimAgent.Team.IsPlayerAlly)
-                MBInformationManager.AddQuickInformation(new TextObject(settings.enemyGeneralFallenNotification), 2000, attackerAgent.Character, "event:/ui/notification/levelup");
+                MBInformationManager.AddQuickInformation(new TextObject(settings.enemyGeneralFallenNotification), 2000, attackerAgent.Character, null, "event:/ui/notification/levelup");
         }
 
         public static void DisplayQuickInformationMessageWhenCaptainFalls(Agent attackerAgent, Agent victimAgent)
@@ -214,7 +214,7 @@ namespace KnockedDownHeroesInfluencesTroops
                     "Horse Archers" => settings.friendlyHorseArchersCaptainFallenNotification,
                     _ => "Your captain has fallen! Give up!"
                 };
-                MBInformationManager.AddQuickInformation(new TextObject(message), 2000, attackerAgent.Character, "event:/ui/notification/death");
+                MBInformationManager.AddQuickInformation(new TextObject(message), 2000, attackerAgent.Character, null, "event:/ui/notification/death");
             }
             else if (!victimAgent.Team.IsPlayerTeam && !victimAgent.Team.IsPlayerAlly)
             {
@@ -226,7 +226,7 @@ namespace KnockedDownHeroesInfluencesTroops
                     "Horse Archers" => settings.enemyHorseArchersCaptainFallenNotification,
                     _ => "Enemy's captain has fallen! Good fight!"
                 };
-                MBInformationManager.AddQuickInformation(new TextObject(message), 2000, attackerAgent.Character, "event:/ui/notification/levelup");
+                MBInformationManager.AddQuickInformation(new TextObject(message), 2000, attackerAgent.Character, null, "event:/ui/notification/levelup");
             }
         }
 
@@ -251,9 +251,9 @@ namespace KnockedDownHeroesInfluencesTroops
                 return;
 
             if (victimAgent.Team.IsPlayerTeam || victimAgent.Team.IsPlayerAlly)
-                MBInformationManager.AddQuickInformation(new TextObject(settings.friendlyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, "event:/ui/notification/death");
+                MBInformationManager.AddQuickInformation(new TextObject(settings.friendlyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, null, "event:/ui/notification/death");
             if (!victimAgent.Team.IsPlayerTeam && !victimAgent.Team.IsPlayerAlly)
-                MBInformationManager.AddQuickInformation(new TextObject(settings.enemyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, "event:/ui/notification/levelup");
+                MBInformationManager.AddQuickInformation(new TextObject(settings.enemyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, null, "event:/ui/notification/levelup");
         }
 
         public static void ShowLogs(List<(string message, Color color)> captainLogMessages)
