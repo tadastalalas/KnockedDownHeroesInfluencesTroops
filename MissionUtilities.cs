@@ -107,6 +107,9 @@ namespace KnockedDownHeroesInfluencesTroops
             {
                 if (agent == null)
                     continue;
+                // Fix #2: snapshot may contain agents that died/were removed since last refresh.
+                if (!agent.IsActive())
+                    continue;
                 agent.ChangeMorale(moraleChange);
                 troopCount++;
             }

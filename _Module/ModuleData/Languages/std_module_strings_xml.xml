@@ -34,7 +34,7 @@
 		<string id="KDHIT_yD6sszN" text="When General Knocks Down Formation Captain" />
 		<string id="KDHIT_LEvkHZs" text="The enemy's troops (captain's formation troops) suffers a morale loss when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 15]" />
 		<string id="KDHIT_j4dHqfE" text="When General Knocks Down General" />
-		<string id="KDHIT_Q4ntARL" text="The enemy's troops (all enemy troops) suffers a morale loss when a genral defeats an enemy general. Works for both sides. [Default: 16]" />
+		<string id="KDHIT_Q4ntARL" text="The enemy's troops (all enemy troops) suffers a morale loss when a general defeats an enemy general. Works for both sides. [Default: 16]" />
 		<string id="KDHIT_MdLvOaI" text="Morale gains when heroes are knocked down" />
 		<string id="KDHIT_fKK5mYm" text="When Troop Knocks Down Unassigned Hero" />
 		<string id="KDHIT_wPkAX9J" text="The attacker's troops (all friendly troops within 10m radius by default) gain morale when an ordinary soldier defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 2]" />
@@ -59,7 +59,7 @@
 		<string id="KDHIT_Mr7cbdv" text="When General Knocks Down Formation Captain" />
 		<string id="KDHIT_6hBug9f" text="The attacker's troops (all friendly troops) gain morale when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 15]" />
 		<string id="KDHIT_Za6yOdt" text="When General Knocks Down General" />
-		<string id="KDHIT_kqmtG3J" text="The attacker's troops (all friendly troops) gain morale when a genral defeats an enemy general. Works for both sides. [Default: 16]" />
+		<string id="KDHIT_kqmtG3J" text="The attacker's troops (all friendly troops) gain morale when a general defeats an enemy general. Works for both sides. [Default: 16]" />
 		<string id="KDHIT_YD0DERb" text="On-screen notifications texts" />
 		<string id="KDHIT_iV3XC78" text="Friendly General Fallen" />
 		<string id="KDHIT_s56GZlT" text="This text will be shown when friendly general will fall in battle." />

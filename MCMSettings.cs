@@ -126,7 +126,7 @@ namespace KnockedDownHeroesInfluencesTroops
         [SettingPropertyGroup("{=KDHIT_MdLvOaI}Morale gains when heroes are knocked down", GroupOrder = 2)]
         public int MoraleGainWhenGeneralHeroKillsCaptainHero { get; set; } = 15;
 
-        [SettingPropertyInteger("{=KDHIT_Za6yOdt}When General Knocks Down General", 0, 100, "0", Order = 11, RequireRestart = false, HintText = "{=KDHIT_kqmtG3J}The attacker's troops (all friendly troops) gain morale when a genral defeats an enemy general. Works for both sides. [Default: 16]")]
+        [SettingPropertyInteger("{=KDHIT_Za6yOdt}When General Knocks Down General", 0, 100, "0", Order = 11, RequireRestart = false, HintText = "{=KDHIT_kqmtG3J}The attacker's troops (all friendly troops) gain morale when a general defeats an enemy general. Works for both sides. [Default: 16]")]
         [SettingPropertyGroup("{=KDHIT_MdLvOaI}Morale gains when heroes are knocked down", GroupOrder = 2)]
         public int MoraleGainWhenGeneralHeroKillsGeneralHero { get; set; } = 16;
 

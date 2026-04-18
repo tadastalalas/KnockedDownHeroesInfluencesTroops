@@ -22,22 +22,6 @@ namespace KnockedDownHeroesInfluencesTroops
 
         private float elapsedTime = 0f;
 
-        private readonly List<Formation> friendlyTeamsFormations = new();
-        private readonly List<Formation> enemyTeamsFormations = new();
-
-        private readonly List<Formation> friendlyTeamsInfantryFormations = new();
-        private readonly List<Formation> friendlyTeamsArchersFormations = new();
-        private readonly List<Formation> friendlyTeamsCavalryFormations = new();
-        private readonly List<Formation> friendlyTeamsHorseArchersFormations = new();
-
-        private readonly List<Formation> enemyTeamsInfantryFormations = new();
-        private readonly List<Formation> enemyTeamsArchersFormations = new();
-        private readonly List<Formation> enemyTeamsCavalryFormations = new();
-        private readonly List<Formation> enemyTeamsHorseArchersFormations = new();
-
-        private readonly List<Agent> friendlyHeroes = new();
-        private readonly List<Agent> enemyHeroes = new();
-
         private readonly List<Agent> friendlyInfantryCaptains = new();
         private readonly List<Agent> friendlyArchersCaptains = new();
         private readonly List<Agent> friendlyCavalryCaptains = new();
@@ -106,12 +90,12 @@ namespace KnockedDownHeroesInfluencesTroops
                 if (team.IsPlayerAlly)
                 {
                     friendlyTeamsCount++;
-                    ProcessTeamFormations(team, friendlyTeamsFormations, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, Colors.Yellow);
+                    ProcessTeamFormations(team, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, Colors.Yellow);
                 }
                 else
                 {
                     enemyTeamsCount++;
-                    ProcessTeamFormations(team, enemyTeamsFormations, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains, Colors.Red);
+                    ProcessTeamFormations(team, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains, Colors.Red);
                 }
             }
 
@@ -128,18 +112,6 @@ namespace KnockedDownHeroesInfluencesTroops
 
         private void ClearAllLists()
         {
-            friendlyTeamsFormations.Clear();
-            enemyTeamsFormations.Clear();
-            friendlyTeamsInfantryFormations.Clear();
-            friendlyTeamsArchersFormations.Clear();
-            friendlyTeamsCavalryFormations.Clear();
-            friendlyTeamsHorseArchersFormations.Clear();
-            enemyTeamsInfantryFormations.Clear();
-            enemyTeamsArchersFormations.Clear();
-            enemyTeamsCavalryFormations.Clear();
-            enemyTeamsHorseArchersFormations.Clear();
-            friendlyHeroes.Clear();
-            enemyHeroes.Clear();
             friendlyInfantryCaptains.Clear();
             friendlyArchersCaptains.Clear();
             friendlyCavalryCaptains.Clear();
@@ -152,7 +124,7 @@ namespace KnockedDownHeroesInfluencesTroops
             troopsOfFormationCaptains.Clear();
         }
 
-        private void ProcessTeamFormations(Team team, List<Formation> teamFormations, List<Agent> infantryCaptains, List<Agent> archersCaptains, List<Agent> cavalryCaptains, List<Agent> horseArchersCaptains, Color logColor)
+        private void ProcessTeamFormations(Team team, List<Agent> infantryCaptains, List<Agent> archersCaptains, List<Agent> cavalryCaptains, List<Agent> horseArchersCaptains, Color logColor)
         {
             int infantryFormationsCount = 0;
             int archersFormationsCount = 0;
@@ -170,7 +142,6 @@ namespace KnockedDownHeroesInfluencesTroops
                 else if (formation.QuerySystem.IsRangedCavalryFormation)
                     horseArchersFormationsCount++;
 
-                teamFormations.Add(formation);
                 ProcessFormation(formation, infantryCaptains, archersCaptains, cavalryCaptains, horseArchersCaptains, logColor);
             }
 
@@ -215,33 +186,13 @@ namespace KnockedDownHeroesInfluencesTroops
         private void AddCaptainToFormationLists(Formation formation, List<Agent> infantryCaptains, List<Agent> archersCaptains, List<Agent> cavalryCaptains, List<Agent> horseArchersCaptains)
         {
             if (formation.QuerySystem.IsInfantryFormation)
-            {
                 infantryCaptains.Add(formation.Captain);
-                AddFormationToTeamList(formation, friendlyTeamsInfantryFormations, enemyTeamsInfantryFormations);
-            }
             else if (formation.QuerySystem.IsRangedFormation)
-            {
                 archersCaptains.Add(formation.Captain);
-                AddFormationToTeamList(formation, friendlyTeamsArchersFormations, enemyTeamsArchersFormations);
-            }
             else if (formation.QuerySystem.IsCavalryFormation)
-            {
                 cavalryCaptains.Add(formation.Captain);
-                AddFormationToTeamList(formation, friendlyTeamsCavalryFormations, enemyTeamsCavalryFormations);
-            }
             else if (formation.QuerySystem.IsRangedCavalryFormation)
-            {
                 horseArchersCaptains.Add(formation.Captain);
-                AddFormationToTeamList(formation, friendlyTeamsHorseArchersFormations, enemyTeamsHorseArchersFormations);
-            }
-        }
-
-        private void AddFormationToTeamList(Formation formation, List<Formation> friendlyFormations, List<Formation> enemyFormations)
-        {
-            if (formation.Team.IsPlayerAlly)
-                friendlyFormations.Add(formation);
-            else
-                enemyFormations.Add(formation);
         }
 
         public override void OnAgentRemoved(Agent affectedAgent, Agent affectorAgent, AgentState agentState, KillingBlow blow)
