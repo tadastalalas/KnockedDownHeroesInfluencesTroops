@@ -12,7 +12,9 @@ namespace KnockedDownHeroesInfluencesTroops
     {
         public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
 
-        private readonly MCMSettings settings = AttributeGlobalSettings<MCMSettings>.Instance ?? new MCMSettings();
+        // Always re-resolve from MCM so runtime setting changes take effect.
+        private static readonly MCMSettings _fallback = new();
+        private static MCMSettings Settings => AttributeGlobalSettings<MCMSettings>.Instance ?? _fallback;
 
         private const int rangeForTroopsToReactToUnassignedHeroFall = 10;
         private const int rangeForTroopsToReactToCaptainHeroFall = 20;
@@ -50,11 +52,24 @@ namespace KnockedDownHeroesInfluencesTroops
 
         private readonly List<(string message, Color color)> storedLogMessagesList = new();
 
+        public override void OnBehaviorInitialize()
+        {
+            base.OnBehaviorInitialize();
+            // Reset static cross-mission state so a previous mission's queued cheers don't leak in.
+            MissionUtilities.ResetCheerQueue();
+        }
+
+        public override void OnRemoveBehavior()
+        {
+            MissionUtilities.ResetCheerQueue();
+            base.OnRemoveBehavior();
+        }
+
         public override void OnMissionTick(float dt)
         {
             base.OnMissionTick(dt);
 
-            if (!settings.EnableThisModification)
+            if (!Settings.EnableThisModification)
                 return;
 
             MainSetup(dt);
@@ -67,7 +82,7 @@ namespace KnockedDownHeroesInfluencesTroops
                 return;
 
             elapsedTime += dt;
-            if (elapsedTime < settings.UpdateIntervalInSeconds)
+            if (elapsedTime < Settings.UpdateIntervalInSeconds)
                 return;
 
             InitializeTeamsFormationsCaptainsAndTroops();
@@ -78,6 +93,8 @@ namespace KnockedDownHeroesInfluencesTroops
         private void InitializeTeamsFormationsCaptainsAndTroops()
         {
             ClearAllLists();
+            // Fix F: always clear pending log buffer at the start of each refresh, regardless of LoggingEnabled.
+            storedLogMessagesList.Clear();
 
             int totalTeamsCount = 0;
             int friendlyTeamsCount = 0;
@@ -102,7 +119,7 @@ namespace KnockedDownHeroesInfluencesTroops
             storedLogMessagesList.Add(($"Friendly teams: {friendlyTeamsCount}", Colors.Yellow));
             storedLogMessagesList.Add(($"Total teams: {totalTeamsCount}", Colors.White));
 
-            if (settings.LoggingEnabled)
+            if (Settings.LoggingEnabled)
             {
                 storedLogMessagesList.Reverse();
                 MissionUtilities.ShowLogs(storedLogMessagesList);
@@ -131,6 +148,8 @@ namespace KnockedDownHeroesInfluencesTroops
             enemyArchersCaptains.Clear();
             enemyCavalryCaptains.Clear();
             enemyHorseArchersCaptains.Clear();
+            // Fix A: was leaking stale captain entries every refresh.
+            troopsOfFormationCaptains.Clear();
         }
 
         private void ProcessTeamFormations(Team team, List<Formation> teamFormations, List<Agent> infantryCaptains, List<Agent> archersCaptains, List<Agent> cavalryCaptains, List<Agent> horseArchersCaptains, Color logColor)
@@ -229,7 +248,7 @@ namespace KnockedDownHeroesInfluencesTroops
         {
             base.OnAgentRemoved(affectedAgent, affectorAgent, agentState, blow);
 
-            if (!settings.EnableThisModification || Mission.Current == null || (!Mission.Current.IsFieldBattle && !Mission.Current.IsSiegeBattle) ||
+            if (!Settings.EnableThisModification || Mission.Current == null || (!Mission.Current.IsFieldBattle && !Mission.Current.IsSiegeBattle) ||
                 affectedAgent == null || affectorAgent == null || affectedAgent == affectorAgent) return;
 
             if (!affectedAgent.IsHero)
@@ -240,15 +259,20 @@ namespace KnockedDownHeroesInfluencesTroops
             else
                 SimpleTroopKnockedDownAgent(affectorAgent, affectedAgent);
 
-            if (settings.LoggingEnabled)
+            if (Settings.LoggingEnabled)
                 MissionUtilities.DisplayKnockdownMessage(affectorAgent, affectedAgent);
         }
+
+        private bool IsCaptainCached(Agent agent)
+            => MissionUtilities.IsAgentCaptain(agent,
+                friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains,
+                enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains);
 
         private void HeroKnockedDownAgent(Agent attackerAgent, Agent victimAgent)
         {
             if (MissionUtilities.IsAgentGeneral(attackerAgent))
                 GeneralKnockedDownAgent(attackerAgent, victimAgent);
-            else if (MissionUtilities.IsAgentCaptain(attackerAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (IsCaptainCached(attackerAgent))
                 CaptainKnockedDownAgent(attackerAgent, victimAgent);
             else
                 UnassignedHeroKnockedDownAgent(attackerAgent, victimAgent);
@@ -260,38 +284,46 @@ namespace KnockedDownHeroesInfluencesTroops
 
             if (MissionUtilities.IsAgentGeneral(affectedAgent))
             {
-                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -settings.MoraleChangeWhenGeneralHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -Settings.MoraleChangeWhenGeneralHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, +Settings.MoraleGainWhenGeneralHeroKillsGeneralHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenGeneralFalls);
             }
-            else if (MissionUtilities.IsAgentCaptain(affectedAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (IsCaptainCached(affectedAgent))
             {
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -settings.MoraleChangeWhenGeneralHeroKillsCaptainHero);
+                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -Settings.MoraleChangeWhenGeneralHeroKillsCaptainHero);
+                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, +Settings.MoraleGainWhenGeneralHeroKillsCaptainHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenCaptainFalls);
             }
             else
             {
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectorAgent, rangeForTroopsToReactToGeneralHeroFall, -settings.MoraleChangeWhenGeneralHeroKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectorAgent, rangeForTroopsToReactToGeneralHeroFall, -Settings.MoraleChangeWhenGeneralHeroKillsUnassignedHero);
+                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, +Settings.MoraleGainWhenGeneralHeroKillsUnassignedHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenUnassignedHeroFalls);
             }
         }
 
         private void CaptainKnockedDownAgent(Agent attackerAgent, Agent victimAgent)
         {
-            MissionUtilities.SetWantsToYellForFormation(troopsOfFormationCaptains[attackerAgent]);
+            // Guard B: only yell-for-formation if attacker captain is in the cached map
+            if (troopsOfFormationCaptains.TryGetValue(attackerAgent, out var attackerFormationTroops))
+                MissionUtilities.SetWantsToYellForFormation(attackerFormationTroops);
 
             if (MissionUtilities.IsAgentGeneral(victimAgent))
             {
-                MissionUtilities.UpdateTeamMorale(victimAgent.Team, -settings.MoraleChangeWhenCaptainHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(victimAgent.Team, -Settings.MoraleChangeWhenCaptainHeroKillsGeneralHero);
+                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, attackerAgent, +Settings.MoraleGainWhenCaptainHeroKillsGeneralHero);
                 ShowOnScreenNotification(attackerAgent, victimAgent, MissionUtilities.DisplayQuickInformationMessageWhenGeneralFalls);
             }
-            else if (MissionUtilities.IsAgentCaptain(victimAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (IsCaptainCached(victimAgent))
             {
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, victimAgent, -settings.MoraleChangeWhenCaptainHeroKillsCaptainHero);
+                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, victimAgent, -Settings.MoraleChangeWhenCaptainHeroKillsCaptainHero);
+                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, attackerAgent, +Settings.MoraleGainWhenCaptainHeroKillsCaptainHero);
                 ShowOnScreenNotification(attackerAgent, victimAgent, MissionUtilities.DisplayQuickInformationMessageWhenCaptainFalls);
             }
             else
             {
-                MissionUtilities.UpdateMoraleForNearbyAgents(victimAgent.Team, attackerAgent, rangeForTroopsToReactToUnassignedHeroFall + 10, -settings.MoraleChangeWhenCaptainHeroKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(victimAgent.Team, attackerAgent, rangeForTroopsToReactToUnassignedHeroFall + 10, -Settings.MoraleChangeWhenCaptainHeroKillsUnassignedHero);
+                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, attackerAgent, +Settings.MoraleGainWhenCaptainHeroKillsUnassignedHero);
                 ShowOnScreenNotification(attackerAgent, victimAgent, MissionUtilities.DisplayQuickInformationMessageWhenUnassignedHeroFalls);
             }
         }
@@ -301,19 +333,23 @@ namespace KnockedDownHeroesInfluencesTroops
             if (MissionUtilities.IsAgentGeneral(affectedAgent))
             {
                 MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToGeneralHeroFall + 5);
-                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -settings.MoraleChangeWhenUnassignedHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -Settings.MoraleChangeWhenUnassignedHeroKillsGeneralHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToGeneralHeroFall + 5, +Settings.MoraleGainWhenUnassignedHeroKillsGeneralHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenGeneralFalls);
             }
-            else if (MissionUtilities.IsAgentCaptain(affectedAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (IsCaptainCached(affectedAgent))
             {
                 MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToCaptainHeroFall + 5);
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -settings.MoraleChangeWhenUnassignedHeroKillsCaptainHero);
+                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -Settings.MoraleChangeWhenUnassignedHeroKillsCaptainHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToCaptainHeroFall + 5, +Settings.MoraleGainWhenUnassignedHeroKillsCaptainHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenCaptainFalls);
             }
             else
             {
                 MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToUnassignedHeroFall + 5);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectedAgent, rangeForTroopsToReactToUnassignedHeroFall, -settings.MoraleChangeWhenUnassignedHeroKillsUnassignedHero);
+                // Fix G: distance now measured from affector (attacker), matching MCM hint text.
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectorAgent, rangeForTroopsToReactToUnassignedHeroFall, -Settings.MoraleChangeWhenUnassignedHeroKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToUnassignedHeroFall + 5, +Settings.MoraleGainWhenUnassignedHeroKillsUnassignedHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenUnassignedHeroFalls);
             }
         }
@@ -323,26 +359,30 @@ namespace KnockedDownHeroesInfluencesTroops
             if (MissionUtilities.IsAgentGeneral(affectedAgent))
             {
                 MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToGeneralHeroFall);
-                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -settings.MoraleChangeWhenTroopKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -Settings.MoraleChangeWhenTroopKillsGeneralHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToGeneralHeroFall, +Settings.MoraleGainWhenTroopKillsGeneralHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenGeneralFalls);
             }
-            else if (MissionUtilities.IsAgentCaptain(affectedAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (IsCaptainCached(affectedAgent))
             {
                 MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToCaptainHeroFall);
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -settings.MoraleChangeWhenTroopKillsCaptainHero);
+                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -Settings.MoraleChangeWhenTroopKillsCaptainHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToCaptainHeroFall, +Settings.MoraleGainWhenTroopKillsCaptainHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenCaptainFalls);
             }
             else
             {
                 MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToUnassignedHeroFall);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectedAgent, rangeForTroopsToReactToUnassignedHeroFall, -settings.MoraleChangeWhenTroopKillsUnassignedHero);
+                // Fix G: distance now measured from affector (attacker), matching MCM hint text.
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectorAgent, rangeForTroopsToReactToUnassignedHeroFall, -Settings.MoraleChangeWhenTroopKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToUnassignedHeroFall, +Settings.MoraleGainWhenTroopKillsUnassignedHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenUnassignedHeroFalls);
             }
         }
 
         private void ShowOnScreenNotification(Agent affectorAgent, Agent affectedAgent, Action<Agent, Agent> displayNotification)
         {
-            if (settings.ShowOnScreenNotifications)
+            if (Settings.ShowOnScreenNotifications)
                 displayNotification(affectorAgent, affectedAgent);
         }
     }

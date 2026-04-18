@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="除錯日誌。[預設：停用]" />
 		<string id="KDHIT_hOGKEE2" text="隱藏未分配英雄的通知" />
 		<string id="KDHIT_KoXnreW" text="當未分配的英雄被擊倒時隱藏螢幕通知。[預設：停用]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="停用英雄被擊倒時的音效" />
+		<string id="KDHIT_3ol4FO4" text="啟用後，當英雄被擊倒時播放的介面音效將被靜音。螢幕通知仍會顯示。[預設：停用]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

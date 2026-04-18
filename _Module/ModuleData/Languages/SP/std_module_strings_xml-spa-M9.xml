@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Registro para depuración. [Predeterminado: deshabilitado]" />
 		<string id="KDHIT_hOGKEE2" text="Ocultar notificaciones de héroes no asignados" />
 		<string id="KDHIT_KoXnreW" text="Ocultar notificaciones en pantalla cuando un héroe no asignado sea derribado. [Predeterminado: deshabilitado]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Desactivar sonidos al derribar héroes" />
+		<string id="KDHIT_3ol4FO4" text="Cuando está activado, se silenciará el sonido de la interfaz que se reproduce al derribar a un héroe. La notificación en pantalla seguirá apareciendo. [Predeterminado: desactivado]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

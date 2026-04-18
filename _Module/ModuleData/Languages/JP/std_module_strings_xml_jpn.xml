@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="デバッグ用のログ記録。[デフォルト: 無効]" />
 		<string id="KDHIT_hOGKEE2" text="未割り当て英雄の通知を非表示にする" />
 		<string id="KDHIT_KoXnreW" text="未割り当て英雄が倒れたときに画面上の通知を非表示にします。[デフォルト: 無効]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="英雄が倒れたときの効果音を無効にする" />
+		<string id="KDHIT_3ol4FO4" text="有効にすると、英雄が倒れたときに再生されるUI効果音がミュートされます。画面上の通知は引き続き表示されます。[デフォルト: 無効]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Protokollierung für Debugging. [Standard: deaktiviert]" />
 		<string id="KDHIT_hOGKEE2" text="Benachrichtigungen für nicht zugewiesene Helden ausblenden" />
 		<string id="KDHIT_KoXnreW" text="Bildschirmbenachrichtigungen ausblenden, wenn ein nicht zugewiesener Held gestürzt wird. [Standard: deaktiviert]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Helden-Sturzgeräusche deaktivieren" />
+		<string id="KDHIT_3ol4FO4" text="Wenn aktiviert, wird das UI-Geräusch, das beim Sturz eines Helden abgespielt wird, stummgeschaltet. Die Bildschirmbenachrichtigung wird weiterhin angezeigt. [Standard: deaktiviert]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

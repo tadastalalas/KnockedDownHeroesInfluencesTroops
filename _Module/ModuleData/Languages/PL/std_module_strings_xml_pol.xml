@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Rejestrowanie dla debugowania. [Domyślnie: wyłączone]" />
 		<string id="KDHIT_hOGKEE2" text="Ukryj powiadomienia o nieprzypisanych bohaterach" />
 		<string id="KDHIT_KoXnreW" text="Ukryj powiadomienia na ekranie, gdy nieprzypisany bohater zostanie powalony. [Domyślnie: wyłączone]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Wyłącz dźwięki powalenia bohaterów" />
+		<string id="KDHIT_3ol4FO4" text="Po włączeniu dźwięk interfejsu odtwarzany przy powaleniu bohatera zostanie wyciszony. Powiadomienie na ekranie nadal będzie się pojawiać. [Domyślnie: wyłączone]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Registro para depuração. [Padrão: desativado]" />
 		<string id="KDHIT_hOGKEE2" text="Ocultar Notificações de Heróis Não Atribuídos" />
 		<string id="KDHIT_KoXnreW" text="Oculte notificações na tela quando um herói não atribuído for derrubado. [Padrão: desativado]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Desativar Sons de Heróis Derrubados" />
+		<string id="KDHIT_3ol4FO4" text="Quando ativado, o som da interface reproduzido quando um herói for derrubado será silenciado. A notificação na tela ainda será exibida. [Padrão: desativado]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

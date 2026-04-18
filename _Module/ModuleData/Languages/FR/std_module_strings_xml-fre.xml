@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Journalisation pour le débogage. [Par défaut : désactivé]" />
 		<string id="KDHIT_hOGKEE2" text="Masquer les notifications des héros non assignés" />
 		<string id="KDHIT_KoXnreW" text="Masquer les notifications à l'écran lorsqu'un héros non assigné est abattu. [Par défaut : désactivé]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Désactiver les sons d’abattage des héros" />
+		<string id="KDHIT_3ol4FO4" text="Lorsqu’elle est activée, le son de l’interface joué lorsqu’un héros est abattu sera coupé. La notification à l’écran s’affichera toujours. [Par défaut : désactivé]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

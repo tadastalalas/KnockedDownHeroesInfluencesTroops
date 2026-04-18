@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="调试日志。[默认：禁用]" />
 		<string id="KDHIT_hOGKEE2" text="隐藏未分配英雄的通知" />
 		<string id="KDHIT_KoXnreW" text="当未分配的英雄被击倒时隐藏屏幕通知。[默认：禁用]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="禁用英雄被击倒时的音效" />
+		<string id="KDHIT_3ol4FO4" text="启用后，当英雄被击倒时播放的界面音效将被静音。屏幕通知仍会显示。[默认：禁用]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

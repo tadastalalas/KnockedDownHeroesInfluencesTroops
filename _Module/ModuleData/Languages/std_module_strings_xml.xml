@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Logging for debugging. [Default: disabled]" />
 		<string id="KDHIT_hOGKEE2" text="Hide Unassigned Hero Notifications" />
 		<string id="KDHIT_KoXnreW" text="Hide on-screen notifications when unassigned hero is knocked down. [Default: disabled]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Disable Hero Knockdown Sounds" />
+		<string id="KDHIT_3ol4FO4" text="When enabled, the UI sound played when a hero is knocked down will be muted. The on-screen notification still appears. [Default: disabled]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

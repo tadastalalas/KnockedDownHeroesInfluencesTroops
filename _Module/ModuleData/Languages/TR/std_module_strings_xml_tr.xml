@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Hata ayıklama için günlük kaydı. [Varsayılan: devre dışı]" />
 		<string id="KDHIT_hOGKEE2" text="Atanmamış Kahraman Bildirimlerini Gizle" />
 		<string id="KDHIT_KoXnreW" text="Atanmamış bir kahraman yere düştüğünde ekran bildirimlerini gizle. [Varsayılan: devre dışı]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Kahraman Yere Düşme Seslerini Devre Dışı Bırak" />
+		<string id="KDHIT_3ol4FO4" text="Etkinleştirildiğinde, bir kahraman yere düştüğünde çalınan arayüz sesi susturulur. Ekrandaki bildirim yine de gösterilmeye devam eder. [Varsayılan: devre dışı]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

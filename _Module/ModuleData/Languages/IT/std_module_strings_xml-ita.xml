@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Registrazione per il debug. [Predefinito: disabilitato]" />
 		<string id="KDHIT_hOGKEE2" text="Nascondi notifiche degli eroi non assegnati" />
 		<string id="KDHIT_KoXnreW" text="Nascondi le notifiche sullo schermo quando un eroe non assegnato viene abbattuto. [Predefinito: disabilitato]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Disattiva i suoni dell’abbattimento degli eroi" />
+		<string id="KDHIT_3ol4FO4" text="Quando attivata, il suono dell’interfaccia riprodotto quando un eroe viene abbattuto verrà silenziato. La notifica sullo schermo verrà comunque mostrata. [Predefinito: disabilitato]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

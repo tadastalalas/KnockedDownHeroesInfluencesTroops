@@ -92,8 +92,8 @@
 		<string id="KDHIT_BQhlZPM" text="Логирование для отладки. [По умолчанию: отключено]" />
 		<string id="KDHIT_hOGKEE2" text="Скрыть уведомления о нераспределенных героях" />
 		<string id="KDHIT_KoXnreW" text="Скрыть уведомления на экране, когда нераспределенный герой сбит. [По умолчанию: отключено]" />
-		<string id="KDHIT_Z30i9MU" text="" />
-		<string id="KDHIT_3ol4FO4" text="" />
+		<string id="KDHIT_Z30i9MU" text="Отключить звуки при падении героев" />
+		<string id="KDHIT_3ol4FO4" text="Если включено, звук интерфейса, воспроизводимый при падении героя, будет отключён. Уведомление на экране при этом всё равно будет отображаться. [По умолчанию: отключено]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />
