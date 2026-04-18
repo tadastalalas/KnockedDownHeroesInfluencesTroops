@@ -26,10 +26,6 @@ namespace KnockedDownHeroesInfluencesTroops
         [SettingPropertyGroup("{=KDHIT_AjEK8im}Main settings", GroupOrder = 0)]
         public bool HideUnassignedHeroNotifications { get; set; } = false;
 
-        [SettingPropertyBool("{=KDHIT_Z30i9MU}Disable Hero Knockdown Sounds", Order = 3, RequireRestart = false, HintText = "{=KDHIT_3ol4FO4}When enabled, the UI sound played when a hero is knocked down will be muted. The on-screen notification still appears. [Default: disabled]")]
-        [SettingPropertyGroup("{=KDHIT_AjEK8im}Main settings", GroupOrder = 0)]
-        public bool DisableKnockdownSounds { get; set; } = false;
-
         // Morale penalties when heroes are knocked down
 
         [SettingPropertyInteger("{=KDHIT_c4srbaQ}When Troop Knocks Down Unassigned Hero", 0, 100, "0", Order = 0, RequireRestart = false, HintText = "{=KDHIT_tyxCqZv}The enemy's troops (all enemy's troops within 10m radius by default) suffers a morale loss when an ordinary soldier defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 2]")]

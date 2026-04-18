@@ -10,13 +10,7 @@ namespace KnockedDownHeroesInfluencesTroops
 {
     public static class MissionUtilities
     {
-        // Always re-resolve from MCM so runtime setting changes take effect.
-        // Falls back to a single throwaway instance if MCM hasn't initialized yet.
-        private static readonly MCMSettings _fallback = new();
-        private static MCMSettings Settings => AttributeGlobalSettings<MCMSettings>.Instance ?? _fallback;
-
-        private const string SoundFriendlyHeroDown = "event:/ui/notification/death";
-        private const string SoundEnemyHeroDown = "event:/ui/notification/levelup";
+        private static readonly MCMSettings settings = AttributeGlobalSettings<MCMSettings>.Instance ?? new MCMSettings();
 
         private static readonly Queue<Agent> _cheerQueue = new();
         private static float _cheerBatchTimer = 0f;
@@ -24,38 +18,20 @@ namespace KnockedDownHeroesInfluencesTroops
         private static float _cheerBatchInterval = 0.1f; // Seconds between batches
         private static bool _cheeringInProgress = false;
 
-        /// <summary>
-        /// Resets static cross-mission state so the next mission starts clean.
-        /// </summary>
-        public static void ResetCheerQueue()
-        {
-            _cheerQueue.Clear();
-            _cheerBatchTimer = 0f;
-            _cheeringInProgress = false;
-        }
-
-        private static string GetSoundEvent(string defaultEvent)
-            => Settings.DisableKnockdownSounds ? string.Empty : defaultEvent;
-
         public static void UpdateMoraleForNearbyAgents(Team team, Agent referenceAgent, float range, float moraleChange, bool setWantsToYell = false)
         {
-            if (team == null || referenceAgent == null)
-                return;
-
             int troopCount = 0;
 
             foreach (var agent in team.ActiveAgents)
             {
-                if (agent == null)
-                    continue;
                 if (agent.Position.Distance(referenceAgent.Position) < range)
                 {
-                    agent.ChangeMorale(moraleChange);
+                    agent?.ChangeMorale(moraleChange);
                     troopCount++;
                 }
             }
 
-            if (Settings.LoggingEnabled)
+            if (settings.LoggingEnabled)
             {
                 string logMessage = $"Number of troops affected by morale change and yell in range: {troopCount}";
 
@@ -68,20 +44,15 @@ namespace KnockedDownHeroesInfluencesTroops
 
         public static void UpdateTeamMorale(Team affectedTeam, float moraleChange)
         {
-            if (affectedTeam == null)
-                return;
-
             int troopCount = 0;
 
             foreach (var agent in affectedTeam.ActiveAgents)
             {
-                if (agent == null)
-                    continue;
-                agent.ChangeMorale(moraleChange);
+                agent?.ChangeMorale(moraleChange);
                 troopCount++;
             }
 
-            if (Settings.LoggingEnabled)
+            if (settings.LoggingEnabled)
             {
                 string logMessage = $"Number of troops affected by morale change in the team: {troopCount}";
 
@@ -90,28 +61,20 @@ namespace KnockedDownHeroesInfluencesTroops
                 else
                     InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Red));
             }
+
         }
 
         public static void UpdateFormationMorale(Dictionary<Agent, List<Agent>> troopsOfFormationCaptains, Agent formationCaptain, float moraleChange)
         {
-            if (formationCaptain == null || troopsOfFormationCaptains == null)
-                return;
-
-            // Guard B: avoid KeyNotFoundException if captain isn't in the cached map yet
-            if (!troopsOfFormationCaptains.TryGetValue(formationCaptain, out var troops) || troops == null)
-                return;
-
             int troopCount = 0;
 
-            foreach (var agent in troops)
+            foreach (var agent in troopsOfFormationCaptains[formationCaptain])
             {
-                if (agent == null)
-                    continue;
-                agent.ChangeMorale(moraleChange);
+                agent?.ChangeMorale(moraleChange);
                 troopCount++;
             }
 
-            if (Settings.LoggingEnabled)
+            if (settings.LoggingEnabled)
             {
                 string logMessage = $"Number of troops affected by morale change in formation: {troopCount}";
 
@@ -124,15 +87,11 @@ namespace KnockedDownHeroesInfluencesTroops
 
         public static void SetWantsToYellForTeam(Team team)
         {
-            if (team == null)
-                return;
             EnqueueAgentsToCheer(team.ActiveAgents);
         }
 
         public static void SetWantsToYellForFormation(List<Agent> troopsInFormation)
         {
-            if (troopsInFormation == null)
-                return;
             EnqueueAgentsToCheer(troopsInFormation);
         }
 
@@ -163,7 +122,7 @@ namespace KnockedDownHeroesInfluencesTroops
                 _cheeringInProgress = true;
 
             // Logging: only log when something is actually enqueued
-            if (Settings.LoggingEnabled && enqueuedCount > 0)
+            if (settings.LoggingEnabled && enqueuedCount > 0)
             {
                 string logMessage = $"Number of troops queued to cheer: {enqueuedCount}";
                 InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Yellow));
@@ -183,9 +142,7 @@ namespace KnockedDownHeroesInfluencesTroops
             while (_cheerQueue.Count > 0 && count < _cheerBatchSize)
             {
                 var agent = _cheerQueue.Dequeue();
-                // Agent may have been removed since being queued
-                if (agent != null && agent.IsActive())
-                    agent.SetWantsToYell();
+                agent.SetWantsToYell();
                 count++;
             }
 
@@ -195,13 +152,10 @@ namespace KnockedDownHeroesInfluencesTroops
                 _cheeringInProgress = false;
         }
 
-        // Guard C: agent.Team may be null after removal
-        public static bool IsAgentGeneral(Agent agent)
-            => agent != null && agent.Team != null && agent == agent.Team.GeneralAgent;
+        public static bool IsAgentGeneral(Agent agent) => agent == agent.Team.GeneralAgent;
 
         public static bool IsAgentCaptain(Agent agent, List<Agent> friendlyInfantryCaptains, List<Agent> friendlyArchersCaptains, List<Agent> friendlyCavalryCaptains, List<Agent> friendlyHorseArchersCaptains, List<Agent> enemyInfantryCaptains, List<Agent> enemyArchersCaptains, List<Agent> enemyCavalryCaptains, List<Agent> enemyHorseArchersCaptains)
         {
-            if (agent == null) return false;
             if (friendlyInfantryCaptains.Contains(agent)) return true;
             if (friendlyArchersCaptains.Contains(agent)) return true;
             if (friendlyCavalryCaptains.Contains(agent)) return true;
@@ -240,45 +194,39 @@ namespace KnockedDownHeroesInfluencesTroops
 
         public static void DisplayQuickInformationMessageWhenGeneralFalls(Agent attackerAgent, Agent victimAgent)
         {
-            if (victimAgent?.Team == null || attackerAgent == null)
-                return;
-
             if (victimAgent.Team.IsPlayerTeam || victimAgent.Team.IsPlayerAlly)
-                MBInformationManager.AddQuickInformation(new TextObject(Settings.friendlyGeneralFallenNotification), 2000, attackerAgent.Character, null, GetSoundEvent(SoundFriendlyHeroDown));
-            else
-                MBInformationManager.AddQuickInformation(new TextObject(Settings.enemyGeneralFallenNotification), 2000, attackerAgent.Character, null, GetSoundEvent(SoundEnemyHeroDown));
+                MBInformationManager.AddQuickInformation(new TextObject(settings.friendlyGeneralFallenNotification), 2000, attackerAgent.Character, null, "event:/ui/notification/death");
+            if (!victimAgent.Team.IsPlayerTeam && !victimAgent.Team.IsPlayerAlly)
+                MBInformationManager.AddQuickInformation(new TextObject(settings.enemyGeneralFallenNotification), 2000, attackerAgent.Character, null, "event:/ui/notification/levelup");
         }
 
         public static void DisplayQuickInformationMessageWhenCaptainFalls(Agent attackerAgent, Agent victimAgent)
         {
-            if (victimAgent?.Team == null || attackerAgent == null)
-                return;
-
             string formationType = GetFormationType(victimAgent);
 
             if (victimAgent.Team.IsPlayerTeam || victimAgent.Team.IsPlayerAlly)
             {
                 string message = formationType switch
                 {
-                    "Infantry" => Settings.friendlyInfantryCaptainFallenNotification,
-                    "Archers" => Settings.friendlyRangedCaptainFallenNotification,
-                    "Cavalry" => Settings.friendlyCavalryCaptainFallenNotification,
-                    "Horse Archers" => Settings.friendlyHorseArchersCaptainFallenNotification,
+                    "Infantry" => settings.friendlyInfantryCaptainFallenNotification,
+                    "Archers" => settings.friendlyRangedCaptainFallenNotification,
+                    "Cavalry" => settings.friendlyCavalryCaptainFallenNotification,
+                    "Horse Archers" => settings.friendlyHorseArchersCaptainFallenNotification,
                     _ => "Your captain has fallen! Give up!"
                 };
-                MBInformationManager.AddQuickInformation(new TextObject(message), 2000, attackerAgent.Character, null, GetSoundEvent(SoundFriendlyHeroDown));
+                MBInformationManager.AddQuickInformation(new TextObject(message), 2000, attackerAgent.Character, null, "event:/ui/notification/death");
             }
-            else
+            else if (!victimAgent.Team.IsPlayerTeam && !victimAgent.Team.IsPlayerAlly)
             {
                 string message = formationType switch
                 {
-                    "Infantry" => Settings.enemyInfantryCaptainFallenNotification,
-                    "Archers" => Settings.enemyRangedCaptainFallenNotification,
-                    "Cavalry" => Settings.enemyCavalryCaptainFallenNotification,
-                    "Horse Archers" => Settings.enemyHorseArchersCaptainFallenNotification,
+                    "Infantry" => settings.enemyInfantryCaptainFallenNotification,
+                    "Archers" => settings.enemyRangedCaptainFallenNotification,
+                    "Cavalry" => settings.enemyCavalryCaptainFallenNotification,
+                    "Horse Archers" => settings.enemyHorseArchersCaptainFallenNotification,
                     _ => "Enemy's captain has fallen! Good fight!"
                 };
-                MBInformationManager.AddQuickInformation(new TextObject(message), 2000, attackerAgent.Character, null, GetSoundEvent(SoundEnemyHeroDown));
+                MBInformationManager.AddQuickInformation(new TextObject(message), 2000, attackerAgent.Character, null, "event:/ui/notification/levelup");
             }
         }
 
@@ -297,19 +245,15 @@ namespace KnockedDownHeroesInfluencesTroops
             }
             return "Unknown";
         }
-
         public static void DisplayQuickInformationMessageWhenUnassignedHeroFalls(Agent attackerAgent, Agent victimAgent)
         {
-            if (Settings.HideUnassignedHeroNotifications)
-                return;
-
-            if (victimAgent?.Team == null || attackerAgent == null)
+            if (settings.HideUnassignedHeroNotifications)
                 return;
 
             if (victimAgent.Team.IsPlayerTeam || victimAgent.Team.IsPlayerAlly)
-                MBInformationManager.AddQuickInformation(new TextObject(Settings.friendlyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, null, GetSoundEvent(SoundFriendlyHeroDown));
-            else
-                MBInformationManager.AddQuickInformation(new TextObject(Settings.enemyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, null, GetSoundEvent(SoundEnemyHeroDown));
+                MBInformationManager.AddQuickInformation(new TextObject(settings.friendlyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, null, "event:/ui/notification/death");
+            if (!victimAgent.Team.IsPlayerTeam && !victimAgent.Team.IsPlayerAlly)
+                MBInformationManager.AddQuickInformation(new TextObject(settings.enemyUnassignedHeroFallenNotification), 2000, attackerAgent.Character, null, "event:/ui/notification/levelup");
         }
 
         public static void ShowLogs(List<(string message, Color color)> captainLogMessages)
