@@ -28,7 +28,7 @@ namespace KnockedDownHeroesInfluencesTroops
 
         [SettingPropertyBool("{=KDHIT_Z30i9MU}Disable Hero Knockdown Sounds", Order = 3, RequireRestart = false, HintText = "{=KDHIT_3ol4FO4}When enabled, the UI sound played when a hero is knocked down will be muted. The on-screen notification still appears. [Default: disabled]")]
         [SettingPropertyGroup("{=KDHIT_AjEK8im}Main settings", GroupOrder = 0)]
-        public bool DisableHeroKnockdownSounds { get; set; } = false;
+        public bool DisableKnockdownSounds { get; set; } = false;
 
         // Morale penalties when heroes are knocked down
 
@@ -126,7 +126,7 @@ namespace KnockedDownHeroesInfluencesTroops
         [SettingPropertyGroup("{=KDHIT_MdLvOaI}Morale gains when heroes are knocked down", GroupOrder = 2)]
         public int MoraleGainWhenGeneralHeroKillsCaptainHero { get; set; } = 15;
 
-        [SettingPropertyInteger("{=KDHIT_Za6yOdt}When General Knocks Down General", 0, 100, "0", Order = 11, RequireRestart = false, HintText = "{=KDHIT_kqmtG3J}The attacker's troops (all friendly troops) gain morale when a general defeats an enemy general. Works for both sides. [Default: 16]")]
+        [SettingPropertyInteger("{=KDHIT_Za6yOdt}When General Knocks Down General", 0, 100, "0", Order = 11, RequireRestart = false, HintText = "{=KDHIT_kqmtG3J}The attacker's troops (all friendly troops) gain morale when a genral defeats an enemy general. Works for both sides. [Default: 16]")]
         [SettingPropertyGroup("{=KDHIT_MdLvOaI}Morale gains when heroes are knocked down", GroupOrder = 2)]
         public int MoraleGainWhenGeneralHeroKillsGeneralHero { get; set; } = 16;
 
@@ -182,7 +182,11 @@ namespace KnockedDownHeroesInfluencesTroops
 
         // Technical settings
 
-        [SettingPropertyBool("{=KDHIT_AGgXl75}Logging for debugging", Order = 0, RequireRestart = false, HintText = "{=KDHIT_BQhlZPM}Logging for debugging. [Default: disabled]")]
+        [SettingPropertyInteger("{=KDHIT_Aei3QtZ}Mod update interval in seconds", 0, 100, "0", Order = 1, RequireRestart = false, HintText = "{=KDHIT_4jgoXLb}This mod updates hero and troop lists every XX seconds. It doesn’t need to be changed. [Default: 30]")]
+        [SettingPropertyGroup("{=KDHIT_IG2AH0v}Technical settings", GroupOrder = 4)]
+        public int UpdateIntervalInSeconds { get; set; } = 30;
+
+        [SettingPropertyBool("{=KDHIT_AGgXl75}Logging for debugging", Order = 2, RequireRestart = false, HintText = "{=KDHIT_BQhlZPM}Logging for debugging. [Default: disabled]")]
         [SettingPropertyGroup("{=KDHIT_IG2AH0v}Technical settings", GroupOrder = 4)]
         public bool LoggingEnabled { get; set; } = false;
     }
