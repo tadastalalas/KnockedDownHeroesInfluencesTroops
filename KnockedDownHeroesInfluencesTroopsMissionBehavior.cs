@@ -12,49 +12,34 @@ namespace KnockedDownHeroesInfluencesTroops
     {
         public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
 
-        private readonly MCMSettings settings = AttributeGlobalSettings<MCMSettings>.Instance ?? new MCMSettings();
+        private readonly MCMSettings _settings = AttributeGlobalSettings<MCMSettings>.Instance ?? new MCMSettings();
 
-        private const int rangeForTroopsToReactToUnassignedHeroFall = 10;
-        private const int rangeForTroopsToReactToCaptainHeroFall = 20;
-        private const int rangeForTroopsToReactToGeneralHeroFall = 30;
+        private const int RangeForTroopsToReactToUnassignedHeroFall = 10;
+        private const int RangeForTroopsToReactToCaptainHeroFall = 20;
+        private const int RangeForTroopsToReactToGeneralHeroFall = 30;
 
-        private float elapsedTime = 0f;
+        private float _elapsedTime;
+        private bool _listsInitialized;
 
-        private readonly List<Formation> friendlyTeamsFormations = new();
-        private readonly List<Formation> enemyTeamsFormations = new();
+        private readonly List<Agent> _friendlyInfantryCaptains = new();
+        private readonly List<Agent> _friendlyArchersCaptains = new();
+        private readonly List<Agent> _friendlyCavalryCaptains = new();
+        private readonly List<Agent> _friendlyHorseArchersCaptains = new();
 
-        private readonly List<Formation> friendlyTeamsInfantryFormations = new();
-        private readonly List<Formation> friendlyTeamsArchersFormations = new();
-        private readonly List<Formation> friendlyTeamsCavalryFormations = new();
-        private readonly List<Formation> friendlyTeamsHorseArchersFormations = new();
+        private readonly List<Agent> _enemyInfantryCaptains = new();
+        private readonly List<Agent> _enemyArchersCaptains = new();
+        private readonly List<Agent> _enemyCavalryCaptains = new();
+        private readonly List<Agent> _enemyHorseArchersCaptains = new();
 
-        private readonly List<Formation> enemyTeamsInfantryFormations = new();
-        private readonly List<Formation> enemyTeamsArchersFormations = new();
-        private readonly List<Formation> enemyTeamsCavalryFormations = new();
-        private readonly List<Formation> enemyTeamsHorseArchersFormations = new();
+        private readonly Dictionary<Agent, List<Agent>> _troopsOfFormationCaptains = new();
 
-        private readonly List<Agent> friendlyHeroes = new();
-        private readonly List<Agent> enemyHeroes = new();
-
-        private readonly List<Agent> friendlyInfantryCaptains = new();
-        private readonly List<Agent> friendlyArchersCaptains = new();
-        private readonly List<Agent> friendlyCavalryCaptains = new();
-        private readonly List<Agent> friendlyHorseArchersCaptains = new();
-
-        private readonly List<Agent> enemyInfantryCaptains = new();
-        private readonly List<Agent> enemyArchersCaptains = new();
-        private readonly List<Agent> enemyCavalryCaptains = new();
-        private readonly List<Agent> enemyHorseArchersCaptains = new();
-
-        private readonly Dictionary<Agent, List<Agent>> troopsOfFormationCaptains = new();
-
-        private readonly List<(string message, Color color)> storedLogMessagesList = new();
+        private readonly List<(string message, Color color)> _storedLogMessagesList = new();
 
         public override void OnMissionTick(float dt)
         {
             base.OnMissionTick(dt);
 
-            if (!settings.EnableThisModification)
+            if (!_settings.EnableThisModification)
                 return;
 
             MainSetup(dt);
@@ -66,13 +51,13 @@ namespace KnockedDownHeroesInfluencesTroops
             if (Mission.Current == null || (!Mission.Current.IsFieldBattle && !Mission.Current.IsSiegeBattle))
                 return;
 
-            elapsedTime += dt;
-            if (elapsedTime < settings.UpdateIntervalInSeconds)
+            _elapsedTime += dt;
+            if (_listsInitialized && _elapsedTime < Math.Max(1, _settings.UpdateIntervalInSeconds))
                 return;
 
             InitializeTeamsFormationsCaptainsAndTroops();
-
-            elapsedTime = 0f;
+            _listsInitialized = true;
+            _elapsedTime = 0f;
         }
 
         private void InitializeTeamsFormationsCaptainsAndTroops()
@@ -89,51 +74,40 @@ namespace KnockedDownHeroesInfluencesTroops
                 if (team.IsPlayerAlly)
                 {
                     friendlyTeamsCount++;
-                    ProcessTeamFormations(team, friendlyTeamsFormations, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, Colors.Yellow);
+                    ProcessTeamFormations(team, _friendlyInfantryCaptains, _friendlyArchersCaptains, _friendlyCavalryCaptains, _friendlyHorseArchersCaptains, Colors.Yellow);
                 }
                 else
                 {
                     enemyTeamsCount++;
-                    ProcessTeamFormations(team, enemyTeamsFormations, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains, Colors.Red);
+                    ProcessTeamFormations(team, _enemyInfantryCaptains, _enemyArchersCaptains, _enemyCavalryCaptains, _enemyHorseArchersCaptains, Colors.Red);
                 }
             }
 
-            storedLogMessagesList.Add(($"Enemy teams: {enemyTeamsCount}", Colors.Red));
-            storedLogMessagesList.Add(($"Friendly teams: {friendlyTeamsCount}", Colors.Yellow));
-            storedLogMessagesList.Add(($"Total teams: {totalTeamsCount}", Colors.White));
-
-            if (settings.LoggingEnabled)
+            if (_settings.LoggingEnabled)
             {
-                storedLogMessagesList.Reverse();
-                MissionUtilities.ShowLogs(storedLogMessagesList);
+                _storedLogMessagesList.Add(($"Enemy teams: {enemyTeamsCount}", Colors.Red));
+                _storedLogMessagesList.Add(($"Friendly teams: {friendlyTeamsCount}", Colors.Yellow));
+                _storedLogMessagesList.Add(($"Total teams: {totalTeamsCount}", Colors.White));
+                _storedLogMessagesList.Reverse();
+                MissionUtilities.ShowLogs(_storedLogMessagesList);
             }
         }
 
         private void ClearAllLists()
         {
-            friendlyTeamsFormations.Clear();
-            enemyTeamsFormations.Clear();
-            friendlyTeamsInfantryFormations.Clear();
-            friendlyTeamsArchersFormations.Clear();
-            friendlyTeamsCavalryFormations.Clear();
-            friendlyTeamsHorseArchersFormations.Clear();
-            enemyTeamsInfantryFormations.Clear();
-            enemyTeamsArchersFormations.Clear();
-            enemyTeamsCavalryFormations.Clear();
-            enemyTeamsHorseArchersFormations.Clear();
-            friendlyHeroes.Clear();
-            enemyHeroes.Clear();
-            friendlyInfantryCaptains.Clear();
-            friendlyArchersCaptains.Clear();
-            friendlyCavalryCaptains.Clear();
-            friendlyHorseArchersCaptains.Clear();
-            enemyInfantryCaptains.Clear();
-            enemyArchersCaptains.Clear();
-            enemyCavalryCaptains.Clear();
-            enemyHorseArchersCaptains.Clear();
+            _friendlyInfantryCaptains.Clear();
+            _friendlyArchersCaptains.Clear();
+            _friendlyCavalryCaptains.Clear();
+            _friendlyHorseArchersCaptains.Clear();
+            _enemyInfantryCaptains.Clear();
+            _enemyArchersCaptains.Clear();
+            _enemyCavalryCaptains.Clear();
+            _enemyHorseArchersCaptains.Clear();
+            _troopsOfFormationCaptains.Clear();
+            _storedLogMessagesList.Clear();
         }
 
-        private void ProcessTeamFormations(Team team, List<Formation> teamFormations, List<Agent> infantryCaptains, List<Agent> archersCaptains, List<Agent> cavalryCaptains, List<Agent> horseArchersCaptains, Color logColor)
+        private void ProcessTeamFormations(Team team, List<Agent> infantryCaptains, List<Agent> archersCaptains, List<Agent> cavalryCaptains, List<Agent> horseArchersCaptains, Color logColor)
         {
             int infantryFormationsCount = 0;
             int archersFormationsCount = 0;
@@ -151,35 +125,40 @@ namespace KnockedDownHeroesInfluencesTroops
                 else if (formation.QuerySystem.IsRangedCavalryFormation)
                     horseArchersFormationsCount++;
 
-                teamFormations.Add(formation);
                 ProcessFormation(formation, infantryCaptains, archersCaptains, cavalryCaptains, horseArchersCaptains, logColor);
             }
 
-            storedLogMessagesList.Add(($"Horse Archers formations: {horseArchersFormationsCount}", logColor));
-            storedLogMessagesList.Add(($"Cavalry formations: {cavalryFormationsCount}", logColor));
-            storedLogMessagesList.Add(($"Archers formations: {archersFormationsCount}", logColor));
-            storedLogMessagesList.Add(($"Infantry formations: {infantryFormationsCount}", logColor));
+            if (_settings.LoggingEnabled)
+            {
+                _storedLogMessagesList.Add(($"Horse Archers formations: {horseArchersFormationsCount}", logColor));
+                _storedLogMessagesList.Add(($"Cavalry formations: {cavalryFormationsCount}", logColor));
+                _storedLogMessagesList.Add(($"Archers formations: {archersFormationsCount}", logColor));
+                _storedLogMessagesList.Add(($"Infantry formations: {infantryFormationsCount}", logColor));
+            }
         }
 
         private void ProcessFormation(Formation formation, List<Agent> infantryCaptains, List<Agent> archersCaptains, List<Agent> cavalryCaptains, List<Agent> horseArchersCaptains, Color logColor)
         {
-            if (formation == null || formation.Captain == null)
+            if (formation?.Captain == null)
                 return;
 
             AddCaptainToFormationLists(formation, infantryCaptains, archersCaptains, cavalryCaptains, horseArchersCaptains);
 
-            troopsOfFormationCaptains[formation.Captain] = new List<Agent>();
+            List<Agent> troops = [];
+            _troopsOfFormationCaptains[formation.Captain] = troops;
 
             foreach (var agent in formation.Team.ActiveAgents)
                 if (agent.Formation != null && agent.Formation.Captain == formation.Captain)
-                    troopsOfFormationCaptains[formation.Captain].Add(agent);
+                    troops.Add(agent);
 
-            string formationType = GetFormationType(formation);
-            storedLogMessagesList.Add(($"{formationType} formation captain: {formation.Captain.Name}", logColor));
-            storedLogMessagesList.Add(($"Troops in formation: {troopsOfFormationCaptains[formation.Captain].Count}", logColor));
+            if (!_settings.LoggingEnabled)
+                return;
+            
+            _storedLogMessagesList.Add(($"{GetFormationType(formation)} formation captain: {formation.Captain.Name}", logColor));
+            _storedLogMessagesList.Add(($"Troops in formation: {troops.Count}", logColor));
         }
 
-        private string GetFormationType(Formation formation)
+        private static string GetFormationType(Formation formation)
         {
             if (formation.QuerySystem.IsInfantryFormation)
                 return "Infantry";
@@ -196,41 +175,22 @@ namespace KnockedDownHeroesInfluencesTroops
         private void AddCaptainToFormationLists(Formation formation, List<Agent> infantryCaptains, List<Agent> archersCaptains, List<Agent> cavalryCaptains, List<Agent> horseArchersCaptains)
         {
             if (formation.QuerySystem.IsInfantryFormation)
-            {
                 infantryCaptains.Add(formation.Captain);
-                AddFormationToTeamList(formation, friendlyTeamsInfantryFormations, enemyTeamsInfantryFormations);
-            }
             else if (formation.QuerySystem.IsRangedFormation)
-            {
                 archersCaptains.Add(formation.Captain);
-                AddFormationToTeamList(formation, friendlyTeamsArchersFormations, enemyTeamsArchersFormations);
-            }
             else if (formation.QuerySystem.IsCavalryFormation)
-            {
                 cavalryCaptains.Add(formation.Captain);
-                AddFormationToTeamList(formation, friendlyTeamsCavalryFormations, enemyTeamsCavalryFormations);
-            }
             else if (formation.QuerySystem.IsRangedCavalryFormation)
-            {
                 horseArchersCaptains.Add(formation.Captain);
-                AddFormationToTeamList(formation, friendlyTeamsHorseArchersFormations, enemyTeamsHorseArchersFormations);
-            }
         }
 
-        private void AddFormationToTeamList(Formation formation, List<Formation> friendlyFormations, List<Formation> enemyFormations)
-        {
-            if (formation.Team.IsPlayerAlly)
-                friendlyFormations.Add(formation);
-            else
-                enemyFormations.Add(formation);
-        }
-
-        public override void OnAgentRemoved(Agent affectedAgent, Agent affectorAgent, AgentState agentState, KillingBlow blow)
+        public override void OnAgentRemoved(Agent? affectedAgent, Agent? affectorAgent, AgentState agentState, KillingBlow blow)
         {
             base.OnAgentRemoved(affectedAgent, affectorAgent, agentState, blow);
 
-            if (!settings.EnableThisModification || Mission.Current == null || (!Mission.Current.IsFieldBattle && !Mission.Current.IsSiegeBattle) ||
-                affectedAgent == null || affectorAgent == null || affectedAgent == affectorAgent) return;
+            if (!_settings.EnableThisModification || Mission.Current == null || (!Mission.Current.IsFieldBattle && !Mission.Current.IsSiegeBattle) ||
+                affectedAgent == null || affectorAgent == null || affectedAgent == affectorAgent ||
+                affectedAgent.Team == null || affectorAgent.Team == null) return;
 
             if (!affectedAgent.IsHero)
                 return;
@@ -240,7 +200,7 @@ namespace KnockedDownHeroesInfluencesTroops
             else
                 SimpleTroopKnockedDownAgent(affectorAgent, affectedAgent);
 
-            if (settings.LoggingEnabled)
+            if (_settings.LoggingEnabled)
                 MissionUtilities.DisplayKnockdownMessage(affectorAgent, affectedAgent);
         }
 
@@ -248,7 +208,7 @@ namespace KnockedDownHeroesInfluencesTroops
         {
             if (MissionUtilities.IsAgentGeneral(attackerAgent))
                 GeneralKnockedDownAgent(attackerAgent, victimAgent);
-            else if (MissionUtilities.IsAgentCaptain(attackerAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (MissionUtilities.IsAgentCaptain(attackerAgent, _friendlyInfantryCaptains, _friendlyArchersCaptains, _friendlyCavalryCaptains, _friendlyHorseArchersCaptains, _enemyInfantryCaptains, _enemyArchersCaptains, _enemyCavalryCaptains, _enemyHorseArchersCaptains))
                 CaptainKnockedDownAgent(attackerAgent, victimAgent);
             else
                 UnassignedHeroKnockedDownAgent(attackerAgent, victimAgent);
@@ -260,44 +220,44 @@ namespace KnockedDownHeroesInfluencesTroops
 
             if (MissionUtilities.IsAgentGeneral(affectedAgent))
             {
-                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -settings.MoraleChangeWhenGeneralHeroKillsGeneralHero);
-                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, settings.MoraleGainWhenGeneralHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -_settings.MoraleChangeWhenGeneralHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, _settings.MoraleGainWhenGeneralHeroKillsGeneralHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenGeneralFalls);
             }
-            else if (MissionUtilities.IsAgentCaptain(affectedAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (MissionUtilities.IsAgentCaptain(affectedAgent, _friendlyInfantryCaptains, _friendlyArchersCaptains, _friendlyCavalryCaptains, _friendlyHorseArchersCaptains, _enemyInfantryCaptains, _enemyArchersCaptains, _enemyCavalryCaptains, _enemyHorseArchersCaptains))
             {
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -settings.MoraleChangeWhenGeneralHeroKillsCaptainHero);
-                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, settings.MoraleGainWhenGeneralHeroKillsCaptainHero);
+                MissionUtilities.UpdateFormationMorale(_troopsOfFormationCaptains, affectedAgent, -_settings.MoraleChangeWhenGeneralHeroKillsCaptainHero);
+                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, _settings.MoraleGainWhenGeneralHeroKillsCaptainHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenCaptainFalls);
             }
             else
             {
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectorAgent, rangeForTroopsToReactToGeneralHeroFall, -settings.MoraleChangeWhenGeneralHeroKillsUnassignedHero);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToGeneralHeroFall, settings.MoraleGainWhenGeneralHeroKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectedAgent, RangeForTroopsToReactToGeneralHeroFall, -_settings.MoraleChangeWhenGeneralHeroKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, RangeForTroopsToReactToGeneralHeroFall, _settings.MoraleGainWhenGeneralHeroKillsUnassignedHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenUnassignedHeroFalls);
             }
         }
 
         private void CaptainKnockedDownAgent(Agent attackerAgent, Agent victimAgent)
         {
-            MissionUtilities.SetWantsToYellForFormation(troopsOfFormationCaptains[attackerAgent]);
+            MissionUtilities.SetWantsToYellForFormation(_troopsOfFormationCaptains[attackerAgent]);
 
             if (MissionUtilities.IsAgentGeneral(victimAgent))
             {
-                MissionUtilities.UpdateTeamMorale(victimAgent.Team, -settings.MoraleChangeWhenCaptainHeroKillsGeneralHero);
-                MissionUtilities.UpdateTeamMorale(attackerAgent.Team, settings.MoraleGainWhenCaptainHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(victimAgent.Team, -_settings.MoraleChangeWhenCaptainHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(attackerAgent.Team, _settings.MoraleGainWhenCaptainHeroKillsGeneralHero);
                 ShowOnScreenNotification(attackerAgent, victimAgent, MissionUtilities.DisplayQuickInformationMessageWhenGeneralFalls);
             }
-            else if (MissionUtilities.IsAgentCaptain(victimAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (MissionUtilities.IsAgentCaptain(victimAgent, _friendlyInfantryCaptains, _friendlyArchersCaptains, _friendlyCavalryCaptains, _friendlyHorseArchersCaptains, _enemyInfantryCaptains, _enemyArchersCaptains, _enemyCavalryCaptains, _enemyHorseArchersCaptains))
             {
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, victimAgent, -settings.MoraleChangeWhenCaptainHeroKillsCaptainHero);
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, attackerAgent, settings.MoraleGainWhenCaptainHeroKillsCaptainHero);
+                MissionUtilities.UpdateFormationMorale(_troopsOfFormationCaptains, victimAgent, -_settings.MoraleChangeWhenCaptainHeroKillsCaptainHero);
+                MissionUtilities.UpdateFormationMorale(_troopsOfFormationCaptains, attackerAgent, _settings.MoraleGainWhenCaptainHeroKillsCaptainHero);
                 ShowOnScreenNotification(attackerAgent, victimAgent, MissionUtilities.DisplayQuickInformationMessageWhenCaptainFalls);
             }
             else
             {
-                MissionUtilities.UpdateMoraleForNearbyAgents(victimAgent.Team, attackerAgent, rangeForTroopsToReactToUnassignedHeroFall + 10, -settings.MoraleChangeWhenCaptainHeroKillsUnassignedHero);
-                MissionUtilities.UpdateMoraleForNearbyAgents(attackerAgent.Team, attackerAgent, rangeForTroopsToReactToUnassignedHeroFall + 10, settings.MoraleGainWhenCaptainHeroKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(victimAgent.Team, victimAgent, RangeForTroopsToReactToUnassignedHeroFall + 10, -_settings.MoraleChangeWhenCaptainHeroKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(attackerAgent.Team, attackerAgent, RangeForTroopsToReactToUnassignedHeroFall + 10, _settings.MoraleGainWhenCaptainHeroKillsUnassignedHero);
                 ShowOnScreenNotification(attackerAgent, victimAgent, MissionUtilities.DisplayQuickInformationMessageWhenUnassignedHeroFalls);
             }
         }
@@ -306,23 +266,23 @@ namespace KnockedDownHeroesInfluencesTroops
         {
             if (MissionUtilities.IsAgentGeneral(affectedAgent))
             {
-                MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToGeneralHeroFall + 5);
-                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -settings.MoraleChangeWhenUnassignedHeroKillsGeneralHero);
-                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, settings.MoraleGainWhenUnassignedHeroKillsGeneralHero);
+                MissionUtilities.SetWantsToYellInRange(affectorAgent, RangeForTroopsToReactToGeneralHeroFall + 5);
+                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -_settings.MoraleChangeWhenUnassignedHeroKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, _settings.MoraleGainWhenUnassignedHeroKillsGeneralHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenGeneralFalls);
             }
-            else if (MissionUtilities.IsAgentCaptain(affectedAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (MissionUtilities.IsAgentCaptain(affectedAgent, _friendlyInfantryCaptains, _friendlyArchersCaptains, _friendlyCavalryCaptains, _friendlyHorseArchersCaptains, _enemyInfantryCaptains, _enemyArchersCaptains, _enemyCavalryCaptains, _enemyHorseArchersCaptains))
             {
-                MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToCaptainHeroFall + 5);
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -settings.MoraleChangeWhenUnassignedHeroKillsCaptainHero);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToCaptainHeroFall + 5, settings.MoraleGainWhenUnassignedHeroKillsCaptainHero);
+                MissionUtilities.SetWantsToYellInRange(affectorAgent, RangeForTroopsToReactToCaptainHeroFall + 5);
+                MissionUtilities.UpdateFormationMorale(_troopsOfFormationCaptains, affectedAgent, -_settings.MoraleChangeWhenUnassignedHeroKillsCaptainHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, RangeForTroopsToReactToCaptainHeroFall + 5, _settings.MoraleGainWhenUnassignedHeroKillsCaptainHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenCaptainFalls);
             }
             else
             {
-                MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToUnassignedHeroFall + 5);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectedAgent, rangeForTroopsToReactToUnassignedHeroFall, -settings.MoraleChangeWhenUnassignedHeroKillsUnassignedHero);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToUnassignedHeroFall, settings.MoraleGainWhenUnassignedHeroKillsUnassignedHero);
+                MissionUtilities.SetWantsToYellInRange(affectorAgent, RangeForTroopsToReactToUnassignedHeroFall + 5);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectedAgent, RangeForTroopsToReactToUnassignedHeroFall, -_settings.MoraleChangeWhenUnassignedHeroKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, RangeForTroopsToReactToUnassignedHeroFall, _settings.MoraleGainWhenUnassignedHeroKillsUnassignedHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenUnassignedHeroFalls);
             }
         }
@@ -331,31 +291,37 @@ namespace KnockedDownHeroesInfluencesTroops
         {
             if (MissionUtilities.IsAgentGeneral(affectedAgent))
             {
-                MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToGeneralHeroFall);
-                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -settings.MoraleChangeWhenTroopKillsGeneralHero);
-                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, settings.MoraleGainWhenTroopKillsGeneralHero);
+                MissionUtilities.SetWantsToYellInRange(affectorAgent, RangeForTroopsToReactToGeneralHeroFall);
+                MissionUtilities.UpdateTeamMorale(affectedAgent.Team, -_settings.MoraleChangeWhenTroopKillsGeneralHero);
+                MissionUtilities.UpdateTeamMorale(affectorAgent.Team, _settings.MoraleGainWhenTroopKillsGeneralHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenGeneralFalls);
             }
-            else if (MissionUtilities.IsAgentCaptain(affectedAgent, friendlyInfantryCaptains, friendlyArchersCaptains, friendlyCavalryCaptains, friendlyHorseArchersCaptains, enemyInfantryCaptains, enemyArchersCaptains, enemyCavalryCaptains, enemyHorseArchersCaptains))
+            else if (MissionUtilities.IsAgentCaptain(affectedAgent, _friendlyInfantryCaptains, _friendlyArchersCaptains, _friendlyCavalryCaptains, _friendlyHorseArchersCaptains, _enemyInfantryCaptains, _enemyArchersCaptains, _enemyCavalryCaptains, _enemyHorseArchersCaptains))
             {
-                MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToCaptainHeroFall);
-                MissionUtilities.UpdateFormationMorale(troopsOfFormationCaptains, affectedAgent, -settings.MoraleChangeWhenTroopKillsCaptainHero);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToCaptainHeroFall, settings.MoraleGainWhenTroopKillsCaptainHero);
+                MissionUtilities.SetWantsToYellInRange(affectorAgent, RangeForTroopsToReactToCaptainHeroFall);
+                MissionUtilities.UpdateFormationMorale(_troopsOfFormationCaptains, affectedAgent, -_settings.MoraleChangeWhenTroopKillsCaptainHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, RangeForTroopsToReactToCaptainHeroFall, _settings.MoraleGainWhenTroopKillsCaptainHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenCaptainFalls);
             }
             else
             {
-                MissionUtilities.SetWantsToYellInRange(affectorAgent, rangeForTroopsToReactToUnassignedHeroFall);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectedAgent, rangeForTroopsToReactToUnassignedHeroFall, -settings.MoraleChangeWhenTroopKillsUnassignedHero);
-                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, rangeForTroopsToReactToUnassignedHeroFall, settings.MoraleGainWhenTroopKillsUnassignedHero);
+                MissionUtilities.SetWantsToYellInRange(affectorAgent, RangeForTroopsToReactToUnassignedHeroFall);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectedAgent.Team, affectedAgent, RangeForTroopsToReactToUnassignedHeroFall, -_settings.MoraleChangeWhenTroopKillsUnassignedHero);
+                MissionUtilities.UpdateMoraleForNearbyAgents(affectorAgent.Team, affectorAgent, RangeForTroopsToReactToUnassignedHeroFall, _settings.MoraleGainWhenTroopKillsUnassignedHero);
                 ShowOnScreenNotification(affectorAgent, affectedAgent, MissionUtilities.DisplayQuickInformationMessageWhenUnassignedHeroFalls);
             }
         }
 
         private void ShowOnScreenNotification(Agent affectorAgent, Agent affectedAgent, Action<Agent, Agent> displayNotification)
         {
-            if (settings.ShowOnScreenNotifications)
+            if (_settings.ShowOnScreenNotifications)
                 displayNotification(affectorAgent, affectedAgent);
+        }
+        
+        public override void OnRemoveBehavior()
+        {
+            base.OnRemoveBehavior();
+            MissionUtilities.ResetCheerState();
         }
     }
 }

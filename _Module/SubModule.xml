@@ -18,11 +18,11 @@
   </DependedModules>
   <DependedModuleMetadatas>
 	<DependedModuleMetadata Id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v5.11.4" />
-    <DependedModuleMetadata id="Native" order="LoadBeforeThis" />
-    <DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" />
-    <DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" />
-    <DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" />
-    <DependedModuleMetadata id="CustomBattle" order="LoadBeforeThis" />
+    <DependedModuleMetadata Id="Native" order="LoadBeforeThis" />
+    <DependedModuleMetadata Id="SandBoxCore" order="LoadBeforeThis" />
+    <DependedModuleMetadata Id="SandBox" order="LoadBeforeThis" />
+    <DependedModuleMetadata Id="StoryMode" order="LoadBeforeThis" />
+    <DependedModuleMetadata Id="CustomBattle" order="LoadBeforeThis" />
   </DependedModuleMetadatas>
   <SubModules>
     <SubModule>

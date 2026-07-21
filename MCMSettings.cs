@@ -76,7 +76,7 @@ namespace KnockedDownHeroesInfluencesTroops
         [SettingPropertyGroup("{=KDHIT_gfKSI8d}Morale penalties when heroes are knocked down", GroupOrder = 1)]
         public int MoraleChangeWhenGeneralHeroKillsCaptainHero { get; set; } = 15;
 
-        [SettingPropertyInteger("{=KDHIT_j4dHqfE}When General Knocks Down General", 0, 100, "0", Order = 11, RequireRestart = false, HintText = "{=KDHIT_Q4ntARL}The enemy's troops (all enemy troops) suffers a morale loss when a genral defeats an enemy general. Works for both sides. [Default: 16]")]
+        [SettingPropertyInteger("{=KDHIT_j4dHqfE}When General Knocks Down General", 0, 100, "0", Order = 11, RequireRestart = false, HintText = "{=KDHIT_Q4ntARL}The enemy's troops (all enemy troops) suffers a morale loss when a general defeats an enemy general. Works for both sides. [Default: 16]")]
         [SettingPropertyGroup("{=KDHIT_gfKSI8d}Morale penalties when heroes are knocked down", GroupOrder = 1)]
         public int MoraleChangeWhenGeneralHeroKillsGeneralHero { get; set; } = 16;
 
@@ -126,7 +126,7 @@ namespace KnockedDownHeroesInfluencesTroops
         [SettingPropertyGroup("{=KDHIT_MdLvOaI}Morale gains when heroes are knocked down", GroupOrder = 2)]
         public int MoraleGainWhenGeneralHeroKillsCaptainHero { get; set; } = 15;
 
-        [SettingPropertyInteger("{=KDHIT_Za6yOdt}When General Knocks Down General", 0, 100, "0", Order = 11, RequireRestart = false, HintText = "{=KDHIT_kqmtG3J}The attacker's troops (all friendly troops) gain morale when a genral defeats an enemy general. Works for both sides. [Default: 16]")]
+        [SettingPropertyInteger("{=KDHIT_Za6yOdt}When General Knocks Down General", 0, 100, "0", Order = 11, RequireRestart = false, HintText = "{=KDHIT_kqmtG3J}The attacker's troops (all friendly troops) gain morale when a general defeats an enemy general. Works for both sides. [Default: 16]")]
         [SettingPropertyGroup("{=KDHIT_MdLvOaI}Morale gains when heroes are knocked down", GroupOrder = 2)]
         public int MoraleGainWhenGeneralHeroKillsGeneralHero { get; set; } = 16;
 
@@ -182,7 +182,7 @@ namespace KnockedDownHeroesInfluencesTroops
 
         // Technical settings
 
-        [SettingPropertyInteger("{=KDHIT_Aei3QtZ}Mod update interval in seconds", 0, 100, "0", Order = 1, RequireRestart = false, HintText = "{=KDHIT_4jgoXLb}This mod updates hero and troop lists every XX seconds. It doesn’t need to be changed. [Default: 30]")]
+        [SettingPropertyInteger("{=KDHIT_Aei3QtZ}Mod update interval in seconds", 1, 100, "0", Order = 1, RequireRestart = false, HintText = "{=KDHIT_4jgoXLb}This mod updates hero and troop lists every XX seconds. It doesn’t need to be changed. [Default: 30]")]
         [SettingPropertyGroup("{=KDHIT_IG2AH0v}Technical settings", GroupOrder = 4)]
         public int UpdateIntervalInSeconds { get; set; } = 30;
 
