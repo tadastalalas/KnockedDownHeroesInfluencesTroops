@@ -9,7 +9,7 @@
   <ModuleType value="Community" />
   <Url value="$moduleurl$" />
   <DependedModules>
-	<DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.11.4" />
+	<DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.12.1" />
     <DependedModule Id="Native" />
     <DependedModule Id="SandBoxCore" />
     <DependedModule Id="Sandbox" />
@@ -17,12 +17,12 @@
     <DependedModule Id="CustomBattle" />
   </DependedModules>
   <DependedModuleMetadatas>
-	<DependedModuleMetadata Id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v5.11.4" />
-    <DependedModuleMetadata Id="Native" order="LoadBeforeThis" />
-    <DependedModuleMetadata Id="SandBoxCore" order="LoadBeforeThis" />
-    <DependedModuleMetadata Id="SandBox" order="LoadBeforeThis" />
-    <DependedModuleMetadata Id="StoryMode" order="LoadBeforeThis" />
-    <DependedModuleMetadata Id="CustomBattle" order="LoadBeforeThis" />
+	<DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v5.12.1" />
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="CustomBattle" order="LoadBeforeThis" />
   </DependedModuleMetadatas>
   <SubModules>
     <SubModule>

@@ -144,7 +144,7 @@ namespace KnockedDownHeroesInfluencesTroops
 
             AddCaptainToFormationLists(formation, infantryCaptains, archersCaptains, cavalryCaptains, horseArchersCaptains);
 
-            List<Agent> troops = [];
+            var troops = new List<Agent> { };
             _troopsOfFormationCaptains[formation.Captain] = troops;
 
             foreach (var agent in formation.Team.ActiveAgents)
