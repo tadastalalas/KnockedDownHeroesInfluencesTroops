@@ -94,6 +94,8 @@
 		<string id="KDHIT_KoXnreW" text="Bildschirmbenachrichtigungen ausblenden, wenn ein nicht zugewiesener Held gestürzt wird. [Standard: deaktiviert]" />
 		<string id="KDHIT_Z30i9MU" text="Helden-Sturzgeräusche deaktivieren" />
 		<string id="KDHIT_3ol4FO4" text="Wenn aktiviert, wird das UI-Geräusch, das beim Sturz eines Helden abgespielt wird, stummgeschaltet. Die Bildschirmbenachrichtigung wird weiterhin angezeigt. [Standard: deaktiviert]" />
+		<string id="KDHIT_hFq3Zt9" text="Reaktions-Sprachzeilen bei Heldensturz abspielen" />
+		<string id="KDHIT_Bn7pXo2" text="Sprachzeilen abspielen, die dein Charakter sagt, wenn ein befreundeter General oder Formationshauptmann im Kampf zu Boden geht. [Standard: aktiviert]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

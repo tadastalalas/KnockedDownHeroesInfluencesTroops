@@ -1,4 +1,5 @@
 ﻿using TaleWorlds.MountAndBlade;
+// ReSharper disable UnusedType.Global
 
 namespace KnockedDownHeroesInfluencesTroops
 {

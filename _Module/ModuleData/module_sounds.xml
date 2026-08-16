@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="module_sound">
+    <module_sounds>
+        <module_sound name="kdhit_general_fall_reaction_male" is_2d="false" sound_category="mission_voice_shout" min_pitch_multiplier="0.9" max_pitch_multiplier="1.1">
+            <variation path="kdhit_general_fall_reaction_male1.ogg" weight="1.0" />
+            <variation path="kdhit_general_fall_reaction_male2.ogg" weight="1.0" />
+            <variation path="kdhit_general_fall_reaction_male3.ogg" weight="1.0" />
+        </module_sound>
+        <module_sound name="kdhit_general_fall_reaction_female" is_2d="false" sound_category="mission_voice_shout" min_pitch_multiplier="0.9" max_pitch_multiplier="1.1">
+            <variation path="kdhit_general_fall_reaction_female1.ogg" weight="1.0" />
+            <variation path="kdhit_general_fall_reaction_female2.ogg" weight="1.0" />
+            <variation path="kdhit_general_fall_reaction_female3.ogg" weight="1.0" />
+        </module_sound>
+        <module_sound name="kdhit_captain_fall_reaction_male" is_2d="false" sound_category="mission_voice_shout" min_pitch_multiplier="0.9" max_pitch_multiplier="1.1">
+            <variation path="kdhit_captain_fall_reaction_male1.ogg" weight="1.0" />
+            <variation path="kdhit_captain_fall_reaction_male2.ogg" weight="1.0" />
+            <variation path="kdhit_captain_fall_reaction_male3.ogg" weight="1.0" />
+        </module_sound>
+        <module_sound name="kdhit_captain_fall_reaction_female" is_2d="false" sound_category="mission_voice_shout" min_pitch_multiplier="0.9" max_pitch_multiplier="1.1">
+            <variation path="kdhit_captain_fall_reaction_female1.ogg" weight="1.0" />
+            <variation path="kdhit_captain_fall_reaction_female2.ogg" weight="1.0" />
+            <variation path="kdhit_captain_fall_reaction_female3.ogg" weight="1.0" />
+        </module_sound>
+    </module_sounds>
+</base>

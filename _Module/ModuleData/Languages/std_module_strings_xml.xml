@@ -94,6 +94,8 @@
 		<string id="KDHIT_KoXnreW" text="Hide on-screen notifications when unassigned hero is knocked down. [Default: disabled]" />
 		<string id="KDHIT_Z30i9MU" text="Disable Hero Knockdown Sounds" />
 		<string id="KDHIT_3ol4FO4" text="When enabled, the UI sound played when a hero is knocked down will be muted. The on-screen notification still appears. [Default: disabled]" />
+		<string id="KDHIT_hFq3Zt9" text="Play Hero Fall Reaction Voice Lines" />
+		<string id="KDHIT_Bn7pXo2" text="Toggle voice lines said by your character when a general or formation captain, friendly or enemy, is knocked down in battle. [Default: enabled]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

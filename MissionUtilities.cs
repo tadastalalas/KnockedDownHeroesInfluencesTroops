@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using MCM.Abstractions.Base.Global;
 using TaleWorlds.Core;
+using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
@@ -14,19 +15,55 @@ namespace KnockedDownHeroesInfluencesTroops
         private static MCMSettings Settings => AttributeGlobalSettings<MCMSettings>.Instance ?? (_fallbackSettings ??= new MCMSettings());
 
         private static readonly Queue<Agent> CheerQueue = new();
-        private static float _cheerBatchTimer = 0f;
+        private static float _cheerBatchTimer;
         private const int CheerBatchSize = 10;
         private const float CheerBatchInterval = 0.1f;
-        private static bool _cheeringInProgress = false;
+        private static bool _cheeringInProgress;
+        
+        private const string GeneralFallReactionSoundMale = "kdhit_general_fall_reaction_male";
+        private const string GeneralFallReactionSoundFemale = "kdhit_general_fall_reaction_female";
+        private const string CaptainFallReactionSoundMale = "kdhit_captain_fall_reaction_male";
+        private const string CaptainFallReactionSoundFemale = "kdhit_captain_fall_reaction_female";
+
+        private static readonly Dictionary<string, int> FallReactionSoundIdCache = new();
 
         private const string SoundFriendlyFalls = "event:/ui/notification/death";
         private const string SoundEnemyFalls = "event:/ui/notification/levelup";
 
-        private static string? ResolveSound(bool isFriendly)
+        private static string ResolveSound(bool isFriendly)
         {
             if (Settings.DisableKnockdownSounds)
                 return string.Empty;
             return isFriendly ? SoundFriendlyFalls : SoundEnemyFalls;
+        }
+        
+        public static void PlayHeroFallReactionVoiceLine(Agent victimAgent, bool victimIsGeneral)
+        {
+            if (!Settings.PlayHeroFallReactionVoiceLines || Mission.Current == null)
+                return;
+
+            Agent? mainAgent = Agent.Main;
+            if (mainAgent?.Team == null || !mainAgent.IsActive() || mainAgent == victimAgent)
+                return;
+
+            if (victimAgent.Team?.Side != mainAgent.Team.Side)
+                return;
+
+            string soundName = victimIsGeneral
+                ? (mainAgent.IsFemale ? GeneralFallReactionSoundFemale : GeneralFallReactionSoundMale)
+                : (mainAgent.IsFemale ? CaptainFallReactionSoundFemale : CaptainFallReactionSoundMale);
+
+            if (!FallReactionSoundIdCache.TryGetValue(soundName, out int soundId))
+            {
+                soundId = SoundEvent.GetEventIdFromString(soundName);
+                if (soundId >= 0)
+                    FallReactionSoundIdCache[soundName] = soundId;
+            }
+
+            if (soundId < 0)
+                return;
+
+            Mission.Current.MakeSound(soundId, mainAgent.Position, false, true, -1, -1);
         }
 
         public static void UpdateMoraleForNearbyAgents(Team team, Agent referenceAgent, float range, float moraleChange, bool setWantsToYell = false)
@@ -62,16 +99,13 @@ namespace KnockedDownHeroesInfluencesTroops
                 troopCount++;
             }
 
-            if (Settings.LoggingEnabled)
-            {
-                string logMessage = $"Number of troops affected by morale change in the team: {troopCount}";
-
-                if (moraleChange > 0)
-                    InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Green));
-                else
-                    InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Red));
-            }
-
+            if (!Settings.LoggingEnabled)
+                return;
+            
+            string logMessage = $"Number of troops affected by morale change in the team: {troopCount}";
+            InformationManager.DisplayMessage(moraleChange > 0
+                ? new InformationMessage(logMessage, Colors.Green)
+                : new InformationMessage(logMessage, Colors.Red));
         }
 
         public static void UpdateFormationMorale(Dictionary<Agent, List<Agent>> troopsOfFormationCaptains, Agent formationCaptain, float moraleChange)
@@ -106,7 +140,7 @@ namespace KnockedDownHeroesInfluencesTroops
 
         public static void SetWantsToYellInRange(Agent attackerAgent, float range)
         {
-            if (attackerAgent?.Team?.ActiveAgents == null)
+            if (attackerAgent.Team?.ActiveAgents == null)
                 return;
 
             EnqueueAgentsToCheer(
@@ -131,11 +165,11 @@ namespace KnockedDownHeroesInfluencesTroops
                 _cheeringInProgress = true;
 
             // Logging: only log when something is actually enqueued
-            if (Settings.LoggingEnabled && enqueuedCount > 0)
-            {
-                string logMessage = $"Number of troops queued to cheer: {enqueuedCount}";
-                InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Yellow));
-            }
+            if (!Settings.LoggingEnabled || enqueuedCount <= 0)
+                return;
+            
+            string logMessage = $"Number of troops queued to cheer: {enqueuedCount}";
+            InformationManager.DisplayMessage(new InformationMessage(logMessage, Colors.Yellow));
         }
 
         public static void ProcessCheerQueue(float dt)
@@ -151,11 +185,11 @@ namespace KnockedDownHeroesInfluencesTroops
             while (CheerQueue.Count > 0 && count < CheerBatchSize)
             {
                 var agent = CheerQueue.Dequeue();
-                if (agent.IsActive())
-                {
-                    agent.SetWantsToYell();
-                    count++;
-                }
+                if (!agent.IsActive()) 
+                    continue;
+                
+                agent.SetWantsToYell();
+                count++;
             }
 
             _cheerBatchTimer = 0f;

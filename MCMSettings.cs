@@ -29,6 +29,10 @@ namespace KnockedDownHeroesInfluencesTroops
         [SettingPropertyBool("{=KDHIT_Z30i9MU}Disable Hero Knockdown Sounds", Order = 3, RequireRestart = false, HintText = "{=KDHIT_3ol4FO4}When enabled, the UI sound played when a hero is knocked down will be muted. The on-screen notification still appears. [Default: disabled]")]
         [SettingPropertyGroup("{=KDHIT_AjEK8im}Main settings", GroupOrder = 0)]
         public bool DisableKnockdownSounds { get; set; } = false;
+        
+        [SettingPropertyBool("{=KDHIT_hFq3Zt9}Play Hero Fall Reaction Voice Lines", Order = 4, RequireRestart = false, HintText = "{=KDHIT_Bn7pXo2}Toggle voice lines said by your character when a general or formation captain, friendly or enemy, is knocked down in battle. [Default: enabled]")]
+        [SettingPropertyGroup("{=KDHIT_AjEK8im}Main settings", GroupOrder = 0)]
+        public bool PlayHeroFallReactionVoiceLines { get; set; } = true;
 
         // Morale penalties when heroes are knocked down
 

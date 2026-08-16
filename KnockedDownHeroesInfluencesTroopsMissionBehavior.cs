@@ -195,6 +195,8 @@ namespace KnockedDownHeroesInfluencesTroops
             if (!affectedAgent.IsHero)
                 return;
 
+            PlayFallReactionVoiceLineIfApplicable(affectedAgent);
+
             if (affectorAgent.IsHero)
                 HeroKnockedDownAgent(affectorAgent, affectedAgent);
             else
@@ -202,6 +204,14 @@ namespace KnockedDownHeroesInfluencesTroops
 
             if (_settings.LoggingEnabled)
                 MissionUtilities.DisplayKnockdownMessage(affectorAgent, affectedAgent);
+        }
+
+        private void PlayFallReactionVoiceLineIfApplicable(Agent affectedAgent)
+        {
+            if (MissionUtilities.IsAgentGeneral(affectedAgent))
+                MissionUtilities.PlayHeroFallReactionVoiceLine(affectedAgent, victimIsGeneral: true);
+            else if (MissionUtilities.IsAgentCaptain(affectedAgent, _friendlyInfantryCaptains, _friendlyArchersCaptains, _friendlyCavalryCaptains, _friendlyHorseArchersCaptains, _enemyInfantryCaptains, _enemyArchersCaptains, _enemyCavalryCaptains, _enemyHorseArchersCaptains))
+                MissionUtilities.PlayHeroFallReactionVoiceLine(affectedAgent, victimIsGeneral: false);
         }
 
         private void HeroKnockedDownAgent(Agent attackerAgent, Agent victimAgent)

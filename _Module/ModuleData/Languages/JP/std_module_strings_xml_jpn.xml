@@ -94,6 +94,8 @@
 		<string id="KDHIT_KoXnreW" text="未割り当て英雄が倒れたときに画面上の通知を非表示にします。[デフォルト: 無効]" />
 		<string id="KDHIT_Z30i9MU" text="英雄が倒れたときの効果音を無効にする" />
 		<string id="KDHIT_3ol4FO4" text="有効にすると、英雄が倒れたときに再生されるUI効果音がミュートされます。画面上の通知は引き続き表示されます。[デフォルト: 無効]" />
+		<string id="KDHIT_hFq3Zt9" text="英雄負傷時のリアクション音声を再生" />
+		<string id="KDHIT_Bn7pXo2" text="戦闘中に味方の将軍または編成隊長が倒れたとき、プレイヤーキャラクターの音声リアクションを再生します。[デフォルト: 有効]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

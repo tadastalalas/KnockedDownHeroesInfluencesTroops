@@ -94,6 +94,8 @@
 		<string id="KDHIT_KoXnreW" text="할당되지 않은 영웅이 쓰러질 때 화면 알림을 숨깁니다. [기본값: 비활성화]" />
 		<string id="KDHIT_Z30i9MU" text="영웅이 쓰러질 때의 효과음 비활성화" />
 		<string id="KDHIT_3ol4FO4" text="활성화하면 영웅이 쓰러질 때 재생되는 UI 효과음이 음소거됩니다. 화면 알림은 계속 표시됩니다. [기본값: 비활성화]" />
+		<string id="KDHIT_hFq3Zt9" text="영웅 쓰러짐 반응 음성 대사 재생" />
+		<string id="KDHIT_Bn7pXo2" text="전투에서 아군 장군 또는 대형 대장이 쓰러졌을 때 플레이어 캐릭터의 반응 음성 대사를 재생합니다. [기본값: 활성화]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />

@@ -94,6 +94,8 @@
 		<string id="KDHIT_KoXnreW" text="Ocultar notificaciones en pantalla cuando un héroe no asignado sea derribado. [Predeterminado: deshabilitado]" />
 		<string id="KDHIT_Z30i9MU" text="Desactivar sonidos al derribar héroes" />
 		<string id="KDHIT_3ol4FO4" text="Cuando está activado, se silenciará el sonido de la interfaz que se reproduce al derribar a un héroe. La notificación en pantalla seguirá apareciendo. [Predeterminado: desactivado]" />
+		<string id="KDHIT_hFq3Zt9" text="Reproducir líneas de voz de reacción a la caída de héroes" />
+		<string id="KDHIT_Bn7pXo2" text="Activa las líneas de voz que dice tu personaje cuando un general o capitán de formación aliado es derribado en batalla. [Predeterminado: habilitado]" />
 		<string id="KDHIT_gyfUZLl" text="" />
 		<string id="KDHIT_fezNYoY" text="" />
 		<string id="KDHIT_jdTzMBn" text="" />
