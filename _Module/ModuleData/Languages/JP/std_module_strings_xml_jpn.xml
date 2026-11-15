@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="有効にすると、英雄が倒れたときに再生されるUI効果音がミュートされます。画面上の通知は引き続き表示されます。[デフォルト: 無効]" />
 		<string id="KDHIT_hFq3Zt9" text="英雄負傷時のリアクション音声を再生" />
 		<string id="KDHIT_Bn7pXo2" text="戦闘中に味方の将軍または編成隊長が倒れたとき、プレイヤーキャラクターの音声リアクションを再生します。[デフォルト: 有効]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="味方の将軍が倒れた！もう誰も助けてくれない！" />
+		<string id="KDHIT_YxuK6fA" text="敵の将軍が倒れた！勝利は我らのものだ！" />
+		<string id="KDHIT_ABEqr3n" text="味方の歩兵隊長が倒れた！降伏しろ！" />
+		<string id="KDHIT_Amerh0t" text="味方の遠距離隊長が倒れた！降伏しろ！" />
+		<string id="KDHIT_8Fzqb4c" text="味方の騎兵隊長が倒れた！降伏しろ！" />
+		<string id="KDHIT_JhWooWH" text="味方の騎馬射手隊長が倒れた！降伏しろ！" />
+		<string id="KDHIT_NZ7KC8a" text="敵の歩兵隊長が倒れた！見事な戦いだ！" />
+		<string id="KDHIT_zfGD6ad" text="敵の弓兵隊長が倒れた！見事な戦いだ！" />
+		<string id="KDHIT_BTTw8p6" text="敵の騎兵隊長が倒れた！見事な戦いだ！" />
+		<string id="KDHIT_Q8exFRD" text="敵の騎馬射手隊長が倒れた！見事な戦いだ！" />
+		<string id="KDHIT_xJFUXi0" text="味方の英雄の一人が倒れた！" />
+		<string id="KDHIT_EfBnjgz" text="敵の英雄の一人が倒れた！" />
+		<string id="KDHIT_nlFILgW" text="味方の隊長が倒れた！降伏しろ！" />
+		<string id="KDHIT_NQjIwCQ" text="敵の隊長が倒れた！見事な戦いだ！" />
 	</strings>
 </base>

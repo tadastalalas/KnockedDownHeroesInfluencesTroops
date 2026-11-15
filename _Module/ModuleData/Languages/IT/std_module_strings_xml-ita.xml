@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="Quando attivata, il suono dell’interfaccia riprodotto quando un eroe viene abbattuto verrà silenziato. La notifica sullo schermo verrà comunque mostrata. [Predefinito: disabilitato]" />
 		<string id="KDHIT_hFq3Zt9" text="Riproduci le battute vocali di reazione alla caduta degli eroi" />
 		<string id="KDHIT_Bn7pXo2" text="Attiva le battute pronunciate dal tuo personaggio quando un generale o un capitano di formazione alleato viene abbattuto in battaglia. [Predefinito: attivato]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="Il tuo generale è caduto! Nessuno ti salverà!" />
+		<string id="KDHIT_YxuK6fA" text="Il generale nemico è caduto! La vittoria è nostra!" />
+		<string id="KDHIT_ABEqr3n" text="Il tuo capitano di fanteria è caduto! Arrenditi!" />
+		<string id="KDHIT_Amerh0t" text="Il tuo capitano a distanza è caduto! Arrenditi!" />
+		<string id="KDHIT_8Fzqb4c" text="Il tuo capitano di cavalleria è caduto! Arrenditi!" />
+		<string id="KDHIT_JhWooWH" text="Il tuo capitano degli arcieri a cavallo è caduto! Arrenditi!" />
+		<string id="KDHIT_NZ7KC8a" text="Il capitano di fanteria nemico è caduto! Bel combattimento!" />
+		<string id="KDHIT_zfGD6ad" text="Il capitano degli arcieri nemico è caduto! Bel combattimento!" />
+		<string id="KDHIT_BTTw8p6" text="Il capitano di cavalleria nemico è caduto! Bel combattimento!" />
+		<string id="KDHIT_Q8exFRD" text="Il capitano degli arcieri a cavallo nemico è caduto! Bel combattimento!" />
+		<string id="KDHIT_xJFUXi0" text="Uno dei tuoi eroi è caduto!" />
+		<string id="KDHIT_EfBnjgz" text="Uno dei loro eroi è caduto!" />
+		<string id="KDHIT_nlFILgW" text="Il tuo capitano è caduto! Arrenditi!" />
+		<string id="KDHIT_NQjIwCQ" text="Il capitano nemico è caduto! Bel combattimento!" />
 	</strings>
 </base>

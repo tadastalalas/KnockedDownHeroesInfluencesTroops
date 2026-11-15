@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="Quando ativado, o som da interface reproduzido quando um herói for derrubado será silenciado. A notificação na tela ainda será exibida. [Padrão: desativado]" />
 		<string id="KDHIT_hFq3Zt9" text="Reproduzir falas de reação à queda de heróis" />
 		<string id="KDHIT_Bn7pXo2" text="Ativa as falas ditas pelo seu personagem quando um general ou capitão de formação aliado for derrubado em batalha. [Padrão: ativado]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="Seu general caiu! Ninguém vai salvar você!" />
+		<string id="KDHIT_YxuK6fA" text="O general inimigo caiu! A vitória é nossa!" />
+		<string id="KDHIT_ABEqr3n" text="Seu capitão de infantaria caiu! Desista!" />
+		<string id="KDHIT_Amerh0t" text="Seu capitão de arqueiros caiu! Desista!" />
+		<string id="KDHIT_8Fzqb4c" text="Seu capitão de cavalaria caiu! Desista!" />
+		<string id="KDHIT_JhWooWH" text="Seu capitão de cavaleiros arqueiros caiu! Desista!" />
+		<string id="KDHIT_NZ7KC8a" text="O capitão de infantaria inimigo caiu! Boa luta!" />
+		<string id="KDHIT_zfGD6ad" text="O capitão de arqueiros inimigo caiu! Boa luta!" />
+		<string id="KDHIT_BTTw8p6" text="O capitão de cavalaria inimigo caiu! Boa luta!" />
+		<string id="KDHIT_Q8exFRD" text="O capitão de cavaleiros arqueiros inimigo caiu! Boa luta!" />
+		<string id="KDHIT_xJFUXi0" text="Um dos seus heróis caiu!" />
+		<string id="KDHIT_EfBnjgz" text="Um dos heróis deles caiu!" />
+		<string id="KDHIT_nlFILgW" text="Seu capitão caiu! Desista!" />
+		<string id="KDHIT_NQjIwCQ" text="O capitão inimigo caiu! Boa luta!" />
 	</strings>
 </base>

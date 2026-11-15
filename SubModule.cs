@@ -1,14 +1,23 @@
-﻿using TaleWorlds.MountAndBlade;
+using KnockedDownHeroesInfluencesTroops.Core;
+using KnockedDownHeroesInfluencesTroops.Missions;
+using TaleWorlds.Core;
+using TaleWorlds.MountAndBlade;
 // ReSharper disable UnusedType.Global
 
-namespace KnockedDownHeroesInfluencesTroops
+namespace KnockedDownHeroesInfluencesTroops;
+
+public class SubModule : MBSubModuleBase
 {
-    public class SubModule : MBSubModuleBase
+    // Any game type (campaign, custom battle): the mod works in every field and siege battle.
+    protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
     {
-        public override void OnMissionBehaviorInitialize(Mission mission)
-        {
-            base.OnMissionBehaviorInitialize(mission);
-            mission.AddMissionBehavior(new KnockedDownHeroesInfluencesTroopsMissionBehavior());
-        }
+        base.OnGameStart(game, gameStarterObject);
+        ModSettings.Reload();
+    }
+
+    public override void OnMissionBehaviorInitialize(Mission mission)
+    {
+        base.OnMissionBehaviorInitialize(mission);
+        mission.AddMissionBehavior(new KnockedDownHeroesInfluencesTroopsMissionBehavior());
     }
 }

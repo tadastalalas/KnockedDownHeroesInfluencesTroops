@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="Wenn aktiviert, wird das UI-Geräusch, das beim Sturz eines Helden abgespielt wird, stummgeschaltet. Die Bildschirmbenachrichtigung wird weiterhin angezeigt. [Standard: deaktiviert]" />
 		<string id="KDHIT_hFq3Zt9" text="Reaktions-Sprachzeilen bei Heldensturz abspielen" />
 		<string id="KDHIT_Bn7pXo2" text="Sprachzeilen abspielen, die dein Charakter sagt, wenn ein befreundeter General oder Formationshauptmann im Kampf zu Boden geht. [Standard: aktiviert]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="Dein General ist gefallen! Niemand wird dich retten!" />
+		<string id="KDHIT_YxuK6fA" text="Der feindliche General ist gefallen! Der Sieg ist unser!" />
+		<string id="KDHIT_ABEqr3n" text="Dein Infanteriekapitän ist gefallen! Gib auf!" />
+		<string id="KDHIT_Amerh0t" text="Dein Fernkampfkapitän ist gefallen! Gib auf!" />
+		<string id="KDHIT_8Fzqb4c" text="Dein Kavalleriekapitän ist gefallen! Gib auf!" />
+		<string id="KDHIT_JhWooWH" text="Dein Kapitän der berittenen Bogenschützen ist gefallen! Gib auf!" />
+		<string id="KDHIT_NZ7KC8a" text="Der feindliche Infanteriekapitän ist gefallen! Guter Kampf!" />
+		<string id="KDHIT_zfGD6ad" text="Der feindliche Bogenschützenkapitän ist gefallen! Guter Kampf!" />
+		<string id="KDHIT_BTTw8p6" text="Der feindliche Kavalleriekapitän ist gefallen! Guter Kampf!" />
+		<string id="KDHIT_Q8exFRD" text="Der feindliche Kapitän der berittenen Bogenschützen ist gefallen! Guter Kampf!" />
+		<string id="KDHIT_xJFUXi0" text="Einer deiner Helden ist gefallen!" />
+		<string id="KDHIT_EfBnjgz" text="Einer ihrer Helden ist gefallen!" />
+		<string id="KDHIT_nlFILgW" text="Dein Kapitän ist gefallen! Gib auf!" />
+		<string id="KDHIT_NQjIwCQ" text="Der feindliche Kapitän ist gefallen! Guter Kampf!" />
 	</strings>
 </base>

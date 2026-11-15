@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="Если включено, звук интерфейса, воспроизводимый при падении героя, будет отключён. Уведомление на экране при этом всё равно будет отображаться. [По умолчанию: отключено]" />
 		<string id="KDHIT_hFq3Zt9" text="Воспроизводить голосовые реплики реакции на падение героев" />
 		<string id="KDHIT_Bn7pXo2" text="Включает реплики, которые произносит ваш персонаж, когда в бою повержен союзный генерал или командир построения. [По умолчанию: включено]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="Ваш генерал пал! Никто вас не спасёт!" />
+		<string id="KDHIT_YxuK6fA" text="Вражеский генерал пал! Победа за нами!" />
+		<string id="KDHIT_ABEqr3n" text="Ваш командир пехоты пал! Сдавайтесь!" />
+		<string id="KDHIT_Amerh0t" text="Ваш командир стрелков пал! Сдавайтесь!" />
+		<string id="KDHIT_8Fzqb4c" text="Ваш командир кавалерии пал! Сдавайтесь!" />
+		<string id="KDHIT_JhWooWH" text="Ваш командир конных лучников пал! Сдавайтесь!" />
+		<string id="KDHIT_NZ7KC8a" text="Вражеский командир пехоты пал! Хороший бой!" />
+		<string id="KDHIT_zfGD6ad" text="Вражеский командир лучников пал! Хороший бой!" />
+		<string id="KDHIT_BTTw8p6" text="Вражеский командир кавалерии пал! Хороший бой!" />
+		<string id="KDHIT_Q8exFRD" text="Вражеский командир конных лучников пал! Хороший бой!" />
+		<string id="KDHIT_xJFUXi0" text="Один из ваших героев пал!" />
+		<string id="KDHIT_EfBnjgz" text="Один из их героев пал!" />
+		<string id="KDHIT_nlFILgW" text="Ваш командир пал! Сдавайтесь!" />
+		<string id="KDHIT_NQjIwCQ" text="Вражеский командир пал! Хороший бой!" />
 	</strings>
 </base>

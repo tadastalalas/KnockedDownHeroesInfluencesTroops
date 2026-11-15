@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="Cuando está activado, se silenciará el sonido de la interfaz que se reproduce al derribar a un héroe. La notificación en pantalla seguirá apareciendo. [Predeterminado: desactivado]" />
 		<string id="KDHIT_hFq3Zt9" text="Reproducir líneas de voz de reacción a la caída de héroes" />
 		<string id="KDHIT_Bn7pXo2" text="Activa las líneas de voz que dice tu personaje cuando un general o capitán de formación aliado es derribado en batalla. [Predeterminado: habilitado]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="¡Tu general ha caído! ¡Nadie te salvará!" />
+		<string id="KDHIT_YxuK6fA" text="¡El general enemigo ha caído! ¡La victoria es nuestra!" />
+		<string id="KDHIT_ABEqr3n" text="¡Tu capitán de infantería ha caído! ¡Ríndete!" />
+		<string id="KDHIT_Amerh0t" text="¡Tu capitán a distancia ha caído! ¡Ríndete!" />
+		<string id="KDHIT_8Fzqb4c" text="¡Tu capitán de caballería ha caído! ¡Ríndete!" />
+		<string id="KDHIT_JhWooWH" text="¡Tu capitán de arqueros a caballo ha caído! ¡Ríndete!" />
+		<string id="KDHIT_NZ7KC8a" text="¡El capitán de infantería enemigo ha caído! ¡Buena pelea!" />
+		<string id="KDHIT_zfGD6ad" text="¡El capitán de arqueros enemigo ha caído! ¡Buena pelea!" />
+		<string id="KDHIT_BTTw8p6" text="¡El capitán de caballería enemigo ha caído! ¡Buena pelea!" />
+		<string id="KDHIT_Q8exFRD" text="¡El capitán de arqueros a caballo enemigo ha caído! ¡Buena pelea!" />
+		<string id="KDHIT_xJFUXi0" text="¡Uno de tus héroes ha caído!" />
+		<string id="KDHIT_EfBnjgz" text="¡Uno de sus héroes ha caído!" />
+		<string id="KDHIT_nlFILgW" text="¡Tu capitán ha caído! ¡Ríndete!" />
+		<string id="KDHIT_NQjIwCQ" text="¡El capitán enemigo ha caído! ¡Buena pelea!" />
 	</strings>
 </base>

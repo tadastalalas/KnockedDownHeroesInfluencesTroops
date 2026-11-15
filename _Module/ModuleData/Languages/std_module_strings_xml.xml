@@ -34,7 +34,7 @@
 		<string id="KDHIT_yD6sszN" text="When General Knocks Down Formation Captain" />
 		<string id="KDHIT_LEvkHZs" text="The enemy's troops (captain's formation troops) suffers a morale loss when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 15]" />
 		<string id="KDHIT_j4dHqfE" text="When General Knocks Down General" />
-		<string id="KDHIT_Q4ntARL" text="The enemy's troops (all enemy troops) suffers a morale loss when a genral defeats an enemy general. Works for both sides. [Default: 16]" />
+		<string id="KDHIT_Q4ntARL" text="The enemy's troops (all enemy troops) suffers a morale loss when a general defeats an enemy general. Works for both sides. [Default: 16]" />
 		<string id="KDHIT_MdLvOaI" text="Morale gains when heroes are knocked down" />
 		<string id="KDHIT_fKK5mYm" text="When Troop Knocks Down Unassigned Hero" />
 		<string id="KDHIT_wPkAX9J" text="The attacker's troops (all friendly troops within 10m radius by default) gain morale when an ordinary soldier defeats an enemy hero not serving as a formation captain. Works for both sides. [Default: 2]" />
@@ -59,7 +59,7 @@
 		<string id="KDHIT_Mr7cbdv" text="When General Knocks Down Formation Captain" />
 		<string id="KDHIT_6hBug9f" text="The attacker's troops (all friendly troops) gain morale when a general defeats an enemy hero serving as a formation captain. Works for both sides. [Default: 15]" />
 		<string id="KDHIT_Za6yOdt" text="When General Knocks Down General" />
-		<string id="KDHIT_kqmtG3J" text="The attacker's troops (all friendly troops) gain morale when a genral defeats an enemy general. Works for both sides. [Default: 16]" />
+		<string id="KDHIT_kqmtG3J" text="The attacker's troops (all friendly troops) gain morale when a general defeats an enemy general. Works for both sides. [Default: 16]" />
 		<string id="KDHIT_YD0DERb" text="On-screen notifications texts" />
 		<string id="KDHIT_iV3XC78" text="Friendly General Fallen" />
 		<string id="KDHIT_s56GZlT" text="This text will be shown when friendly general will fall in battle." />
@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="When enabled, the UI sound played when a hero is knocked down will be muted. The on-screen notification still appears. [Default: disabled]" />
 		<string id="KDHIT_hFq3Zt9" text="Play Hero Fall Reaction Voice Lines" />
 		<string id="KDHIT_Bn7pXo2" text="Toggle voice lines said by your character when a general or formation captain, friendly or enemy, is knocked down in battle. [Default: enabled]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="Your general has fallen! Nobody will save you!" />
+		<string id="KDHIT_YxuK6fA" text="Enemy's general has fallen! Victory is ours!" />
+		<string id="KDHIT_ABEqr3n" text="Your infantry captain has fallen! Give up!" />
+		<string id="KDHIT_Amerh0t" text="Your ranged captain has fallen! Give up!" />
+		<string id="KDHIT_8Fzqb4c" text="Your cavalry captain has fallen! Give up!" />
+		<string id="KDHIT_JhWooWH" text="Your horse archers captain has fallen! Give up!" />
+		<string id="KDHIT_NZ7KC8a" text="Enemy's infantry captain has fallen! Good fight!" />
+		<string id="KDHIT_zfGD6ad" text="Enemy's archers captain has fallen! Good fight!" />
+		<string id="KDHIT_BTTw8p6" text="Enemy's cavalry captain has fallen! Good fight!" />
+		<string id="KDHIT_Q8exFRD" text="Enemy's horse archers captain has fallen! Good fight!" />
+		<string id="KDHIT_xJFUXi0" text="One of your heroes has fallen!" />
+		<string id="KDHIT_EfBnjgz" text="One of their heroes has fallen!" />
+		<string id="KDHIT_nlFILgW" text="Your captain has fallen! Give up!" />
+		<string id="KDHIT_NQjIwCQ" text="Enemy's captain has fallen! Good fight!" />
 	</strings>
 </base>

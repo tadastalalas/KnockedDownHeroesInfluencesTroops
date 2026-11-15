@@ -1,0 +1,10 @@
+KDHIT v1.5.7.0 :
+
+- Updated for game versions 1.5.7, 1.4.8 and 1.4.7 (one download, the right files are picked for your game).
+- MCM is no longer a hard requirement. If MCM is not installed, use the ModConfiguration.xml file to configure the mod.
+- Fixed friendly-fire knockdowns being treated as enemy kills (morale and cheering).
+- Fixed morale changes applied to removed troops in cached formation lists.
+- Switched range checks to squared distance.
+- Default on-screen notification texts are now translated. Texts you changed yourself are shown as you typed them.
+- Debug logging now writes to Modules\KnockedDownHeroesInfluencesTroops\logs instead of the screen.
+- StoryMode is no longer a required module.

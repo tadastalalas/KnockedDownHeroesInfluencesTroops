@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="Etkinleştirildiğinde, bir kahraman yere düştüğünde çalınan arayüz sesi susturulur. Ekrandaki bildirim yine de gösterilmeye devam eder. [Varsayılan: devre dışı]" />
 		<string id="KDHIT_hFq3Zt9" text="Kahraman Düşüş Tepki Seslerini Çal" />
 		<string id="KDHIT_Bn7pXo2" text="Savaşta dost bir general veya formasyon kaptanı yere düştüğünde karakterinizin söylediği sesli tepkileri açar. [Varsayılan: etkin]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="Generalin düştü! Kimse seni kurtaramayacak!" />
+		<string id="KDHIT_YxuK6fA" text="Düşman generali düştü! Zafer bizim!" />
+		<string id="KDHIT_ABEqr3n" text="Piyade kaptanın düştü! Teslim ol!" />
+		<string id="KDHIT_Amerh0t" text="Menzilli kaptanın düştü! Teslim ol!" />
+		<string id="KDHIT_8Fzqb4c" text="Süvari kaptanın düştü! Teslim ol!" />
+		<string id="KDHIT_JhWooWH" text="Atlı okçu kaptanın düştü! Teslim ol!" />
+		<string id="KDHIT_NZ7KC8a" text="Düşmanın piyade kaptanı düştü! İyi dövüş!" />
+		<string id="KDHIT_zfGD6ad" text="Düşmanın okçu kaptanı düştü! İyi dövüş!" />
+		<string id="KDHIT_BTTw8p6" text="Düşmanın süvari kaptanı düştü! İyi dövüş!" />
+		<string id="KDHIT_Q8exFRD" text="Düşmanın atlı okçu kaptanı düştü! İyi dövüş!" />
+		<string id="KDHIT_xJFUXi0" text="Kahramanlarından biri düştü!" />
+		<string id="KDHIT_EfBnjgz" text="Onların kahramanlarından biri düştü!" />
+		<string id="KDHIT_nlFILgW" text="Kaptanın düştü! Teslim ol!" />
+		<string id="KDHIT_NQjIwCQ" text="Düşmanın kaptanı düştü! İyi dövüş!" />
 	</strings>
 </base>

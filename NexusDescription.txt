@@ -1,0 +1,107 @@
+[center][size=4]It finally matters [color=#93c47d]who knocks down heroes[/color] in battle.[/size]
+[size=3]Troops [color=#93c47d]lose morale[/color] when their lords, formation captains and generals fall - the other side [color=#93c47d]gains morale[/color] and cheers.
+How many troops are affected depends on the role of the fallen hero and of the one who knocked him down.[/size]
+
+[color=#93c47d][size=3]Supported game versions: 1.5.7, 1.4.8, 1.4.7.[/size][/color]
+[img]https://i.ibb.co/d4K95gzs/On-Screen-Message-Example1.png[/img][/center]
+
+[color=#ffff00][size=4]What's new in v1.5.7.0 (since v1.3.0)[/size][/color]
+[color=#ffd966]Mod Configuration Menu is no longer required - without it, use ModConfiguration.xml.[/color]
+[color=#93c47d]Game versions 1.5.7, 1.4.8 and 1.4.7 in one download.[/color]
+[color=#ffd966]Knockdowns by friendly fire no longer count as enemy kills.[/color]
+[color=#93c47d]Default notification texts are now shown in your game language.[/color]
+[color=#ffd966]Logging for debugging writes to a log file instead of the screen.[/color]
+[color=#93c47d]More fixes - see the Changelog tab.[/color]
+
+[color=#ffff00][size=4]Features[/size][/color]
+[color=#ffd966]Troops lose morale when a hero of their side is knocked down in battle.[/color]
+[color=#93c47d]The attacking side's troops gain morale.[/color]
+[color=#ffd966]Generals, formation captains and unassigned heroes count differently - both the one who falls and the one who strikes.[/color]
+[color=#93c47d]The attacker's troops cheer when an enemy hero falls.[/color]
+[color=#ffd966]On-screen notification when a hero falls, with texts you can change.[/color] ([color=#6aa84f]on[/color]/[color=#e06666]off[/color])
+[color=#93c47d]Your character shouts a short line when your general or one of your formation captains falls.[/color] ([color=#6aa84f]on[/color]/[color=#e06666]off[/color])
+[color=#ffd966]Works in field and siege battles.[/color]
+[color=#93c47d]No need to configure anything - every value can still be changed.[/color]
+[color=#ffd966]Works with or without Mod Configuration Menu.[/color]
+[color=#93c47d]Translations for 12 languages.[/color]
+
+[center][color=#6fa8dc][size=4]Additional languages included (using copilot ai translation)[/size][/color]
+Português (BR), 简体中文, 繁體中文, Deutsch, Français, Italiano, 日本語, 한국어, Polski, Русский, Español (LA), Türkçe[/center]
+
+[color=#ffff00][size=4]Who is affected (default settings)[/size][/color]
+[color=#6fa8dc]Morale loss[/color] - the fallen hero's side:
+General falls - the whole team.
+Formation captain falls - the captain's formation.
+Unassigned hero falls - troops within [color=#93c47d]10 m[/color] of him ([color=#93c47d]20 m[/color] if a formation captain struck him, [color=#93c47d]30 m[/color] if the general did).
+[color=#6fa8dc]Morale gain[/color] - the attacker's side:
+General strikes - the whole team (troops within [color=#93c47d]30 m[/color] when an unassigned hero falls).
+Formation captain strikes - the whole team for a general, the captain's formation for a captain, troops within [color=#93c47d]20 m[/color] for an unassigned hero.
+Unassigned hero strikes - the whole team for a general, troops within [color=#93c47d]25 m[/color] for a captain, [color=#93c47d]10 m[/color] for an unassigned hero.
+Troop strikes - the whole team for a general, troops within [color=#93c47d]20 m[/color] for a captain, [color=#93c47d]10 m[/color] for an unassigned hero.
+[color=#6fa8dc]Cheering[/color] - not configurable:
+General strikes - all troops. Formation captain strikes - his formation.
+Unassigned hero strikes - troops within [color=#93c47d]35 / 25 / 15 m[/color] when a general / captain / unassigned hero falls.
+Troop strikes - troops within [color=#93c47d]30 / 20 / 10 m[/color] when a general / captain / unassigned hero falls.
+
+[color=#ffff00][size=4]Settings[/size][/color]
+[color=#6fa8dc]Main settings[/color]
+[color=#ffd966]Enable This Modification[/color] - default [color=#6aa84f]on[/color]
+[color=#ffd966]Show On-Screen Notifications[/color] - default [color=#6aa84f]on[/color]
+[color=#ffd966]Hide Unassigned Hero Notifications[/color] - default [color=#e06666]off[/color]
+[color=#ffd966]Disable Hero Knockdown Sounds[/color] - default [color=#e06666]off[/color]
+[color=#ffd966]Play Hero Fall Reaction Voice Lines[/color] - default [color=#6aa84f]on[/color]
+[color=#6fa8dc]Morale penalties when heroes are knocked down[/color]
+[color=#ffd966]When Troop Knocks Down Unassigned Hero[/color] - 0 to 100, default [color=#93c47d]2[/color]
+[color=#ffd966]When Troop Knocks Down Formation Captain[/color] - 0 to 100, default [color=#93c47d]3[/color]
+[color=#ffd966]When Troop Knocks Down General[/color] - 0 to 100, default [color=#93c47d]4[/color]
+[color=#ffd966]When Unassigned Hero Knocks Down Unassigned Hero[/color] - 0 to 100, default [color=#93c47d]6[/color]
+[color=#ffd966]When Unassigned Hero Knocks Down Formation Captain[/color] - 0 to 100, default [color=#93c47d]7[/color]
+[color=#ffd966]When Unassigned Hero Knocks Down General[/color] - 0 to 100, default [color=#93c47d]8[/color]
+[color=#ffd966]When Formation Captain Knocks Down Unassigned Hero[/color] - 0 to 100, default [color=#93c47d]10[/color]
+[color=#ffd966]When Formation Captain Knocks Down Formation Captain[/color] - 0 to 100, default [color=#93c47d]11[/color]
+[color=#ffd966]When Formation Captain Knocks Down General[/color] - 0 to 100, default [color=#93c47d]12[/color]
+[color=#ffd966]When General Knocks Down Unassigned Hero[/color] - 0 to 100, default [color=#93c47d]14[/color]
+[color=#ffd966]When General Knocks Down Formation Captain[/color] - 0 to 100, default [color=#93c47d]15[/color]
+[color=#ffd966]When General Knocks Down General[/color] - 0 to 100, default [color=#93c47d]16[/color]
+[color=#6fa8dc]Morale gains when heroes are knocked down[/color]
+The same 12 situations and defaults as the penalties ([color=#93c47d]2, 3, 4, 6, 7, 8, 10, 11, 12, 14, 15, 16[/color]), 0 to 100.
+[color=#6fa8dc]On-screen notifications texts[/color]
+[color=#ffd966]Friendly General Fallen[/color], [color=#ffd966]Enemy General Fallen[/color], [color=#ffd966]Friendly Infantry Captain Fallen[/color], [color=#ffd966]Friendly Ranged Captain Fallen[/color], [color=#ffd966]Friendly Cavalry Captain Fallen[/color], [color=#ffd966]Friendly Horse Archers Captain Fallen[/color], [color=#ffd966]Enemy Infantry Captain Fallen[/color], [color=#ffd966]Enemy Ranged Captain Fallen[/color], [color=#ffd966]Enemy Cavalry Captain Fallen[/color], [color=#ffd966]Enemy Horse Archers Captain Fallen[/color], [color=#ffd966]Friendly Unassigned Hero Fallen[/color], [color=#ffd966]Enemy Unassigned Hero Fallen[/color] - any text. Left at the default, the message is shown in your game language.
+[color=#6fa8dc]Technical settings[/color]
+[color=#ffd966]Mod update interval in seconds[/color] - 1 to 100, default [color=#93c47d]30[/color]
+[color=#ffd966]Logging for debugging[/color] - default [color=#e06666]off[/color]
+
+[color=#6fa8dc]With Mod Configuration Menu:[/color] change them in game under [color=#ffd966]Options > Mod Options[/color]. Changes apply at once.
+[color=#6fa8dc]Without Mod Configuration Menu:[/color] open [color=#ffd966]Modules[/color]\[color=#f1c232]KnockedDownHeroesInfluencesTroops[/color]\[color=#ffd966]ModConfiguration.xml[/color] in any text editor. The file is read every time a campaign is started or loaded. If it is deleted or broken, the mod creates a new one with the default values.
+
+[color=#ffff00][size=4]Game versions[/size][/color]
+[color=#93c47d]1.5.7[/color], [color=#93c47d]1.4.8[/color], [color=#93c47d]1.4.7[/color] in the same download. The mod picks the right files for your game by itself.
+
+[color=#ffff00][size=4]Compatibility[/size][/color]
+Can be added/removed [color=#93c47d]anytime[/color].
+Does [color=#93c47d]not add data[/color] to save game files.
+[color=#93c47d]No Harmony patches[/color], uses only mission events.
+
+[color=#ffff00][size=4]Requirements[/size][/color]
+[url=https://www.nexusmods.com/mountandblade2bannerlord/mods/612]Mod Configuration Menu[/url] - [color=#6aa84f]optional[/color], for changing the settings in game.
+
+[color=#ffff00][size=4]Installation[/size][/color]
+Updating? [color=#e06666]Delete the old mod folder first[/color], never overwrite it.
+Advisable to use [color=#ffd966]7zip[/color] to extract archive.
+Put it in [color=#ffd966]Mount & Blade II Bannerlord[/color]\[color=#f1c232]Modules[/color] folder.
+Enable the mod in the launcher. [url=https://www.nexusmods.com/mountandblade2bannerlord/mods/612]Mod Configuration Menu[/url] (if you use it) must be above it.
+
+[color=#ffff00][size=4]Found a problem?[/size][/color]
+Generate a crash report link using [url=https://www.nexusmods.com/mountandblade2bannerlord/mods/2018]ButterLib[/url] mod. How to do that the mini guide is here: [url=http://bannerlordmodding.lt/guides/how_to_report_a_crash/]How To Report A Crash[/url]
+Turn on [color=#ffd966]Logging for debugging[/color] in [color=#ffd966]MCM[/color] settings or [color=#ffd966]ModConfiguration.xml[/color] in mod folder, [color=#f6b26b]repeat the problem[/color], then attach the file from [color=#ffd966]Modules[/color]\[color=#f1c232]KnockedDownHeroesInfluencesTroops[/color]\[color=#ffd966]logs[/color] to your [url=https://www.nexusmods.com/mountandblade2bannerlord/mods/2018]ButterLib[/url] crash report.
+
+[color=#a4c2f4]General Credits:[/color]
+[url=https://next.nexusmods.com/profile/LesserScholar]Lesser Scholar[/url] who made extensive [url=https://www.youtube.com/watch?v=tOziMRXJ7tM&list=PLzebdAxJeltRwfJ8jzsNolgHkRvLjoCRC]Artisan Workshop Mod Tutorial[/url].
+[url=https://next.nexusmods.com/profile/LitauenLitauen]LitauenLitauen[/url] for his priceless modding documentation at [url=http://bannerlordmodding.lt/]BannerlordModding.lt[/url].
+Mount & Blade Modding community [url=https://discord.gg/TGpNRpXGQq]Discord Channel[/url].
+
+[color=#a4c2f4]Source On GitHub:[/color] [url=https://github.com/tadastalalas/KnockedDownHeroesInfluencesTroops]https://github.com/tadastalalas/KnockedDownHeroesInfluencesTroops[/url]
+[color=#a4c2f4]Issues, Suggestions & Other Miscellaneous:[/color] [url=https://discord.gg/NwS7yQgxvu]https://discord.gg/NwS7yQgxvu[/url]
+[color=#a4c2f4]Comprehensive Bannerlord Modding Guide:[/color] [url=https://www.nexusmods.com/mountandblade2bannerlord/mods/11354]Vanilla Plus Proper Modding Notes[/url]
+[color=#a4c2f4]Other Mods:[/color] [url=https://www.nexusmods.com/profile/TadasTheLithuanian/mods]TadasTheLithuanian Nexus Profile[/url]
+[color=#a4c2f4]Support Me On:[/color] [url=https://ko-fi.com/tadasthelithuanian]https://ko-fi.com/tadasthelithuanian[/url] [color=#a4c2f4]or[/color] [url=https://paypal.me/tadastalalas]https://paypal.me/tadastalalas[/url]

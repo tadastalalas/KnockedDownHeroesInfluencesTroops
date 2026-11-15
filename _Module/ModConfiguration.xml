@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModConfiguration>
+    <MainSettings>
+        <EnableThisModification>true</EnableThisModification>
+        <ShowOnScreenNotifications>true</ShowOnScreenNotifications>
+        <HideUnassignedHeroNotifications>false</HideUnassignedHeroNotifications>
+        <DisableKnockdownSounds>false</DisableKnockdownSounds>
+        <PlayHeroFallReactionVoiceLines>true</PlayHeroFallReactionVoiceLines>
+    </MainSettings>
+    <MoralePenalties>
+        <MoraleChangeWhenTroopKillsUnassignedHero>2</MoraleChangeWhenTroopKillsUnassignedHero>
+        <MoraleChangeWhenTroopKillsCaptainHero>3</MoraleChangeWhenTroopKillsCaptainHero>
+        <MoraleChangeWhenTroopKillsGeneralHero>4</MoraleChangeWhenTroopKillsGeneralHero>
+        <MoraleChangeWhenUnassignedHeroKillsUnassignedHero>6</MoraleChangeWhenUnassignedHeroKillsUnassignedHero>
+        <MoraleChangeWhenUnassignedHeroKillsCaptainHero>7</MoraleChangeWhenUnassignedHeroKillsCaptainHero>
+        <MoraleChangeWhenUnassignedHeroKillsGeneralHero>8</MoraleChangeWhenUnassignedHeroKillsGeneralHero>
+        <MoraleChangeWhenCaptainHeroKillsUnassignedHero>10</MoraleChangeWhenCaptainHeroKillsUnassignedHero>
+        <MoraleChangeWhenCaptainHeroKillsCaptainHero>11</MoraleChangeWhenCaptainHeroKillsCaptainHero>
+        <MoraleChangeWhenCaptainHeroKillsGeneralHero>12</MoraleChangeWhenCaptainHeroKillsGeneralHero>
+        <MoraleChangeWhenGeneralHeroKillsUnassignedHero>14</MoraleChangeWhenGeneralHeroKillsUnassignedHero>
+        <MoraleChangeWhenGeneralHeroKillsCaptainHero>15</MoraleChangeWhenGeneralHeroKillsCaptainHero>
+        <MoraleChangeWhenGeneralHeroKillsGeneralHero>16</MoraleChangeWhenGeneralHeroKillsGeneralHero>
+    </MoralePenalties>
+    <MoraleGains>
+        <MoraleGainWhenTroopKillsUnassignedHero>2</MoraleGainWhenTroopKillsUnassignedHero>
+        <MoraleGainWhenTroopKillsCaptainHero>3</MoraleGainWhenTroopKillsCaptainHero>
+        <MoraleGainWhenTroopKillsGeneralHero>4</MoraleGainWhenTroopKillsGeneralHero>
+        <MoraleGainWhenUnassignedHeroKillsUnassignedHero>6</MoraleGainWhenUnassignedHeroKillsUnassignedHero>
+        <MoraleGainWhenUnassignedHeroKillsCaptainHero>7</MoraleGainWhenUnassignedHeroKillsCaptainHero>
+        <MoraleGainWhenUnassignedHeroKillsGeneralHero>8</MoraleGainWhenUnassignedHeroKillsGeneralHero>
+        <MoraleGainWhenCaptainHeroKillsUnassignedHero>10</MoraleGainWhenCaptainHeroKillsUnassignedHero>
+        <MoraleGainWhenCaptainHeroKillsCaptainHero>11</MoraleGainWhenCaptainHeroKillsCaptainHero>
+        <MoraleGainWhenCaptainHeroKillsGeneralHero>12</MoraleGainWhenCaptainHeroKillsGeneralHero>
+        <MoraleGainWhenGeneralHeroKillsUnassignedHero>14</MoraleGainWhenGeneralHeroKillsUnassignedHero>
+        <MoraleGainWhenGeneralHeroKillsCaptainHero>15</MoraleGainWhenGeneralHeroKillsCaptainHero>
+        <MoraleGainWhenGeneralHeroKillsGeneralHero>16</MoraleGainWhenGeneralHeroKillsGeneralHero>
+    </MoraleGains>
+    <NotificationTexts>
+        <FriendlyGeneralFallenNotification>Your general has fallen! Nobody will save you!</FriendlyGeneralFallenNotification>
+        <EnemyGeneralFallenNotification>Enemy's general has fallen! Victory is ours!</EnemyGeneralFallenNotification>
+        <FriendlyInfantryCaptainFallenNotification>Your infantry captain has fallen! Give up!</FriendlyInfantryCaptainFallenNotification>
+        <FriendlyRangedCaptainFallenNotification>Your ranged captain has fallen! Give up!</FriendlyRangedCaptainFallenNotification>
+        <FriendlyCavalryCaptainFallenNotification>Your cavalry captain has fallen! Give up!</FriendlyCavalryCaptainFallenNotification>
+        <FriendlyHorseArchersCaptainFallenNotification>Your horse archers captain has fallen! Give up!</FriendlyHorseArchersCaptainFallenNotification>
+        <EnemyInfantryCaptainFallenNotification>Enemy's infantry captain has fallen! Good fight!</EnemyInfantryCaptainFallenNotification>
+        <EnemyRangedCaptainFallenNotification>Enemy's archers captain has fallen! Good fight!</EnemyRangedCaptainFallenNotification>
+        <EnemyCavalryCaptainFallenNotification>Enemy's cavalry captain has fallen! Good fight!</EnemyCavalryCaptainFallenNotification>
+        <EnemyHorseArchersCaptainFallenNotification>Enemy's horse archers captain has fallen! Good fight!</EnemyHorseArchersCaptainFallenNotification>
+        <FriendlyUnassignedHeroFallenNotification>One of your heroes has fallen!</FriendlyUnassignedHeroFallenNotification>
+        <EnemyUnassignedHeroFallenNotification>One of their heroes has fallen!</EnemyUnassignedHeroFallenNotification>
+    </NotificationTexts>
+    <TechnicalSettings>
+        <UpdateIntervalInSeconds>30</UpdateIntervalInSeconds>
+        <LoggingEnabled>false</LoggingEnabled>
+    </TechnicalSettings>
+</ModConfiguration>

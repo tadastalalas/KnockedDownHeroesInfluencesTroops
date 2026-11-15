@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="Po włączeniu dźwięk interfejsu odtwarzany przy powaleniu bohatera zostanie wyciszony. Powiadomienie na ekranie nadal będzie się pojawiać. [Domyślnie: wyłączone]" />
 		<string id="KDHIT_hFq3Zt9" text="Odtwarzaj kwestie reakcji głosowej na upadek bohatera" />
 		<string id="KDHIT_Bn7pXo2" text="Włącza kwestie wypowiadane przez twoją postać, gdy w bitwie zostanie powalony sojuszniczy generał lub dowódca formacji. [Domyślnie: włączone]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="Twój generał poległ! Nikt cię nie uratuje!" />
+		<string id="KDHIT_YxuK6fA" text="Generał wroga poległ! Zwycięstwo jest nasze!" />
+		<string id="KDHIT_ABEqr3n" text="Twój dowódca piechoty poległ! Poddaj się!" />
+		<string id="KDHIT_Amerh0t" text="Twój dowódca strzelców poległ! Poddaj się!" />
+		<string id="KDHIT_8Fzqb4c" text="Twój dowódca kawalerii poległ! Poddaj się!" />
+		<string id="KDHIT_JhWooWH" text="Twój dowódca łuczników konnych poległ! Poddaj się!" />
+		<string id="KDHIT_NZ7KC8a" text="Dowódca piechoty wroga poległ! Dobra walka!" />
+		<string id="KDHIT_zfGD6ad" text="Dowódca łuczników wroga poległ! Dobra walka!" />
+		<string id="KDHIT_BTTw8p6" text="Dowódca kawalerii wroga poległ! Dobra walka!" />
+		<string id="KDHIT_Q8exFRD" text="Dowódca łuczników konnych wroga poległ! Dobra walka!" />
+		<string id="KDHIT_xJFUXi0" text="Jeden z twoich bohaterów poległ!" />
+		<string id="KDHIT_EfBnjgz" text="Jeden z ich bohaterów poległ!" />
+		<string id="KDHIT_nlFILgW" text="Twój dowódca poległ! Poddaj się!" />
+		<string id="KDHIT_NQjIwCQ" text="Dowódca wroga poległ! Dobra walka!" />
 	</strings>
 </base>

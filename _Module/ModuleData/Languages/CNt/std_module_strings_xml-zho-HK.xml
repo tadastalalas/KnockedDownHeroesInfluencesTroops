@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="啟用後，當英雄被擊倒時播放的介面音效將被靜音。螢幕通知仍會顯示。[預設：停用]" />
 		<string id="KDHIT_hFq3Zt9" text="播放英雄倒下反應語音" />
 		<string id="KDHIT_Bn7pXo2" text="啟用後，當友方將軍或編隊隊長在戰鬥中被擊倒時，會播放你角色說出的反應語音。[預設：啟用]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="你的將軍倒下了！沒有人能救你了！" />
+		<string id="KDHIT_YxuK6fA" text="敵軍將軍倒下了！勝利屬於我們！" />
+		<string id="KDHIT_ABEqr3n" text="你的步兵隊長倒下了！投降吧！" />
+		<string id="KDHIT_Amerh0t" text="你的遠程隊長倒下了！投降吧！" />
+		<string id="KDHIT_8Fzqb4c" text="你的騎兵隊長倒下了！投降吧！" />
+		<string id="KDHIT_JhWooWH" text="你的騎射隊長倒下了！投降吧！" />
+		<string id="KDHIT_NZ7KC8a" text="敵軍步兵隊長倒下了！打得好！" />
+		<string id="KDHIT_zfGD6ad" text="敵軍弓箭手隊長倒下了！打得好！" />
+		<string id="KDHIT_BTTw8p6" text="敵軍騎兵隊長倒下了！打得好！" />
+		<string id="KDHIT_Q8exFRD" text="敵軍騎射隊長倒下了！打得好！" />
+		<string id="KDHIT_xJFUXi0" text="你的一位英雄倒下了！" />
+		<string id="KDHIT_EfBnjgz" text="他們的一位英雄倒下了！" />
+		<string id="KDHIT_nlFILgW" text="你的隊長倒下了！投降吧！" />
+		<string id="KDHIT_NQjIwCQ" text="敵軍隊長倒下了！打得好！" />
 	</strings>
 </base>

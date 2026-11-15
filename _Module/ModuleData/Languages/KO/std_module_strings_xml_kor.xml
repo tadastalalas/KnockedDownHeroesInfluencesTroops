@@ -96,23 +96,19 @@
 		<string id="KDHIT_3ol4FO4" text="활성화하면 영웅이 쓰러질 때 재생되는 UI 효과음이 음소거됩니다. 화면 알림은 계속 표시됩니다. [기본값: 비활성화]" />
 		<string id="KDHIT_hFq3Zt9" text="영웅 쓰러짐 반응 음성 대사 재생" />
 		<string id="KDHIT_Bn7pXo2" text="전투에서 아군 장군 또는 대형 대장이 쓰러졌을 때 플레이어 캐릭터의 반응 음성 대사를 재생합니다. [기본값: 활성화]" />
-		<string id="KDHIT_gyfUZLl" text="" />
-		<string id="KDHIT_fezNYoY" text="" />
-		<string id="KDHIT_jdTzMBn" text="" />
-		<string id="KDHIT_83frCfl" text="" />
-		<string id="KDHIT_CSgfXqL" text="" />
-		<string id="KDHIT_peoBUyW" text="" />
-		<string id="KDHIT_5rgILVG" text="" />
-		<string id="KDHIT_jKqw1QC" text="" />
-		<string id="KDHIT_l3Em00o" text="" />
-		<string id="KDHIT_BEGQS4G" text="" />
-		<string id="KDHIT_C27ZJhJ" text="" />
-		<string id="KDHIT_jVDbWTG" text="" />
-		<string id="KDHIT_EoQxQJC" text="" />
-		<string id="KDHIT_Or5VSPk" text="" />
-		<string id="KDHIT_c2aSq21" text="" />
-		<string id="KDHIT_1njG9pI" text="" />
-		<string id="KDHIT_Rtv2hjV" text="" />
-		<string id="KDHIT_Dg4sepF" text="" />
+		<string id="KDHIT_57qRnbg" text="당신의 장군이 쓰러졌다! 아무도 당신을 구하지 못한다!" />
+		<string id="KDHIT_YxuK6fA" text="적 장군이 쓰러졌다! 승리는 우리의 것이다!" />
+		<string id="KDHIT_ABEqr3n" text="당신의 보병 대장이 쓰러졌다! 포기하라!" />
+		<string id="KDHIT_Amerh0t" text="당신의 원거리 대장이 쓰러졌다! 포기하라!" />
+		<string id="KDHIT_8Fzqb4c" text="당신의 기병 대장이 쓰러졌다! 포기하라!" />
+		<string id="KDHIT_JhWooWH" text="당신의 기마 궁수 대장이 쓰러졌다! 포기하라!" />
+		<string id="KDHIT_NZ7KC8a" text="적 보병 대장이 쓰러졌다! 잘 싸웠다!" />
+		<string id="KDHIT_zfGD6ad" text="적 궁수 대장이 쓰러졌다! 잘 싸웠다!" />
+		<string id="KDHIT_BTTw8p6" text="적 기병 대장이 쓰러졌다! 잘 싸웠다!" />
+		<string id="KDHIT_Q8exFRD" text="적 기마 궁수 대장이 쓰러졌다! 잘 싸웠다!" />
+		<string id="KDHIT_xJFUXi0" text="당신의 영웅 중 한 명이 쓰러졌다!" />
+		<string id="KDHIT_EfBnjgz" text="그들의 영웅 중 한 명이 쓰러졌다!" />
+		<string id="KDHIT_nlFILgW" text="당신의 대장이 쓰러졌다! 포기하라!" />
+		<string id="KDHIT_NQjIwCQ" text="적 대장이 쓰러졌다! 잘 싸웠다!" />
 	</strings>
 </base>
